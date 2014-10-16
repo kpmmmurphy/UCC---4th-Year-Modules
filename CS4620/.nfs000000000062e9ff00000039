@@ -14,4 +14,4 @@ count = \x -> foldr (\a -> \b -> (if a == x then 1 else 0) + b) 0
 foldr_append = \f -> \xs -> \ys -> f xs ys (foldr_append f (tail xs) ys)
 
 -- append : The list formed by joining lists 'xs' and 'ys' in that order
-append = foldr_append (\xs -> \ys -> \c -> if null xs then ys else  head xs : c) 
+append = foldr_append (\a -> \b -> \c -> if null a then b else  head a : c) 
