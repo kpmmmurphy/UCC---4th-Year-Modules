@@ -3,15 +3,15 @@
 iterate = \f -> \x -> x : iterate f (f x) 
 
 -- powers n : The list of all positive powers of the number 'n'
-powers = \n -> n : powers (n * 2)
+powers = \x -> iterate (\n -> n * n) (x) 
 
 -- reps : The infinite list which has, as its n-th item, a list formed
 --        of 'n' copies of the number 'n'
 
+rep = \x ->  \y -> if x == 0 then 
+                      []
+                    else
+                      y : rep (x - 1) y
 
-rep = \x -> \n -> (if n == 0 then 
-                     [] : (rep (x + 1) (n + 1)) 
-                  else
-                     x : rep x (n - 1))
+repp = iterate ((rep) 1  1) (from 1)
 
-reps = rep 1 1
