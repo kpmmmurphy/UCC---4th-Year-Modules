@@ -19,15 +19,15 @@ CFLAGSMPE = $(CFLAGS) -I$(MPE_DIR)/include
 CCFLAGS	  = $(CFLAGS)
 #FFLAGS	  = '-qdpc=e' 
 FFLAGS	  = $(OPTFLAGS)
-EXECS	  = BucketSort # BINARY NAME HERE
+EXECS	  = SortingAssignment # BINARY NAME HERE
 ALL_EXECS = ${EXECS} 
 
-all: BucketSort  # add the target here
+all: SortingAssignment # add the target here
 
 default: $(EXECS)
 
-prime: BucketSort.o
-	$(CLINKER) $(OPTFLAGS) -o BucketSort BucketSort.o -lm
+prime: SortingAssignment.o
+	$(CLINKER) $(OPTFLAGS) -o SortingAssignment SortingAssignment.o -lm
 
 clean:
 	/bin/rm -f *.o *~ PI* $(ALL_EXECS) upshot rdb.* startup.* core
