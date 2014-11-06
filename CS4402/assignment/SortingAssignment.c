@@ -10,29 +10,26 @@ int MPI_Sort(int n, double * array, int root, MPI_Comm comm);
 int MPI_Exhange(int n, double * array, int rank1, int rank2, MPI_Comm comm);
 int MPI_Is_sorted(int n, double * array, int rank1, int rank2, MPI_Comm comm);
 
-double * merge_array(int n, double * a, int m, double * b);
+void merge(int n, double * a, int m, double * b, double * sorted);
 void merge_sort(int n, double * a);
 void swap (double * a, double * b);
 void print_array(double * array);
 
 int rank, size;
 MPI_Status status;
-double *c;
+double *b, *c;
 
 int main (int argc, char *argv[])
 {
 
-	int n = 16, q, l, i, j, k, x, *nr, count = 0;
-	double unsorted_array[10] = {10.1,11.2,3.5,4.7,8.7,1.7,1.6,2.6,3.5,99.5};
+	int n = 10, q, l, i, j, k, x, *nr, count = 0;
+	double unsorted_array[] = {10.1,11.2,3.5,4.7,8.7,1.7,1.6,2.6,3.5,99.5};
 
 	MPI_Init(&argc, &argv);
         MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-	printf("About to call MPI_Exchange...\n");
-	c = (double *)calloc(n, sizeof(double));
-
-	MPI_Exchange(10, unsorted_array, 0, 1, MPI_COMM_WORLD);
+	MPI_Exchange(n, unsorted_array, 0, 1, MPI_COMM_WORLD);
 
 	MPI_Finalize();
 }
@@ -43,10 +40,15 @@ int main (int argc, char *argv[])
 
 int MPI_Exchange(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 {
-    double * b = (double *)calloc(n, sizeof(double));
     int tag1 = 0, tag2 = 1, i;
 
-    printf("Calling MPI_Exchange...From Rank %d\n", rank);
+    b = (double *)calloc(n, sizeof(double));
+    c = (double *)calloc(n, sizeof(double));
+
+    printf("Unsorted %d\n", n);
+    print_array(array);
+
+    printf("Calling MPI_Exchange...From Rank %d\n\n", rank);
 
     if(rank==rank1)
     {
@@ -54,34 +56,36 @@ int MPI_Exchange(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 	MPI_Send(&array[0], n, MPI_DOUBLE, rank2, tag1, comm);
 
 	//Recieve
-	MPI_Recv(b, n, MPI_DOUBLE, rank2, tag2, comm, &status);
+	MPI_Recv(&b[0], n, MPI_DOUBLE, rank2, tag2, comm, &status);
 	printf("Rank %d Recieved Array: \n ", rank);
 	print_array(b);
 
-	//Merge Arrays
-	c = merge_array(n, array, n, b);
+	//Merge
+	merge(n, array, n, b, c);
 
-	for(i=0;i<n++;i++) array[i] = c[i];
-	printf("Rank %d, Sorted Array\n", rank);
-	print_array(c);
+	printf("Rank %d Merged Array\n", rank);
+
+	for(i=0;i<n;i++) array[i] = c[i];
+	print_array(array);
     }
 
     if(rank==rank2)
-    {
-	//Send Unsorted Array
-	MPI_Send(&array[0], n, MPI_DOUBLE, rank1, tag2, comm);
-
+    {	
 	//Recieve
-	MPI_Recv(b, n, MPI_DOUBLE, rank1, tag1, comm, &status);
+	MPI_Recv(&b[0], n, MPI_DOUBLE, rank1, tag1, comm, &status);
         printf("Rank %d Recieved Array: \n", rank);
 	print_array(b);
 
-	//Merge
-	c = merge_array(n, array, n, b);
+	//Send Unsorted Array
+	MPI_Send(&array[0], n, MPI_DOUBLE, rank1, tag2, comm);
 
-	for(i=0;i<n;i++) array[i] = c[i+1];
-	printf("Rank %d Sorted Array\n", rank);
-	print_array(c);
+	//Merge
+	merge(n, array, n, b, c);
+
+	printf("Rank %d Merged Array\n", rank);
+
+	for(i=0;i<n;i++) array[i] = c[i+n];
+	print_array(array);
     }
 }
 
@@ -90,13 +94,49 @@ double * merge_array(int n, double * a, int m, double * b){
    int i,j,k;
    double * c = (double *) calloc(n+m, sizeof(double));
 
-   for(i=j=k=0;(i<n)&&(j<m);){
+   for(i=j=k=0;(i<n)&&(j<m);)
       if(a[i]<=b[j])c[k++]=a[i++];
       else c[k++]=b[j++];
       if(i==n)for(;j<m;)c[k++]=b[j++];
       else for(;i<n;)c[k++]=a[i++];
-   }
+ 
    return c;
+}
+
+
+
+void merge(int a[], int m, int b[], int n, int sorted[]) {
+  int i, j, k;
+ 
+  j = k = 0;
+ 
+  for (i = 0; i < m + n;) {
+    if (j < m && k < n) {
+      if (a[j] < b[k]) {
+        sorted[i] = a[j];
+        j++;
+      }
+      else {
+        sorted[i] = b[k];
+        k++;
+      }
+      i++;
+    }
+    else if (j == m) {
+      for (; i < m + n;) {
+        sorted[i] = b[k];
+        k++;
+        i++;
+      }
+    }
+    else {
+      for (; i < m + n;) {
+        sorted[i] = a[j];
+        j++;
+        i++;
+      }
+    }
+  }
 }
 
 void merge_sort(int n, double * a){

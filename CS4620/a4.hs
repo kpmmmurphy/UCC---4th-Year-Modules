@@ -7,3 +7,4 @@ approximate x xs = if null xs then
                    else
                       x : approximate x (computeRoot (head xs) x)
 
+
