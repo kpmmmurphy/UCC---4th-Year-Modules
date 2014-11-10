@@ -1,10 +1,12 @@
 -- computeRoot a x:
-computeRoot a x = (/) (a + ((/) x a)) 2
+computeRoot :: Float -> Float -> Float
+computeRoot a x = (/) (a + ((/) x a)) 2.0
 
 -- approximate x xs : 
+approximate :: Float -> [xs] -> [ys]
 approximate x xs = if null xs then
-                      1 : approximate x (computeRoot 1 x)
+                      1.0 : approximate x [(computeRoot 1.0 x)]
                    else
-                      x : approximate x (computeRoot (head xs) x)
+                     head xs : approximate x [(computeRoot (head xs) x)]
 
 
