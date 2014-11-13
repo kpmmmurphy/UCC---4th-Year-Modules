@@ -24,6 +24,8 @@ double *a, *b, *c, *localArray;
 double m = 10.0;
 int n = 10, q, l, i, j, k, x, *nr, count = 0;
 
+double totalTime, exchangeTime;
+
 int main (int argc, char *argv[])
 {
     MPI_Init(&argc, &argv);
@@ -40,7 +42,10 @@ int main (int argc, char *argv[])
     c          = (double *)calloc(n,      sizeof(double));
     localArray = (double *)calloc(n/size, sizeof(double));
 
+    totalTime = MPI_Wtime();
     MPI_Odd_even_sort(n, a, 0, MPI_COMM_WORLD);
+    totalTime = MPI_Wtime() - totalTime;
+    printf("\nExecution Time: %f\n", totalTime);
 
     MPI_Finalize();
 }
@@ -113,6 +118,7 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
         merge_sort(n/size, localArray);
 
 	//Repeart for step=0,1,2..., size-1
+	exchangeTime = MPI_Wtime();
 	for(i=0; i < size; i++)
 	{
 
@@ -132,7 +138,10 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 	    }
 	    MPI_Barrier(comm);
 	}
-	
+
+	exchangeTime = MPI_Wtime() - exchangeTime;
+	printf("Exchange Time: %f\n", exchangeTime);
+
 	//Gather first elements of array to root
 	MPI_Gather(&localArray[0], n/size, MPI_DOUBLE, &array[0], n/size , MPI_DOUBLE, 0, comm);
 
@@ -148,12 +157,15 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 
 int MPI_Is_sorted(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 {
-    MPI_Gather(&localArray[0], n/size, MPI_DOUBLE, &array[0], n/size, MPI_DOUBLE, 0, comm);
+    double *first, *last;
+    first = (double *)calloc(size, sizeof(double));
+    last  = (double *)calloc(size, sizeof(double));
+    MPI_Gather(&array[0], 1, MPI_DOUBLE, &array[0], 1, MPI_DOUBLE, 0, comm);
     return MPI_SUCCESS;
 }
 
-double * merge_array(int n, double * a, int m, double * b){
-
+double * merge_array(int n, double * a, int m, double * b)
+{
    int i,j,k;
    double * f = (double *) calloc(n+m, sizeof(double));
 
