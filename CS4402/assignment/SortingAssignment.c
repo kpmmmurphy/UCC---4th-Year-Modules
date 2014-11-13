@@ -20,22 +20,28 @@ void print_array(double * array, int size);
 
 int rank, size;
 MPI_Status status;
-double *a, *b, *c;
+double *a, *b, *c, *localArray;
 double m = 10.0;
 int n = 10, q, l, i, j, k, x, *nr, count = 0;
 
 int main (int argc, char *argv[])
 {
-
     MPI_Init(&argc, &argv);
        
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
     if(rank == 0)
     {
         a = genRandomArray(n);
-    }	
+    }
+
+    b          = (double *)calloc(n,      sizeof(double));
+    c          = (double *)calloc(n,      sizeof(double));
+    localArray = (double *)calloc(n/size, sizeof(double));
+
     MPI_Odd_even_sort(n, a, 0, MPI_COMM_WORLD);
+
     MPI_Finalize();
 }
 
@@ -63,8 +69,6 @@ int MPI_Exchange(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 {
     int tag1 = 0, tag2 = 1, i;
 
-    b = (double *)calloc(n, sizeof(double));
-
     if(rank==rank1)
     {
 	//Send Unsorted Array
@@ -72,14 +76,13 @@ int MPI_Exchange(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 
 	//Recieve
 	MPI_Recv(b, n, MPI_DOUBLE, rank2, tag2, comm, &status);
-	printf("Recieved from rank2");
+
 	//Merge
 	c = merge_array(n, array, n, b);
 
 	for(i=0;i<n;i++){
 	     array[i] = c[i];
 	}
-	print_array(array, n);
     }
 
     if(rank==rank2)
@@ -89,40 +92,32 @@ int MPI_Exchange(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 
 	//Recieve 
 	MPI_Recv(b, n, MPI_DOUBLE, rank1, tag1, comm, &status);
-	printf("Revieved from rank1");
+
 	//Merge
 	c = merge_array(n, array, n, b);
 
 	for(i=0;i<n;i++){
 	     array[i] = c[i+n];
         }
-	print_array(array, n);
     }
 
-    return MPI_SUCCESS; //MPI_SUCCESS;
+    return MPI_SUCCESS; 
 }
 
 int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 {
-	double * localArray = (double *)calloc(n/size, sizeof(double));
-
 	//Scatter
         MPI_Scatter(&array[0], n/size, MPI_DOUBLE, localArray, n/size, MPI_DOUBLE, 0, comm);
 	
         //Sort localArray
         merge_sort(n/size, localArray);
 
-	printf("Merged Local Array Rank: %d\n", rank);
-	print_array(localArray, n/size);
-
 	//Repeart for step=0,1,2..., size-1
 	for(i=0; i < size; i++)
 	{
-	    printf("Loop: %d, Rank: %d \n", i, rank);
 
-	    if(((rank) % 2) == 0)
+	    if(((rank + i) % 2) == 0)
 	    {
-		printf("Rank %d, Even\n", rank);
 		if(rank < size - 1)
 		{
 		    MPI_Exchange(n/size, localArray, rank, rank+1, comm);
@@ -130,39 +125,30 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 	    }
 	    else
 	    {
-		    printf("Rank %d, Odd\n", rank);
-		    if(rank > 0)
-		    {
-		        MPI_Exchange(n/size, localArray, rank-1, rank, comm);
-		    }
+	        if(rank > 0)
+		{
+		    MPI_Exchange(n/size, localArray, rank-1, rank, comm);
+		}
 	    }
-	
-	    //MPI_Barrier(comm);
+	    MPI_Barrier(comm);
 	}
-	printf("hERE");
+	
+	//Gather first elements of array to root
+	MPI_Gather(&localArray[0], n/size, MPI_DOUBLE, &array[0], n/size , MPI_DOUBLE, 0, comm);
 
 	if(rank == root)
 	{
-	    //Gather
-			
-            //MPI_Gather(&localArray[0], n/size, MPI_DOUBLE, &array[0], n/size, MPI_DOUBLE, 0, comm);
-
-	    //Gather first elements of array to root
-	    MPI_Gather(&localArray[0], n/size, MPI_DOUBLE, &array[0], n/size, MPI_DOUBLE, 0, comm);
-	    printf("Gathered Elements");
-	    print_array(array, 10);
 	    for(x = 0; x < n; x++)
 	    {
-		printf("Output : %f\n", array[x]);
+	        printf("Output : %f\n", array[x]);
 	    }
 	}
-
 	return MPI_SUCCESS;
 }
 
 int MPI_Is_sorted(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 {
-    
+    MPI_Gather(&localArray[0], n/size, MPI_DOUBLE, &array[0], n/size, MPI_DOUBLE, 0, comm);
     return MPI_SUCCESS;
 }
 
@@ -212,7 +198,6 @@ void swap (double * a, double * b){
 void print_array(double *array, int size)
 {
     int i;
-    //int length = (int) sizeof(array) / sizeof(array[0]);
     for(i = 0 ; i < size ; i++) {
         printf("%f \n", array[i]);
     }
