@@ -121,10 +121,9 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 	exchangeTime = MPI_Wtime();
 	for(i=0; i < size; i++)
 	{
-            printf("LOOP");
 	    if(MPI_Is_sorted(n/size, localArray, 0, comm) == -1)
             {	
-		printf("Exchange");
+
 	        if(((rank + i) % 2) == 0)
 	        {
 		    if(rank < size - 1)

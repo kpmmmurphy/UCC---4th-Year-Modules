@@ -19,15 +19,15 @@ CFLAGSMPE = $(CFLAGS) -I$(MPE_DIR)/include
 CCFLAGS	  = $(CFLAGS)
 #FFLAGS	  = '-qdpc=e' 
 FFLAGS	  = $(OPTFLAGS)
-EXECS	  = SortingAssignment # BINARY NAME HERE
+EXECS	  = KevinMurphy_111314826 # BINARY NAME HERE
 ALL_EXECS = ${EXECS} 
 
-all: SortingAssignment # add the target here
+all: KevinMurphy_111314826 # add the target here
 
 default: $(EXECS)
 
-prime: SortingAssignment.o
-	$(CLINKER) $(OPTFLAGS) -o SortingAssignment SortingAssignment.o -lm
+prime: KevinMurphy_111314826.o
+	$(CLINKER) $(OPTFLAGS) -o KevinMurphy_111314826 KevinMurphy_111314826.o -lm
 
 clean:
 	/bin/rm -f *.o *~ PI* $(ALL_EXECS) upshot rdb.* startup.* core
