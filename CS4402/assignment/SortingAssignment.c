@@ -8,7 +8,7 @@ void compare_and_exchange(int n, double * a, int rank, MPI_Status status);
 //Function Declerations
 int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm);
 int MPI_Exhange(int n, double * array, int rank1, int rank2, MPI_Comm comm);
-int MPI_Is_sorted(int n, double * array, int rank1, int rank2, MPI_Comm comm);
+int MPI_Is_sorted(int n, double * array, int root, MPI_Comm comm);
 
 double * genRandomArray(int size);
 double * merge_array(int n, double * a, int m, double * b);
@@ -121,20 +121,28 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 	exchangeTime = MPI_Wtime();
 	for(i=0; i < size; i++)
 	{
-
-	    if(((rank + i) % 2) == 0)
-	    {
-		if(rank < size - 1)
-		{
-		    MPI_Exchange(n/size, localArray, rank, rank+1, comm);
-		}
-	    }
+            printf("LOOP");
+	    if(MPI_Is_sorted(n/size, localArray, 0, comm) == -1)
+            {	
+		printf("Exchange");
+	        if(((rank + i) % 2) == 0)
+	        {
+		    if(rank < size - 1)
+		    {
+		        MPI_Exchange(n/size, localArray, rank, rank+1, comm);
+		    }
+	        }
+	        else
+	        {
+	            if(rank > 0)
+		    {
+		        MPI_Exchange(n/size, localArray, rank-1, rank, comm);
+		    }
+	        }
+            }
 	    else
 	    {
-	        if(rank > 0)
-		{
-		    MPI_Exchange(n/size, localArray, rank-1, rank, comm);
-		}
+		break;
 	    }
 	    MPI_Barrier(comm);
 	}
@@ -155,13 +163,32 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 	return MPI_SUCCESS;
 }
 
-int MPI_Is_sorted(int n, double * array, int rank1, int rank2, MPI_Comm comm)
+int MPI_Is_sorted(int num, double * array, int root,  MPI_Comm comm)
 {
-    double *first, *last;
-    first = (double *)calloc(size, sizeof(double));
-    last  = (double *)calloc(size, sizeof(double));
-    MPI_Gather(&array[0], 1, MPI_DOUBLE, &array[0], 1, MPI_DOUBLE, 0, comm);
-    return MPI_SUCCESS;
+        int isSorted = 1;
+    
+        double *first, *last;
+        first = (double *)calloc(num, sizeof(double));
+        last  = (double *)calloc(num, sizeof(double));
+   
+        MPI_Gather(&array[0], 1, MPI_DOUBLE, &first[0], size, MPI_DOUBLE, 0, comm);
+        MPI_Gather(&array[num-1], 1, MPI_DOUBLE, &last[0], size, MPI_DOUBLE, 0, comm);
+      
+	printf("last");
+	print_array(last, 1); 
+        if(rank == root)
+        {
+            for(i = 0; i < size - 1; i++)
+ 	    {
+     		if(last[i] < first[i+1])
+		{
+		    isSorted = -1;
+			printf("Is sorted\n");
+		}
+  	    }
+        } 
+    
+        return isSorted;
 }
 
 double * merge_array(int n, double * a, int m, double * b)
