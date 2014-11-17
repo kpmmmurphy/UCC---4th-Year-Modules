@@ -33,19 +33,30 @@ int main (int argc, char *argv[])
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
-    if(rank == 0)
-    {
-        a = genRandomArray(n);
-    }
-
     b          = (double *)calloc(n,      sizeof(double));
     c          = (double *)calloc(n,      sizeof(double));
     localArray = (double *)calloc(n/size, sizeof(double));
+    
+    if(rank == 0)
+    {
+        a = genRandomArray(n);
+	totalTime = MPI_Wtime();
+    }
 
-    totalTime = MPI_Wtime();
+    
     MPI_Odd_even_sort(n, a, 0, MPI_COMM_WORLD);
-    totalTime = MPI_Wtime() - totalTime;
-    printf("\nExecution Time: %f\n", totalTime);
+    
+    if(rank == 0)
+    {
+      totalTime = MPI_Wtime() - totalTime;
+      printf("\nExecution Time: %f\n", totalTime);
+      
+      for(x = 0; x < n; x++)
+      {
+	printf("Output : %f\n", a[x]);
+      }
+    }
+    
 
     MPI_Finalize();
 }
@@ -92,11 +103,11 @@ int MPI_Exchange(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 
     if(rank==rank2)
     {	        
+        //Recieve 
+	MPI_Recv(b, n, MPI_DOUBLE, rank1, tag1, comm, &status);
+      
 	//Send Unsorted Array
 	MPI_Send(array, n, MPI_DOUBLE, rank1, tag2, comm);
-
-	//Recieve 
-	MPI_Recv(b, n, MPI_DOUBLE, rank1, tag1, comm, &status);
 
 	//Merge
 	c = merge_array(n, array, n, b);
@@ -112,18 +123,19 @@ int MPI_Exchange(int n, double * array, int rank1, int rank2, MPI_Comm comm)
 int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 {
 	//Scatter
-        MPI_Scatter(&array[0], n/size, MPI_DOUBLE, localArray, n/size, MPI_DOUBLE, 0, comm);
+        MPI_Scatter(array, n/size, MPI_DOUBLE, localArray, n/size, MPI_DOUBLE, 0, comm);
 	
         //Sort localArray
         merge_sort(n/size, localArray);
 
-	//Repeart for step=0,1,2..., size-1
+	//Time the Exchange
 	exchangeTime = MPI_Wtime();
-	for(i=0; i < size; i++)
+	
+	//Repeart for step=0,1,2..., size-1
+	for(i=0; i <= size; i++)
 	{
-	    if(MPI_Is_sorted(n/size, localArray, 0, comm) == -1)
+	    if(MPI_Is_sorted(n/size, localArray, 0, comm) != MPI_SUCCESS)
             {	
-
 	        if(((rank + i) % 2) == 0)
 	        {
 		    if(rank < size - 1)
@@ -145,46 +157,52 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 	    }
 	    MPI_Barrier(comm);
 	}
-
+	
+	//Finish Timing Exchange
 	exchangeTime = MPI_Wtime() - exchangeTime;
 	printf("Exchange Time: %f\n", exchangeTime);
 
 	//Gather first elements of array to root
-	MPI_Gather(&localArray[0], n/size, MPI_DOUBLE, &array[0], n/size , MPI_DOUBLE, 0, comm);
+	MPI_Gather(localArray, n/size, MPI_DOUBLE, array, n/size , MPI_DOUBLE, 0, comm);
 
-	if(rank == root)
-	{
-	    for(x = 0; x < n; x++)
-	    {
-	        printf("Output : %f\n", array[x]);
-	    }
-	}
 	return MPI_SUCCESS;
 }
 
 int MPI_Is_sorted(int num, double * array, int root,  MPI_Comm comm)
 {
-        int isSorted = 1;
+    int isSorted = 1;
     
-        double *first, *last;
-        first = (double *)calloc(num, sizeof(double));
-        last  = (double *)calloc(num, sizeof(double));
-   
-        MPI_Gather(&array[0], 1, MPI_DOUBLE, &first[0], size, MPI_DOUBLE, 0, comm);
-        MPI_Gather(&array[num-1], 1, MPI_DOUBLE, &last[0], size, MPI_DOUBLE, 0, comm);
-     
+    double *first, *last;
+    first = (double *)calloc(num, sizeof(double));
+    last  = (double *)calloc(num, sizeof(double));
+
+    MPI_Gather(&array[0], 1, MPI_DOUBLE, &first[0], size, MPI_DOUBLE, 0, comm);
+    MPI_Gather(&array[num-1], 1, MPI_DOUBLE, &last[0], size, MPI_DOUBLE, 0, comm);
+    
+    if(rank == root)
+    {
+	printf("First");
+	print_array(first, 1);
+	printf("Last");
+	print_array(last, 1);
         if(rank == root)
         {
-            for(i = 0; i < size - 1; i++)
+            for(i = 1; i < num; i++)
  	    {
-     		if(last[i] < first[i+1])
+     		//if(last[i] < first[i+1])
+		//{
+		//    isSorted = 1;
+		//}
+		if(first[i] < last[i])
 		{
+		  printf("Yessss");
 		    isSorted = -1;
 		}
   	    }
         } 
+    }
     
-        return isSorted;
+    return MPI_SUCCESS;
 }
 
 double * merge_array(int n, double * a, int m, double * b)
