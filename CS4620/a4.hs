@@ -12,6 +12,7 @@ approx' x y = computeRoot y x : approx' x (computeRoot y x)
 --approx x :: An infinite list of approximations which coverage to the square 
 --            root of 'x'
 approx :: Float -> [Float]
+approx 0 = [0.0]
 approx x = approx' x 1.0
 
 --squareRoot' :: Helper function to estimate the square root of 'x'
@@ -21,8 +22,9 @@ squareRoot' (n1:n2:ns) | abs ((-) n1 n2) <= 0.0001 = n2
 
 --squareRoot :: Gives an extimation of the square root of 'x'
 squareRoot :: Float -> Float
+squareRoot 0 = 0.0
 squareRoot x = squareRoot' (approx x)
 
-toRoot = [ n2 | n1 <- [ 1 .. ], n2 <- [ [ n3 | n3 <- [ 3 .. squareRoot n1 ], ((/) n1 n3 /= 0) ]]]
+
 
 

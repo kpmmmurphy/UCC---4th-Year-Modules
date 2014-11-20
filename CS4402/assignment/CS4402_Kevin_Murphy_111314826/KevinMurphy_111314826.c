@@ -22,7 +22,7 @@ int rank, size;
 MPI_Status status;
 double *a, *b, *c, *localArray;
 double m = 10.0;
-int n = 10, q, l, i, j, isSorted = -1, x, *nr, count = 0;
+int n = 1000000, q, l, i, j, isSorted = -1, x, *nr, count = 0;
 
 double totalTime, exchangeTime;
 
@@ -52,7 +52,7 @@ int main (int argc, char *argv[])
       
       for(x = 0; x < n; x++)
       {
-	printf("Output : %f\n", a[x]);
+	//printf("Output : %f\n", a[x]);
       }
       
       printf("\nExecution Time: %f\n", totalTime);
@@ -75,7 +75,7 @@ double * genRandomArray(int size)
     for( i = 0; i < size; i++ )
     {
         a[i]=((double)rand()/RAND_MAX)*m;
-        printf( "Initial: %f\n", a[i] );
+        //printf( "Initial: %f\n", a[i] );
     } 
 
     return a;
@@ -134,7 +134,6 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 	//Repeart for step=0,1,2..., size-1
 	for(i=0; i <= size; i++)
 	{
-	    MPI_Is_sorted(n/size, localArray, 0, comm);
 	    if(isSorted == -1)
             {	
 	        if(((rank + i) % 2) == 0)
@@ -156,6 +155,8 @@ int MPI_Odd_even_sort(int n, double * array, int root, MPI_Comm comm)
 	    {
 		break;
 	    }
+	    
+	    MPI_Is_sorted(n/size, localArray, 0, comm);
 	    MPI_Barrier(comm);
 	}
 	
