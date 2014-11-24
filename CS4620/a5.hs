@@ -19,12 +19,12 @@ squared n = (*) n n
 --pytrips ::
 pytrips :: [(Int,Int,Int)]
 pytrips = [( (-) (squared n2) (squared n1), (*) (2) ( (*) n1 n2 ), (+) (squared n1) (squared n2) ) | 
-            n1 <- [1..], n2 <- [2..]]
+            n1 <- [1..], n2 <- [2..], gcd n2 n1 == 1, mod ((-) n2 n1) 2 /= 0]
 
 --runs xs ::
-runs' [] _ = []
-runs' ( x1 : x2 : xs ) acc | x1 == x2 = runs' xs acc
-                           | otherwise = runs' xs (acc + 1)
+runs' [_] acc = acc + 1
+runs' ( x1 : x2 : xs ) acc | x1 == x2  = runs' ( x2 : xs ) acc
+                           | otherwise = runs' ( x2 : xs ) (acc + 1)
 
-
+runs [] = 0
 runs xs = runs' xs 0 
