@@ -1,0 +1,12 @@
+keystore "kevin.store";
+
+grant SignedBy "kevin" {
+  permission StackUsePermission
+      "StackApp", signedBy "kevin";
+
+  permission StackSavePermission
+      "StackApp", signedBy "kevin";
+
+  permission java.io.FilePermission
+      "${user.home}${/}.stackFile", "read,write";
+};

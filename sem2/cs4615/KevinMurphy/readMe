@@ -1,0 +1,6 @@
+#KeyStore Command
+keytool -genkey -alias kevin -keystore kevin.store 
+
+#KeyStore Password
+111314826
+
