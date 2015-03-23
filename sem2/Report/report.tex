@@ -1,0 +1,244 @@
+\documentclass{article}
+
+\newenvironment{proof}{\par \noindent {\bf Proof:}}{\begin{flushright}$\Box$\end{flushright}\par \noindent}
+\newtheorem{theorem}{\bf Theorem}
+\newtheorem{definition}[theorem]{\bf Definition}
+\newtheorem{lemma}{\bf Lemma}
+\newtheorem{corollary}[theorem]{\bf Corollary}
+\newcommand{\pari}{\hspace{\parindent}}
+
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{tikz}
+
+\setcounter{secnumdepth}{5}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=false,
+  breakatwhitespace=true,
+  tabsize=2
+}
+
+
+\begin{document}
+
+\title{Automated Safety and Security System for the Home}
+
+\author{Kevin Patrick Murphy}
+
+\maketitle
+
+\begin{abstract}
+
+{\ }
+
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section*{Acknowledgments}
+
+\section{Introduction}
+\subsection{Project Goals}
+
+\section{Problem Analysis}
+\subsection{Literature Review}
+\subsubsection{Internet of Things}
+\subsubsection{Current Safety Applications}
+Safety applications are becoming more prevalent in the home and in industry. Irish building regulations now require that all new houses be fitted with mains powered smoke detectors. By monitoring environmental data, early warning signs of threats can be detected, appropriate alerts made and lives can be saved.\\\
+
+Many companies offer monitor systems for break-ins on a subscription basis. The alerting model usually involves the detection of a breach in security, which triggers an alert to a remote operations centre, which then alerts the emergency services, neighbours or any other listed third parties. PhoneWatch offer by Eircom is an example of this type of service. \\\
+
+Nest Labs have created a number of embedded solutions for home automation and safety. For safety specifically, the Nest Protect system incorporates smoke, carbon monoxide, heat, and activity detection sensors. Surveillance cameras can be added also, to provide additional security. 
+
+\subsubsection{Achieving Safety and Security within the Home}
+Choosing periphery sensors to improve safety and security involved identifying the main threats which can occur within a domestic environment. I settled on the following as a basis for what my system was to mitigate against.
+
+\begin{itemize}
+  \item Fire and Smoke
+  \item Carbon Monoxide
+  \item Gas leaks
+  \item Intruders 
+\end{itemize}
+
+Providing the user with appropriate feedback on current sensor levels is an essential aspect of ensuring safety. The methods of delivering this varying type of feedback depends on both the proximity of the user, and the severity of the particular sensor reading. Giving the user the ability to configure the way in which the system alerts them ensures that they consciously choose the most appropriate method of doing so. The possible methods of alerting that were considered for the project are.
+
+\begin{itemize}
+  \item Smart phone push notifications
+  \item An on board buzzer
+  \item Email	
+  \item Direct Tweet via Twitter
+  \item SMS 
+\end{itemize}
+
+\subsubsection{Embedded Computing}
+\paragraph{Raspberry Pi}
+\paragraph{Intel Galileo}
+
+\subsubsection{Functional Specification}
+An embedded sensor system and Android smart phone application which supplies the user with live environmental data and security services. \\\
+
+The following sensor modules will be included:
+
+\begin{itemize}
+  \item MQ-7 Carbon Monoxide Sensor
+  \item MQ-2 Flammable Gas \& Smoke Sensor
+  \item Infrared Motion Detection Sensor	
+  \item Thermistor for Temperature levels
+  \item Buzzer for immediate vicinity alerting
+  \item Raspberry Pi HD Camera module for Image capture and live video streaming 
+\end{itemize}
+
+This application will take advantage of the latest Android APIs, and follow modern UI and UX guidelines. \\\
+
+\paragraph*{Functional Requirements}\
+
+The system should be configurable by the user, allowing the control of each individual sensor, data management, alerting services, and general system details. \\\\ The system should have the ability to alert the user remotely.  \\\\ The gathered sensor statistical data will be graphed for the user to monitor readings over extended periods of time. \\\\ Context sensitive feedback will be provided to the user on current sensor readings. \\\\ The system should include a mechanism for direct communication, allowing the system to operate in environments where network connectivity is limited. All original functionality should be available when directly communicating. \\\\ The system should provide a device authorisation process, where one single user can have full administrative control, and allow all others only limited access.
+
+\paragraph*{Non-Functional Requirements}\
+
+The system should be operable irrespective of network connectivity. \\\\ The implementation should be extendable and allow for easy inclusion and integration of any desired sensor module. \\\\ Consideration should be give to optimisation, in order to reduce CPU load and maximise speed. \\\\ Interaction with sensor modules in particular will require close attention to ensure efficient and accurate readings are obtainable. \\\\ The system will be powered via the mains, but attention should be given to maximizing efficiency to allow the move to alternative power sources in the future, i.e. solar or wind. \\\\ Care should be taken when designing the data layer of the system, ensuring optimal memory management. \\\\ The system should maintain a database table for general system details.
+
+\section{Design}
+\subsection{Development Approach and Methodology}
+In a development project of this scale and time frame, a hybrid development approach of Agile and Rapid Application Development(RAD) was determined to the most suitable. This hybrid model offered flexibility for the system to change and evolve during its design and implementation, while also providing working software early on. During the implementation phase of development the prototyping aspects of RAD were utilised for the feasibility testing of design decisions. \\\
+
+From the beginning of the project it was evident that a process heavy methodology to development would constrict the time frame of the system’s overall development. Applying an iterative and incremental agile approach reduced the time spend in planning, allowing a longer development phase. This is not to say that planning played a lesser role in the system’s life cycle, but that essential core functionality was defined and a rudimentary version of the system designed early in the project’s life cycle. Using this initial core design, implementation of the subsystems began, and in parallel with their development, any desired additional functionality or feature was incrementally designed and integrated.
+
+\subsection{Architecture}
+
+\subsubsection{Hardware}
+The final hardware architecture of the system comprised of a Raspberry Pi, with four sensors attached; a thermistor for temperature readings, an MQ7 carbon monoxide sensor, an MQ2 flammable gas sensor, and a passive infrared motion detection sensor. Also connect to the Raspberry Pi was a high definition camera module, a wifi dongle and a buzzer for alerting the user.
+
+
+\subsubsection{Software}
+The final software architecture was composed of three main components, with the addition of a peripheral sensing node.
+
+\begin{itemize}
+  \item The Sensor Management System physically running on the Raspberry Pi
+  \item The server side RESTful API running on CS1
+  \item The Android smart phone application
+  \item Peripheral sensing node running on an Intel Galileo 
+\end{itemize}
+
+\paragraph{Sensor Management System}\
+
+This will form the core of the entire system, managing all sensor module interaction. Sensor value monitoring and alerting service triggering should take place natively on the system. \\\\ The system will allow direct connection via the Android application. To accomplish this, the system should maintain its own private wireless network, in the form of a non-internet facing access point(AP). A protocol for establishing connection and full-duplex communication from the system to the Android application will be designed, allowing sensor data transfer and system configuration. \\\\ Three local database tables will be required for operation:
+
+\begin{itemize}
+  \item Sensor values table
+  \item System meta data, including name, location, approximate and GPS coordinates 
+  \item System admin details for authentication and control
+\end{itemize}
+
+\paragraph{RESTful API}\
+
+This will form the server side backend of the system, and provide the application programming interface(API) for both the Sensor Management System, and the Android application. Functionality includeds persistent cloud storage and retrieval of sensor readings, camera assets management, and remote configuration of the Sensor Management System.
+
+\paragraph{Android Application}\
+
+This will form the user interface of the overall system. The application will provide sensor output levels, a gallery of camera stills and videos, graphed statistical data on previous sensor readings, and a configuration interface for the system.\
+
+Related safety feedback information should be delivered to the user via the app. A dataset of safety metrics linked to the sensor output readings will be developed offering the user real time advice in plain english.\
+
+The app will utilise the server side RESTful API as its main communication intermediary to the system, but will also have the ability to connect directly, allowing it to read the sensor data straight from the system, and update the system’s configuration. \
+
+Push notification functionality should also be include to provide the user with remote alerting.
+
+\subsection{Design Decisions}
+
+The initial software architecture was for a self contained system with each component running natively on the Raspberry Pi. While it is a very capable device, as more computational power was required for the operation of the system, the feasibility of running a server in parallel came into question. Using the Glances Python utility \footnote{http://pypi.python.org/pypi/Glances/} I was able to actively monitor the CPU performance of the Raspberry Pi while the system was in operation, which consitantly remained above 60\%, even in the early stages of development. In order to safeguard against congestion and drops in overall performance, an alternative solution was devised to reduce load on the Raspberry Pi. This lead to the adoption of a client-server architecture involving the system periodically sending data to CS1, where it could be stored, and delivered to smart phone applications, greatly reducing the computational load on the physical device. \\\
+
+A Representational State Transfer(REST) architecture was chosen to provide the server side backend functionality required to service both the Sensor Management System and the Android smartphone application.  REST is a lightweight alternative to a Simple Object Access Protocol(SOAP), which utilised the Web Services Description Language(WSDL), an XML based interface definition language. The advantages of REST are its extensibility, simplistic design and portability. \\\
+
+The user Interface for the system was initially in two parts, a web interface for graphing the collected sensor data, and the Android application, for current readings, control and alerting. As the project progressed, the choice was made to unify the UI, providing all functionality in the Android application.  \\\
+
+In order to maximise performance, every subsection of the system was multithreaded where possible. With this decision came the added complexity of appropriate thread management and synchronization. The Raspberry Pi has a single core, so no substantial benefits were apparent when developing the system, but in the eventuality of migrating to more powerful hardware will result in instant performance improvements. \\\
+
+In order to maximise sensor performance, all interaction directly with sensor modules is implemented in C, with a C++ infrastructure to avail of basic object oriented principles such as inheritance and extensibility. This was chosen to reduce the CPU load when probing sensor modules. In order to utilize the C++ implementation, it was necessary to develop a Python wrapper, providing the ability to access sensor values at greater speeds than a standalone Python implementation. \\\
+
+A core feature of the overall system is providing the user with rapid alerting. With that in mind, it was decided that alerting should be handled natively in the sensor management system. The alternative was to perform safety checking server side, but this may lead to alert latency. \\\
+
+\subsection{Data Storage}
+MySQL was chosen as the Relational Database Management System(RDBMS). While its use and interaction is facilitated in most modern programming languages, the real benefit comes from its aggregation functions. Having the ability to select maximum, minimum, and average values from the database in a concise SQL statement greatly reduces the amount of code required, and as rows can be indexed and prepared statements optimized, overall performance is booted also. \\\
+
+Using a NoSQL database was considered as the performance and scalability benefits can be substantial when compared with generic SQL databases. NoSQL databases required a substantial amount of code to be written for interaction and aggregation, something which comes as standard in all SQL storage systems. This deterred adoption. \\\
+
+The Raspberry Pi is running an instance of the MySQL RDBMS, while the RESTful server side system is maintaining a database of tables which is identical to those present in the natively running instance. This provides data redundancy, and in the eventuality of the server side system becoming unreachable no data will be lost. \\\
+\subsection{Data Modelling}
+As memory is a constant constraint when dealing with an embedded system, consideration was put into optimising the structures of the tables within the RDBMS. Due to a lack of time when implementing the system, only one table was eventually used for sensor readings, however the original design contained three tables to minimise memory usage. A table for all current day sensor readings, another table for aggregated readings per hour of each day, and a final table for a summary of aggregated readings per day. The data was then to be aggregated automatically at a given time interval, and reduced into the subsequent table. This way, over time the data growth would be limited. \\\
+
+A table was created to storage the system’s details, such as its user specified name, location, and GPS co-ordinated. \\\
+
+For push notifications, it is necessary to maintain a table for all registered device identification numbers. These IDs are to be stored via the RESTful API and are used when sending out a push notification to a device. \\\
+
+\subsection{Communication Design}
+Developing a distributed architecture involved designing a message passing mechanism utilising Javascript Object Notation(JSON), a lightweight data-interchange format. It’s native support in most modern programming languages and easy to manipulate syntax facilitated fast integration in each subsystem. \\\
+
+XML was considered, but its use is more applicable to heavily structured documents.  Library support for object serialization to JSON greatly promoted rapid application development, providing the ability to easily communicate current sensor readings and system configurations across a network. \\\ A standard structure was defined for the JSON messages being communicated. \\\ The basic structure was as followed: 
+\begin{lstlisting}
+{ 
+  “service” : "Requested Service",
+  “payload” : "Data to be transmitted"
+}
+\end{lstlisting}
+
+The service key indicating the service being requested, and the payload containing the data to be acted upon.
+
+\subsection{User Interface}
+The Android smart phone application is the only user Interface(UI) for the project. The platform provides a UI framework and a large amount of extensible UI view components, which can be combined with ease. The Android OS offers native animations and effects for improving user experience(UX), allowing the creation of visually responsive features with little effort. \\\\ The UI was designed with simplicity in mind. The clear and concise presentation of data to the user was the main priority. To achieve this, core aspects of functionality were designated individual screens within the app. \\\\ The UI is composed of 4 screens. The initial screen where the latest sensor data is presented. The camera screen, where captured images and videos are presented. The graphing section, were line charts display sensor value statistical information. And the final section is the control and configuration options, where the system can be reconfigured. \\\\ As smart phone application has the build in functionality for communicating directly with the sensor management system, it was necessary to design the UI to respond accordingly to how the application is receiving its data.
+
+\subsection{Alerting}
+The method of remote alerting chosen was push notifications, via the Google Cloud Messaging(GCM) Service. \\\ 
+
+The GCM is a free service that enables developers to send downstream messages (from servers to GCM-enabled client apps), and upstream messages (from the GCM-enabled client apps to servers). This could be a lightweight message telling the client app that there is new data to be fetched from the server (for instance, a "new email" notification informing the app that it is out of sync with the back end), or it could be a message containing up to 4kb of payload data (so apps like instant messaging can consume the message directly). The GCM service handles all aspects of queueing of messages and delivery to and from the target client app.\footnote{Description taken from http://developer.android.com/google/gcm/gcm.html}
+
+\section{Implementation	}
+
+\subsection{Tools and Techniques}
+Each component of the system was implemented using a different programming languages, with the exception of the Principal Sensing Node. As a result, each was developed using a different set of tools, techniques and libraries. The reliance on Integrated Development Environments(IDE) to increase productivity and mitigate against syntactical errors was paramount to the rapid development of the project. 
+
+\subsubsection{Sensor Management System}
+
+Implemented in Python, a very flexible and easy to use dynamically typed language. Its succinct nature and dynamic typing aid rapid application development. The community support behind the language also greatly encouraged its adoption for this section of the system. \\\\ To implement the sensor system, I used the PyCharm IDE. This provided real time code validation, automated code generation and syntactical checking.
+
+\subsubsection{RESTful API}
+
+Implemented in the server side language PHP. PHP offers a lot of server side functionality as standard, and required no third-party libraries to facilitate the features that were required. This will prove beneficial in the situation of migrating servers. \\\\ Deployed on the university’s Apache web server, CS1. Utilizing this pre-existing infrastructure resulted in less overhead when initially starting the project, allowing the development phase to begin earlier. 
+
+\subsubsection{Android Application}
+Native Android applications are implemented in Java, and use XML for specifying their user interfaces. It is possible to design applications in HTML and CSS, embedding them in the application within a WebView, which handles rendering, but this greatly hinders performance, and limits the use of the native device APIs, such as location services and animations. \\\\ Android Studio, the officially supported IDE for Android development, was used to develop the application. It is also based upon the Intellij platform of IDEs, and provides a graphical interface for developing user interfaces.  
+
+
+\subsubsection{Peripheral Sensing Node}
+
+
+\begin{thebibliography}{fi99}
+
+\end{thebibliography}
+
+\end{document}
