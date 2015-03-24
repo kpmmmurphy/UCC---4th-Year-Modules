@@ -6,12 +6,14 @@
 \newtheorem{lemma}{\bf Lemma}
 \newtheorem{corollary}[theorem]{\bf Corollary}
 \newcommand{\pari}{\hspace{\parindent}}
+\usepackage{graphicx}
 
 \usepackage{amsmath}
 \usepackage{latexsym}
 \usepackage{amssymb}
 \usepackage{listings}
 \usepackage{tikz}
+\usepackage{float}
 
 \setcounter{secnumdepth}{5}
 
@@ -145,6 +147,13 @@ The final software architecture was composed of three main components, with the 
   \item Peripheral sensing node running on an Intel Galileo 
 \end{itemize}
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{"Open Day General System Diagram".jpg}
+\caption{High Level System Architecture Diagram\label{overflow}}
+\end{figure}
+
 \paragraph{Sensor Management System}\
 
 This will form the core of the entire system, managing all sensor module interaction. Sensor value monitoring and alerting service triggering should take place natively on the system. \\\\ The system will allow direct connection via the Android application. To accomplish this, the system should maintain its own private wireless network, in the form of a non-internet facing access point(AP). A protocol for establishing connection and full-duplex communication from the system to the Android application will be designed, allowing sensor data transfer and system configuration. \\\\ Three local database tables will be required for operation:
@@ -200,7 +209,7 @@ For push notifications, it is necessary to maintain a table for all registered d
 Developing a distributed architecture involved designing a message passing mechanism utilising Javascript Object Notation(JSON), a lightweight data-interchange format. It’s native support in most modern programming languages and easy to manipulate syntax facilitated fast integration in each subsystem. \\\
 
 XML was considered, but its use is more applicable to heavily structured documents.  Library support for object serialization to JSON greatly promoted rapid application development, providing the ability to easily communicate current sensor readings and system configurations across a network. \\\ A standard structure was defined for the JSON messages being communicated. \\\ The basic structure was as followed: 
-\begin{lstlisting}
+\begin{lstlisting}[caption={JSON Message Structure},label={lst:json_message}]
 { 
   “service” : "Requested Service",
   “payload” : "Data to be transmitted"
@@ -235,6 +244,118 @@ Native Android applications are implemented in Java, and use XML for specifying 
 
 
 \subsubsection{Peripheral Sensing Node}
+Python was also used when developing this additional entity of the system. This made interoperability more straightforward when integrating the two sensing systems together. Benefits also included code reuse for the previously written for the Sensor Management System. 
+
+\subsection{Sensor Management System}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{"Sensor Management System Diagram".jpg}
+\caption{Sensor Management System High Level Class Diagram\label{overflow}}
+\label{fig:sms_high_level_arch}
+\end{figure}
+
+\subsubsection{Sensors and Peripheries}
+To control sensors connected to the Raspberry Pi, the open source WiringPi C/C++ general purpose input/output(GPIO) library was employed. It provides basic interaction mechanisms for both analog and digital sensors. The community support for this library is substantial, and has become the de facto standard library for embedded Raspberry Pi projects. \\\\
+A limitation of the Raspberry Pi is that is does not provide any analog GPIO pins. To overcome this, an additional analog to digital converter(ADC) was added to the system’s circuitry. The MCP3008 ADC, an 8 channel 10-bit analog input,  was chosen due to its support in the WiringPi GPIO code library. This facilitated easy access to any analog sensor that needed to be included. \\\\
+Each individual sensor required a slightly different code implementation. \\\\
+The MQ7 carbon monoxide(CO) analog sensor needs a heating cycle of 5v for 60 seconds, and 1.3v for 90 seconds continuously for 48 hours, until a true value of 0 is output. This is due to the sensor being sensitive to other chemical elements, in particular hydrogen. The heating cycle is designed to burn off excess molecules touching the senor’s filament, resulting in more accurate readings. \\\ While in the heating cycle, the sensor is capable of detecting variances in CO levels. In order to provide the user with accurate data, an algorithm was defined to monitor differences in CO levels. By recording previous values, tracking current value increases or decreases, and presenting the user with the difference in values, allowed accurate CO readings from the moment the system is started. \\\\
+The MQ7 flammable gas analog sensor can detect liquefied petroleum gas, i-butane, methane, alcohol, Hydrogen, and smoke. It also required a heating cycle identical to the MQ7. \\\
+The passive infrared motion detection digital sensor measures infrared (IR) light radiating from objects in its field of view. It can detect humanoids/pets from up to 20 feet away. \\\\
+A passive analog thermistor was chosen to provide temperature readings. \\\\
+A passive buzzer was included in the system’s circuitry also, to provided local proximity alerting. \\\\
+To capture visual data, the high definition Raspberry Pi camera module was included. As this module is produced by the developers of the Raspberry Pi board, very little code implementation is required to perform interaction, and two comprehensive libraries, Raspivid and Raspistill,  are natively available to handle video and image capture respectively. \\\\
+
+\subsubsection{Sensor Management}
+Within the system, each sensor was defined within its own individual class. Abstracting individual sensors like this allows for granular configuration, and the delegation of alerting responsibility to the individual module. Each sensors has an alerting threshold, which when met will perform the necessary alerting functionality. The rate at which the sensor is probed is also configurable. Each sensor has its own priority that is used for multithreading, and also in the eventuality of the system becoming alternatively powered, it would allow for graceful degradation as power levels diminish. \\\\
+The Sensor Manager class see in Figure~\ref{fig:sms_high_level_arch} facilitates high level sensor orchestration. Its incharge of data collection, and thread management. A thread is created for each sensor, which is scheduled to run in the interval denoted by its probe rate. It is not necessary for all sensors to be updated constantly, by implementing the probing in this way, safety critical sensors, such as the MQ2 Flammable Gas sensor, can be configured to update its value every second, while a non-safety critical sensor, such as the thermistor, can be probed at longer intervals. In the eventuality of changing the power source of the system, it would also facilitate the marshaling of power exhaustive sensors, allowing dynamic scheduling as resources diminish. 
+
+\subsubsection{Multithreading}
+The Raspberry Pi’s processor, the ARM1176JZF-S, has a single core. While it is not a true multithreaded environment, the decision to multithread the system was taken to ensure a high level of portability. Over the course of this project a new Raspberry Pi model was released. The new model contains 4 cores, and an increase amount of RAM, of 1GB. The multithreading already featuring in the system would allow for swift migration to this new Raspberry Pi model, and instant performance benefits.
+
+\subsubsection{System Configuration}
+
+In order to make the system fully configurable, an abstract base class, called Configurable, was implemented, which all manager classes in Figure~\ref{fig:sms_high_level_arch} inherit from. This class provides the layer of abstraction needed to dynamically update the state of each class. The system does not required halting when reconfiguring. \\\\
+The Javascript Object Notation(JSON) was utilised as the means for specifying the required state configuration of individual classes. The Configuration Manager was delegated the responsibility for administering the updating of the system\lq s configuration. Listing~\ref{lst:sms_json_config} shows the default JSON configuration structure. It contains an object for each manager class present in the system, and an array of sensor objects with individual state values for each. \\\\
+The System is configurable form two sources, via the RESTful API, or direct from the Android Application. To achieve remote configuration, the system periodically polls the RESTful API for an updated configuration file. If present, it requests the raw JSON string, parses it, and then reconfigures the system accordingly. The time interval at which the system polls is also configurable. Via direct communication, the user can push a new configuration at their own discretion. 
+
+\begin{lstlisting}[caption={JSON Configuration Structure},label={lst:sms_json_config}]
+{
+  "alert_manager": {
+    "buzzer_on": false,
+    "camera_on": true,
+    "lockdown_on": false,
+    "push_on": false,
+    "video_mode": false
+  },
+  "api_manager": {
+    "camera_image_upload_rate": 60,
+    "sensor_value_upload_rate": 30,
+    "sys_config_request_rate": 60
+  },
+  "sensor_manager": {
+    "collection_priority": 1,
+    "collection_rate": 15
+  },
+  "system_details_manager": {
+    "gps_lat": "Not set",
+    "gps_lng": "Not set",
+    "location": "Sitting Room",
+    "name": "Kevin's Safety System"
+  },
+  "wifi_direct_manager": {
+    "sensor_value_send_rate": 10
+  },
+  "sensors": [
+    {
+      "name": "carbon_monoxide",
+      "alert_threshold": 50,
+      "is_active": true,
+      "priority": 1,
+      "probe_rate": 10
+    },
+    {
+      "name": "flammable_gas",
+      "alert_threshold": 50,
+      "is_active": true,
+      "priority": 1,
+      "probe_rate": 10
+    },
+    {
+      "name": "temperature",
+      "alert_threshold": 50,
+      "is_active": true,
+      "priority": 1,
+      "probe_rate": 10
+    },
+    {
+      "name": "motion",
+      "alert_threshold": 1,
+      "is_active": true,
+      "priority": 1,
+      "probe_rate": 10
+    }]  
+}
+\end{lstlisting}
+
+\subsubsection{Alerting}
+
+The system alerts in two ways. Proximity altering in the form of a physical buzzer present on on the circuitry, and direct mobile device push notification alerting via the Google Cloud Messaging(GCM) Service. The system can be configured to be in a lockdown state, where in the event of the infrared motion detector detecting activity, the on board camera is activated. \\\\
+Each sensor maintains its own alerting threshold, and when reached it performs its defined behaviour. For example, when the carbon monoxide sensor\lq s threshold is reached, a push notification is sent, and the physical buzzer attached to the system’s circuitry is sounded. \\\\
+To send a push notification, a registration process must first take place between the Android application and the GCM service. This process is described in Android application implementation section~\ref{sssec:android_push_notifications}. Resulting from this registration is a unique device identification number, which must be persistently stored. In this implementation, the registration ids were stored by the RESTful API, and retrieved prior to sending each push notification. \\\\
+The registration id is sent along with a JSON formatted payload via a HTTP request to the GCM service, which handles delivering the payload to the respective device. 
+\begin{center}
+\begin{lstlisting}[caption={JSON Push Notification Payload Example},label={lst:sms_pn}]
+{"sensor" : "thermistor", "value" : 100, "location": "Sitting Room"}
+\end{lstlisting}
+\end{center}
+The key "sensor" identifying the individual sensor module, the key "value" denoting the current sensor reading, and the "location" key is the user specified location of the system which has invoked the sending of the notification. \\\\
+In the implementation, the Alert Manager is delegated all alerting responsibilities. Other then push notification requests, it also handles sounding of the buzzer, and camera operation. 
+\subsection{Android Application}
+
+\subsubsection{Push Notifications}
+\label{sssec:android_push_notifications}
+
 
 
 \begin{thebibliography}{fi99}
