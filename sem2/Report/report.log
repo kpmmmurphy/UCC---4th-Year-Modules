@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.19)  24 MAR 2015 14:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.19)  24 MAR 2015 19:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,7 +746,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--226
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
@@ -754,12 +754,12 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
@@ -768,7 +768,7 @@ File: "Sensor Management System Diagram".jpg Graphic file (type jpg)
 
 <use "Sensor Management System Diagram".jpg>
 Package pdftex.def Info: "Sensor Management System Diagram".jpg used on input l
-ine 253.
+ine 250.
 (pdftex.def)             Requested size: 345.0pt x 258.74925pt.
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
@@ -780,52 +780,52 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--268
+Underfull \hbox (badness 10000) in paragraph at lines 256--265
 
  []
 
 [13 <./Sensor Management System Diagram.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
 
  []
 
@@ -834,12 +834,12 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--281
+Underfull \hbox (badness 10000) in paragraph at lines 275--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--281
+Underfull \hbox (badness 10000) in paragraph at lines 275--278
 
  []
 
@@ -848,17 +848,22 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--347
+Underfull \hbox (badness 10000) in paragraph at lines 339--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--347
+Underfull \hbox (badness 10000) in paragraph at lines 339--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--347
+Underfull \hbox (badness 10000) in paragraph at lines 339--343
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--350
 
  []
 
@@ -867,19 +872,142 @@ Underfull \hbox (badness 10000) in paragraph at lines 352--354
 
  []
 
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 358--361
 
-LaTeX Warning: Empty `thebibliography' environment on input line 363.
+ []
 
-[17] [18] (./report.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--374
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--374
+
+ []
+
+[18]
+Overfull \hbox (9.37088pt too wide) in paragraph at lines 376--377
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][] 
+ []
+
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--381
+
+ []
+
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--393
+
+ []
+
+
+Overfull \hbox (4.16727pt too wide) in paragraph at lines 384--393
+\OT1/cmr/m/n/10 The Sen-sor Man-age-ment Sys-tem main-tains a mul-ti-cast chan-
+nel, on a pre-specified
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--393
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 409--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--418
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--424
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
+
+ []
+
+
+LaTeX Warning: Empty `thebibliography' environment on input line 452.
+
+[22] (./report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12063 strings out of 493304
- 216286 string characters out of 6139871
+ 12071 strings out of 493304
+ 216476 string characters out of 6139871
  297149 words of memory out of 5000000
- 15259 multiletter control sequences out of 15000+600000
+ 15267 multiletter control sequences out of 15000+600000
  12913 words of font info for 54 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,8n,55p,1188b,1505s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -894,10 +1022,10 @@ lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.
 pfb>
-Output written on report.pdf (18 pages, 273073 bytes).
+Output written on report.pdf (22 pages, 287135 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 124 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -232,16 +232,13 @@ The GCM is a free service that enables developers to send downstream messages (f
 Each component of the system was implemented using a different programming languages, with the exception of the Principal Sensing Node. As a result, each was developed using a different set of tools, techniques and libraries. The reliance on Integrated Development Environments(IDE) to increase productivity and mitigate against syntactical errors was paramount to the rapid development of the project. 
 
 \subsubsection{Sensor Management System}
-
 Implemented in Python, a very flexible and easy to use dynamically typed language. Its succinct nature and dynamic typing aid rapid application development. The community support behind the language also greatly encouraged its adoption for this section of the system. \\\\ To implement the sensor system, I used the PyCharm IDE. This provided real time code validation, automated code generation and syntactical checking.
 
 \subsubsection{RESTful API}
-
 Implemented in the server side language PHP. PHP offers a lot of server side functionality as standard, and required no third-party libraries to facilitate the features that were required. This will prove beneficial in the situation of migrating servers. \\\\ Deployed on the university’s Apache web server, CS1. Utilizing this pre-existing infrastructure resulted in less overhead when initially starting the project, allowing the development phase to begin earlier. 
 
 \subsubsection{Android Application}
 Native Android applications are implemented in Java, and use XML for specifying their user interfaces. It is possible to design applications in HTML and CSS, embedding them in the application within a WebView, which handles rendering, but this greatly hinders performance, and limits the use of the native device APIs, such as location services and animations. \\\\ Android Studio, the officially supported IDE for Android development, was used to develop the application. It is also based upon the Intellij platform of IDEs, and provides a graphical interface for developing user interfaces.  
-
 
 \subsubsection{Peripheral Sensing Node}
 Python was also used when developing this additional entity of the system. This made interoperability more straightforward when integrating the two sensing systems together. Benefits also included code reuse for the previously written for the Sensor Management System. 
@@ -339,7 +336,6 @@ The System is configurable form two sources, via the RESTful API, or direct from
 \end{lstlisting}
 
 \subsubsection{Alerting}
-
 The system alerts in two ways. Proximity altering in the form of a physical buzzer present on on the circuitry, and direct mobile device push notification alerting via the Google Cloud Messaging(GCM) Service. The system can be configured to be in a lockdown state, where in the event of the infrared motion detector detecting activity, the on board camera is activated. \\\\
 Each sensor maintains its own alerting threshold, and when reached it performs its defined behaviour. For example, when the carbon monoxide sensor\lq s threshold is reached, a push notification is sent, and the physical buzzer attached to the system’s circuitry is sounded. \\\\
 To send a push notification, a registration process must first take place between the Android application and the GCM service. This process is described in Android application implementation section~\ref{sssec:android_push_notifications}. Resulting from this registration is a unique device identification number, which must be persistently stored. In this implementation, the registration ids were stored by the RESTful API, and retrieved prior to sending each push notification. \\\\
@@ -350,7 +346,100 @@ The registration id is sent along with a JSON formatted payload via a HTTP reque
 \end{lstlisting}
 \end{center}
 The key "sensor" identifying the individual sensor module, the key "value" denoting the current sensor reading, and the "location" key is the user specified location of the system which has invoked the sending of the notification. \\\\
-In the implementation, the Alert Manager is delegated all alerting responsibilities. Other then push notification requests, it also handles sounding of the buzzer, and camera operation. 
+In the implementation, the Alert Manager is delegated all alerting responsibilities. Other than push notification requests, it also handles sounding of the buzzer, and camera operation. 
+
+\subsubsection{Video and Image Capture}
+The Raspberry Pi has an on board Mobile Industry Processor Interface(MIPI) compliant Camera Serial Interface. The HD camera module, also developed by the Raspberry Pi Foundation, is attached directly to this CSI port. The module has a five megapixel fixed-focus camera that supports 1080p30, 720p60 and VGA90 video modes, as well as still image capture. It attaches via a 15 cm ribbon cable. To interact with the camera, two command line tools are present natively in the Raspian OS, Raspstill and Raspvid. These allow still image and video capture respectively. \\\\
+The system performs the following tasks with the camera module.
+\begin{itemize}
+  \item Still image and video capture, uploaded to the backend server, or delivered 	directly to the Android application via a Secure File Transfer Protocol(SFTP) server running on the Raspberry Pi
+  \item Local and Remote video streaming over HTTP
+\end{itemize}
+To perform video streaming, the open-source VLC Media Player was chosen to provide the necessary functionality. Inbuilt within VLC is a streaming media server, which can be invoked programmatically, and allows for the specification of a wide range of media encoding, streaming, and networking options.\\\\
+When called, the system simple uses the Raspvid command line utility to start video capture, and pipes the output to the VLC media streamer, which then constructs the necessary infrastructure for the network stream. \\\\
+When directly communicating, the Raspberry Pi has a Secure File Transfer Protocol(SFTP) Server running as a daemon which allows protected access to the captured images and videos. This is later utilized programmatically by the Android application.
+
+\subsubsection{API Communication}
+The API Manager class orchestrates all network communication with the RESTful API.
+The API Manager performs the following tasks:
+\begin{itemize}
+  \item Uploading of current sensor values
+  \item Requesting of updated system configurations
+  \item Uploading of images and videos
+  \item Retrieving of device registration ids for push notification alerting
+\end{itemize}
+Each of theses operations is scheduled in its own thread, making their timing individually configurable.  All communication with the RESTful API is carried out via the HTTP POST method.\\\\
+To identify the service requested when communication with the RESTful API an additional HTTP header called "service", is added to the request. This is parsed server side and the corresponding functionality executed. There are efficiency benefits with this approach in the cases of checking for updated configuration or requesting push notification device ids, as no data is sent in the request body, minimising the overall request size. \\\\
+An example of the request body for sensor values to be uploaded to the RESTful API can be seen in Listing~\ref{lst:json_sensor_values_example} below. As the service being requested is contained in the request header, the content body is minimal in size and complexity.
+\begin{center}
+\begin{lstlisting}[caption={Sensor Values Request Body Example},label={lst:json_sensor_values_example}]
+{'motion': 1, 'flammable_gas': 0, 'carbon_monoxide': 80, 'temperature': 65}
+\end{lstlisting}
+\end{center}
+With every HTTP request, there is a subsequent HTTP response. To minimise the overall number of HTTP requests needed for operation, additional information is passed back to the Sensor Management System in the response payload. Standard fields in the payload include a status code for reactive error handling, and a timestamp for monitoring latency. Additionally included is a flag for indicating which camera action is being requested. This allows for the requesting of remote video streaming, or still image capture without the need for additional API calls. \\\\
+Incorporated in the class are a number of fault tolerance mechanisms to protect against unexpected network loss. By employing Python’s Try/Except functionality, this class can gracefully fail when network connectivity is unavailable, and automatically continue performing its tasks once connectivity is re-established.
+
+\subsubsection{Direct Communication}
+\label{sssec:sms_direct_comm}
+The system required the ability to directly communicate to the Android application, allowing operation in situations where there is no available connection to the internet.\\\\
+Originally Wifi Direct was chosen as the means for direct communication. The Wi-Fi Direct certification program is developed and administered by the Wi-Fi Alliance.
+Wifi Direct allows for communication without an access point, and can cater for multiple peer connectivity at normal Wifi speeds. 
+It works by creating a software access point(Soft AP) within the device that supports Direct. This Soft AP provides a Wifi Protected Setup(WPS) connection.\\\\
+The Broadcom Wifi Adaptor designed to integrate seamlessly with the Raspberry Pi was chosen to allow the inclusion of Wifi Direct in the system. However, due to limitations of the Adaptor’s firmware not supporting Wifi Direct at the time of development, an alternative solution was sought. \\\\
+To accomplish this feature, an access point(AP) administered by the Raspberry Pi was implemented. This also required the Raspberry Pi to run a Dynamic Host Configuration Protocol(DHCP) server, to automate connected device IP allocation. The AP was configured to be completely local, and not forward any traffic to the wider internet. \\\\
+To connect to the system, firstly the device must be connected to the Sensor Management System\lq s AP. Next the device must initiate a connection handshake by sending a connection message to identify itself and specify the type of device it is. The identification is handled differently depending on the type of device. For an Android device, it uses a unique 64-bit hex string device id which is obtained directly from the Android OS. For peripheral sensing nodes, a 48 bit integer representing the device\lq s MAC address is used.. \\\\
+The Sensor Management System maintains a multicast channel, on a pre-specified IP address and port number. It listens on this IP address for connection messages, and drops all but those which conform to the defined format, seen in Listing~\ref{lst:json_device_connect}. \\\\
+The message in Listing~\ref{lst:json_device_connect} is sent from an Android device to the specified multicast channel IP address, where the Sensor Managment System is listening. A connection verification message is then sent back to the Android device, and if the connection was successful, data passing begins. Alternatively, if unsuccessful, pairing must be reinitiated by the Android device.
+\begin{lstlisting}[caption={JSON Connection Message Object},label={lst:json_device_connect}]
+{  
+   "service":connect,
+   "payload":{  
+      "session":{  
+         "device_id":e1cadbafc6804e3f,
+         "ip_address":192.168.42.2,
+         "time_stamp":2015-03-09 20:23:26,
+         "type":android
+      }
+   }
+}
+\end{lstlisting}
+Once the device and system are ready, all further interaction is handled via direct TCP socket communication.\\\\
+An additinal benefit of implementing device connection in this way is that multiple devices can join a multicast channel, forming a group. This facilitates the communication of messages to all connected devices easily. As new devices connect, all nodes on the network listening on this multicast socket can react accordingly. In the case of alerting, if a sensing device experiences conditions that warrant an alert to be issued, a message can be pushed to this multicast channel, and all devices listening can sound their alarms. \\\\
+
+The Direct Communication Manager class encapsulates all the above system functionality. It periodically pushes data to the connected devices, and acts as an arbitrator for all incoming messages.\\\\
+The multicast IP range of 224.0.0.0 to 239.255.255.255 is specified in RFC 5771, an Internet Engineering Task Force (IETF) Best Current Practice document (BCP51)
+\footnote{http://tools.ietf.org/html/rfc5771}. The IP address 224.1.1.1 was used in the implemetation for the multicast channel. \\\\
+The obvious shortcoming of this implementation is that the device must be connected to the system\lq s AP, disconnecting it from the wider internet. In terms of user experience(UX), a better solution would be to use Bluetooth Low Energy for application to system communication. 
+
+\subsection{Peripheral Sensing Nodes}
+\subsubsection{General Operation}
+A scaled down version of the Sensor Management System was designed and implemented to act as an additional Peripheral Sensing System within the home. Due to time limitations, the Peripheral Sensing System implementation is focused on gathering sensor data, and relaying it to the Sensor Management System. There is not persistent storage of sensor readings, and the system is static in terms of user configuration. \\\\
+Two threads exist in the Peripheral Sensing System, both are used for communication with the Sensor Management System. One thread is purposed for gathering and sending sensor data, the other thread is for receiving data. 
+
+\subsubsection{Hardware}
+For this project, the Intel Galileo generation 1 was used as the hardware for the peripheral node. The Galileo was chosen to highlight the Sensor Management Systems ability to manage a heterogeneous network. The Grove Starter Kit Plus - Intel IoT Edition provides the base shield and sensors, which have a modular plug-and-play design.  \\\\
+Attached to the Galileo, via the Grove base shield, are an LED, a temperature sensor, a light sensor, and a touch sensor.\\\\
+The touch sensor was included to demonstrate remote alerting, as when it receives input, it sends a message to the core Sensor Management System, which sounds a buzzer. Similarly, the LED was included to demonstrate message passing in the opposite direction, from the core system to the Galileo. \\\\
+In order to avail of high level software, such as Python and Git, it was necessary to boot the Galileo from an SD card with the Yocto system image. Yocto is a lightweight version of Linux, which is specifically purposed for embedded systems. 
+
+\subsubsection{Communication with Sensor Management System}
+The core Sensor Management System provides the communicational infrastructure to allow any device capable of connecting to the system\lq s AP to become a peripheral sensing node. The same connection mechanism is used in section~\ref{sssec:sms_direct_comm}. The only alteration is that the device looking to connect is required to specify its type as peripheral. \\\\
+The Peripheral Sensing System is configured to periodically gather all sensor data and send it to the Sensor Management System. Data is sent every 10 seconds, starting once the device is connected. An example of an outbound peripheral message can be seen in Listing~\ref{lst:json_peripheral_sensor_message}
+
+\begin{lstlisting}[caption={JSON Peripheral Sensor Readings Message Object},label={lst:json_peripheral_sensor_message}]
+{  
+   "service":peripheral_sensor_values,
+   "payload":{  
+      "peripheral_sensor_values":{  
+      	 "device_id":167469062838880,
+         "touch":false,
+         "light":14,
+         "temperature":15,
+         "time_stamp":2015-03-07 22:14:15
+      }
+}
+\end{lstlisting}
+
 \subsection{Android Application}
 
 \subsubsection{Push Notifications}
