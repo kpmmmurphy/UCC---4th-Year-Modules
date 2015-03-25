@@ -6,12 +6,12 @@
 \newtheorem{lemma}{\bf Lemma}
 \newtheorem{corollary}[theorem]{\bf Corollary}
 \newcommand{\pari}{\hspace{\parindent}}
+
 \usepackage{graphicx}
 
 \usepackage{amsmath}
 \usepackage{latexsym}
 \usepackage{amssymb}
-\usepackage{listings}
 \usepackage{tikz}
 \usepackage{float}
 
@@ -129,7 +129,7 @@ The system should be operable irrespective of network connectivity. \\\\ The imp
 \subsection{Development Approach and Methodology}
 In a development project of this scale and time frame, a hybrid development approach of Agile and Rapid Application Development(RAD) was determined to the most suitable. This hybrid model offered flexibility for the system to change and evolve during its design and implementation, while also providing working software early on. During the implementation phase of development the prototyping aspects of RAD were utilised for the feasibility testing of design decisions. \\\
 
-From the beginning of the project it was evident that a process heavy methodology to development would constrict the time frame of the system’s overall development. Applying an iterative and incremental agile approach reduced the time spend in planning, allowing a longer development phase. This is not to say that planning played a lesser role in the system’s life cycle, but that essential core functionality was defined and a rudimentary version of the system designed early in the project’s life cycle. Using this initial core design, implementation of the subsystems began, and in parallel with their development, any desired additional functionality or feature was incrementally designed and integrated.
+From the beginning of the project it was evident that a process heavy methodology to development would constrict the time frame of the system’s overall development. Applying an iterative and incremental agile approach reduced the time spend in planning, allowing a longer development phase. This is not to say that planning played a lesser role in the system’s life cycle, but that essential core functionality was defined and a rudimentary version of the system designed early in the project\rq s life cycle. Using this initial core design, implementation of the subsystems began, and in parallel with their development, any desired additional functionality or feature was incrementally designed and integrated.
 
 \subsection{Architecture}
 
@@ -193,21 +193,16 @@ In order to maximise sensor performance, all interaction directly with sensor mo
 A core feature of the overall system is providing the user with rapid alerting. With that in mind, it was decided that alerting should be handled natively in the sensor management system. The alternative was to perform safety checking server side, but this may lead to alert latency. \\\
 
 \subsection{Data Storage}
-MySQL was chosen as the Relational Database Management System(RDBMS). While its use and interaction is facilitated in most modern programming languages, the real benefit comes from its aggregation functions. Having the ability to select maximum, minimum, and average values from the database in a concise SQL statement greatly reduces the amount of code required, and as rows can be indexed and prepared statements optimized, overall performance is booted also. \\\
-
-Using a NoSQL database was considered as the performance and scalability benefits can be substantial when compared with generic SQL databases. NoSQL databases required a substantial amount of code to be written for interaction and aggregation, something which comes as standard in all SQL storage systems. This deterred adoption. \\\
-
-The Raspberry Pi is running an instance of the MySQL RDBMS, while the RESTful server side system is maintaining a database of tables which is identical to those present in the natively running instance. This provides data redundancy, and in the eventuality of the server side system becoming unreachable no data will be lost. \\\
+MySQL was chosen as the Relational Database Management System(RDBMS). While its use and interaction is facilitated in most modern programming languages, the real benefit comes from its aggregation functions. Having the ability to select maximum, minimum, and average values from the database in a concise SQL statement greatly reduces the amount of code required, and as rows can be indexed and prepared statements optimized, overall performance is booted also. \\\\
+Using a NoSQL database was considered as the performance and scalability benefits can be substantial when compared with generic SQL databases. NoSQL databases required a substantial amount of code to be written for interaction and aggregation, something which comes as standard in all SQL storage systems. This deterred adoption. \\\\
+The Raspberry Pi is running an instance of the MySQL RDBMS, while the RESTful server side system is maintaining a database of tables which is identical to those present in the natively running instance. This provides data redundancy, and in the eventuality of the server side system becoming unreachable no data will be lost. \\\\
 \subsection{Data Modelling}
-As memory is a constant constraint when dealing with an embedded system, consideration was put into optimising the structures of the tables within the RDBMS. Due to a lack of time when implementing the system, only one table was eventually used for sensor readings, however the original design contained three tables to minimise memory usage. A table for all current day sensor readings, another table for aggregated readings per hour of each day, and a final table for a summary of aggregated readings per day. The data was then to be aggregated automatically at a given time interval, and reduced into the subsequent table. This way, over time the data growth would be limited. \\\
-
-A table was created to storage the system’s details, such as its user specified name, location, and GPS co-ordinated. \\\
-
+As memory is a constant constraint when dealing with an embedded system, consideration was put into optimising the structures of the tables within the RDBMS. Due to a lack of time when implementing the system, only one table was eventually used for sensor readings, however the original design contained three tables to minimise memory usage. A table for all current day sensor readings, another table for aggregated readings per hour of each day, and a final table for a summary of aggregated readings per day. The data was then to be aggregated automatically at a given time interval, and reduced into the subsequent table. This way, over time the data growth would be limited. \\\\
+A table was created to storage the system’s details, such as its user specified name, location, and GPS co-ordinated. \\\\
 For push notifications, it is necessary to maintain a table for all registered device identification numbers. These IDs are to be stored via the RESTful API and are used when sending out a push notification to a device. \\\
 
 \subsection{Communication Design}
-Developing a distributed architecture involved designing a message passing mechanism utilising Javascript Object Notation(JSON), a lightweight data-interchange format. It’s native support in most modern programming languages and easy to manipulate syntax facilitated fast integration in each subsystem. \\\
-
+Developing a distributed architecture involved designing a message passing mechanism utilising Javascript Object Notation(JSON), a lightweight data-interchange format. It’s native support in most modern programming languages and easy to manipulate syntax facilitated fast integration in each subsystem. \\\\
 XML was considered, but its use is more applicable to heavily structured documents.  Library support for object serialization to JSON greatly promoted rapid application development, providing the ability to easily communicate current sensor readings and system configurations across a network. \\\ A standard structure was defined for the JSON messages being communicated. \\\ The basic structure was as followed: 
 \begin{lstlisting}[caption={JSON Message Structure},label={lst:json_message}]
 { 
@@ -222,8 +217,7 @@ The service key indicating the service being requested, and the payload containi
 The Android smart phone application is the only user Interface(UI) for the project. The platform provides a UI framework and a large amount of extensible UI view components, which can be combined with ease. The Android OS offers native animations and effects for improving user experience(UX), allowing the creation of visually responsive features with little effort. \\\\ The UI was designed with simplicity in mind. The clear and concise presentation of data to the user was the main priority. To achieve this, core aspects of functionality were designated individual screens within the app. \\\\ The UI is composed of 4 screens. The initial screen where the latest sensor data is presented. The camera screen, where captured images and videos are presented. The graphing section, were line charts display sensor value statistical information. And the final section is the control and configuration options, where the system can be reconfigured. \\\\ As smart phone application has the build in functionality for communicating directly with the sensor management system, it was necessary to design the UI to respond accordingly to how the application is receiving its data.
 
 \subsection{Alerting}
-The method of remote alerting chosen was push notifications, via the Google Cloud Messaging(GCM) Service. \\\ 
-
+The method of remote alerting chosen was push notifications, via the Google Cloud Messaging(GCM) Service. \\\\ 
 The GCM is a free service that enables developers to send downstream messages (from servers to GCM-enabled client apps), and upstream messages (from the GCM-enabled client apps to servers). This could be a lightweight message telling the client app that there is new data to be fetched from the server (for instance, a "new email" notification informing the app that it is out of sync with the back end), or it could be a message containing up to 4kb of payload data (so apps like instant messaging can consume the message directly). The GCM service handles all aspects of queueing of messages and delivery to and from the target client app.\footnote{Description taken from http://developer.android.com/google/gcm/gcm.html}
 
 \section{Implementation	}
@@ -243,6 +237,7 @@ Native Android applications are implemented in Java, and use XML for specifying 
 \subsubsection{Peripheral Sensing Node}
 Python was also used when developing this additional entity of the system. This made interoperability more straightforward when integrating the two sensing systems together. Benefits also included code reuse for the previously written for the Sensor Management System. 
 
+\newpage
 \subsection{Sensor Management System}
 
 \begin{figure}[H]
@@ -271,7 +266,6 @@ The Sensor Manager class see in Figure~\ref{fig:sms_high_level_arch} facilitates
 The Raspberry Pi’s processor, the ARM1176JZF-S, has a single core. While it is not a true multithreaded environment, the decision to multithread the system was taken to ensure a high level of portability. Over the course of this project a new Raspberry Pi model was released. The new model contains 4 cores, and an increase amount of RAM, of 1GB. The multithreading already featuring in the system would allow for swift migration to this new Raspberry Pi model, and instant performance benefits.
 
 \subsubsection{System Configuration}
-
 In order to make the system fully configurable, an abstract base class, called Configurable, was implemented, which all manager classes in Figure~\ref{fig:sms_high_level_arch} inherit from. This class provides the layer of abstraction needed to dynamically update the state of each class. The system does not required halting when reconfiguring. \\\\
 The Javascript Object Notation(JSON) was utilised as the means for specifying the required state configuration of individual classes. The Configuration Manager was delegated the responsibility for administering the updating of the system\lq s configuration. Listing~\ref{lst:sms_json_config} shows the default JSON configuration structure. It contains an object for each manager class present in the system, and an array of sensor objects with individual state values for each. \\\\
 The System is configurable form two sources, via the RESTful API, or direct from the Android Application. To achieve remote configuration, the system periodically polls the RESTful API for an updated configuration file. If present, it requests the raw JSON string, parses it, and then reconfigures the system accordingly. The time interval at which the system polls is also configurable. Via direct communication, the user can push a new configuration at their own discretion. 
@@ -360,6 +354,7 @@ When called, the system simple uses the Raspvid command line utility to start vi
 When directly communicating, the Raspberry Pi has a Secure File Transfer Protocol(SFTP) Server running as a daemon which allows protected access to the captured images and videos. This is later utilized programmatically by the Android application.
 
 \subsubsection{API Communication}
+\label{sssec:sms_api_comm}
 The API Manager class orchestrates all network communication with the RESTful API.
 The API Manager performs the following tasks:
 \begin{itemize}
@@ -381,6 +376,12 @@ Incorporated in the class are a number of fault tolerance mechanisms to protect 
 
 \subsubsection{Direct Communication}
 \label{sssec:sms_direct_comm}
+\begin{itemize}
+  \item Uploading of current sensor values
+  \item Requesting of updated system configurations
+  \item Uploading of images and videos
+  \item Retrieving of device registration ids for push notification alerting
+\end{itemize}
 The system required the ability to directly communicate to the Android application, allowing operation in situations where there is no available connection to the internet.\\\\
 Originally Wifi Direct was chosen as the means for direct communication. The Wi-Fi Direct certification program is developed and administered by the Wi-Fi Alliance.
 Wifi Direct allows for communication without an access point, and can cater for multiple peer connectivity at normal Wifi speeds. 
@@ -405,12 +406,12 @@ The message in Listing~\ref{lst:json_device_connect} is sent from an Android dev
 \end{lstlisting}
 Once the device and system are ready, all further interaction is handled via direct TCP socket communication.\\\\
 An additinal benefit of implementing device connection in this way is that multiple devices can join a multicast channel, forming a group. This facilitates the communication of messages to all connected devices easily. As new devices connect, all nodes on the network listening on this multicast socket can react accordingly. In the case of alerting, if a sensing device experiences conditions that warrant an alert to be issued, a message can be pushed to this multicast channel, and all devices listening can sound their alarms. \\\\
-
 The Direct Communication Manager class encapsulates all the above system functionality. It periodically pushes data to the connected devices, and acts as an arbitrator for all incoming messages.\\\\
 The multicast IP range of 224.0.0.0 to 239.255.255.255 is specified in RFC 5771, an Internet Engineering Task Force (IETF) Best Current Practice document (BCP51)
 \footnote{http://tools.ietf.org/html/rfc5771}. The IP address 224.1.1.1 was used in the implemetation for the multicast channel. \\\\
 The obvious shortcoming of this implementation is that the device must be connected to the system\lq s AP, disconnecting it from the wider internet. In terms of user experience(UX), a better solution would be to use Bluetooth Low Energy for application to system communication. 
 
+\newpage
 \subsection{Peripheral Sensing Nodes}
 \subsubsection{General Operation}
 A scaled down version of the Sensor Management System was designed and implemented to act as an additional Peripheral Sensing System within the home. Due to time limitations, the Peripheral Sensing System implementation is focused on gathering sensor data, and relaying it to the Sensor Management System. There is not persistent storage of sensor readings, and the system is static in terms of user configuration. \\\\
@@ -439,6 +440,85 @@ The Peripheral Sensing System is configured to periodically gather all sensor da
       }
 }
 \end{lstlisting}
+
+\newpage
+
+\subsection{RESTful Application Programming Interface}
+\subsubsection{General Operation}
+To provide a remote communication interface for the Sensor Management System and the Android application, a representational state transfer(REST) architecture was implemented as the server side infrastructure for the project. The API runs on CS1, the department’s web server. For storage, a MySQL database is used.  \\\\
+Its responsibilities include:
+\begin{itemize}
+  \item Sensor data storage and retrieval
+  \item Remote configuration of the Sensor Management System
+  \item Remote camera operation
+  \item Image and video storage
+  \item Push notification registration ID storage and retrieval
+  \item Aggregation of sensor data for graph presentation
+\end{itemize}
+REST was chosen over SOAP as it facilitates rapid application development. Each component of the project architecture is implemented in a different programming language. The interoperability of REST removes the complexity of platform specific API communication. All components can utilise a single RESTful interface over HTTP using  JSON as the notation for messaging. This has the added benefit of making it instantly compatible with the current system’s messaging format.
+
+\subsubsection{Request Management}
+Following the standard REST architectural style all communication is handled via HTTP requests. The content body of each message takes the form of a JSON encoded object. As described in section~\ref{sssec:sms_api_comm}, Sensor Management System API Communication, an addition header value, called "service", is attached to each API request, specifying the desired service. The RESTful API simply reads this value, and manages the request payload accordingly.
+
+\subsubsection{Response Management}
+\label{sssec:api_response_mgmt}
+To reduce the number of API calls needed for operation, attached to the response of each request are a number of additional fields. \\\\
+With all responses from the server to both the Sensor Management System, and the Android application, a status code for the completed service is included, to allow for reactive error handling. In keeping with the W3 RFC2616 HTTP/1.1 status code specification, the following status codes were used. \\\\
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c ||} 
+ \hline
+ Status & Status Code  \\ [0.5ex] 
+ \hline\hline
+ Successful & 200 \\ 
+ \hline
+ Bad Request & 400 \\
+ \hline
+ Not Found & 404 \\
+ \hline
+ Server Error & 500 \\ [1ex] 
+ \hline
+ 
+\end{tabular}
+\end{center}
+\caption{API Status and Corresponding Codes}
+\end{table}
+\\\\
+This method facilitates case based reactive error handling, and allows for easier debugging as the problem is automatically narrowed down to one of three possibilities. A timestamp is also included to for general debugging purposes. Depending on where the request originated, further additional fields may be included. \\\\
+When the request originated from the Sensor Management System, a field called "camera\_ operation" is added, with a numeric value attached, which represents the required camera operation. An example can be seen below in Listing~\ref{lst:json_api_response_sms}.
+\begin{lstlisting}[caption={JSON API Response to Sensor Management System},label={lst:json_api_response_sms}]
+{camera_operation:"0",status_code:200, time_stamp:"2015-03-07 22:14:15"}
+\end{lstlisting}
+When the request originated from the Android application, the Sensor Management System’s public IP address is included in the response payload, which is needed went trying to access the remote stream from within the application. An example can be seen below in Listing~\ref{lst:json_api_response_android}.
+
+\begin{lstlisting}[caption={JSON API Response to Android Application},label={lst:json_api_response_android}]
+{"status_code":200,"pi_public_ip":"89.101.115.84"}
+\end{lstlisting}
+
+\subsubsection{Video Streaming and Image Capture}
+The API maintains a camera flag, stored persistently, which signifies the currently desired camera function to be executed, denoted by a numeric value. When the Android application makes a request for a remote stream, or image capture, the API updates this flag accordingly. \\\\
+As described in section~\ref{sssec:api_response_mgmt} above, when the Sensor Management System makes a request to the API, contained in the response is the ‘camera\_ operation’ field, populated by the value of the previously described camera flag. \\\\
+In this way, camera functionality can be invoked by the user, without the need for additional HTTP requests. There is a problem with this implementation however. The invoking of the camera function is constrained by the frequency of communication from the Sensor Management System to the RESTful API. In situations when communication is taking place in large time intervals, the same latency is experienced by the user. \\\\
+In order to provide remote video streaming, the Sensor Management System\rq s public WAN IP address must be tracked at all times for use by the Android application when accessing the remote video stream. For every request sent from the Sensor Management System, the API records the public IP address persistently. As described in section~\ref{sssec:api_response_mgmt} Response Management, the System\rq s public IP address is passed back to the Android application with each response. 
+
+\newpage
+
+\subsubsection{Data Storage}
+The API maintains 3 MySQL database tables, which take a simpler form than the original specification. The choice to simplify the schema was taken due to time constraints. The original design separating the sensor values table would limit the storage required, but also increase the underlying functionality needed to manage the additional tables. The final implementation accomplishes the same functionality, but at the loss of storage optimisation. \\\\
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{"API SQL Schema".jpg}
+\caption{Entity Relationship Diagram for RESTful API Database Schema}
+\label{fig:api_schema}
+\end{figure}
+
+\subsubsection{Data Aggregation}
+To optimise data aggregation for graphical presentation the original design specified three database tables for sensor data storage. One table for the current day sensor values, one table for current day values aggregated by hour, and a final summary table for aggregated values for days previous. The aggregated values include maximums, minimums and averages. \\\\
+Partitioning the data in this way would reduce the overall storage capacity required. However, actively performing this aggregation on the database at regular time intervals is necessary.\\\\
+Due to time constraints, to achieve the needed functionality, a single table was implemented, as seen in the Figure~\ref{fig:api_schema}. Aggregation is then performed on demand. This increases server load, and is not an optimal solution. 
+
+\subsubsection{Push Notifications}
+When registration with the Google Cloud Messaging Service is complete, the resulting device registration identification number given back must be persistently stored for later use. As can be seen in the entity relational Figure~\ref{fig:api_schema} above, the Push Notification Details table is dedicated to storing these registration IDs. When an alert threshold is reached by the Sensor Management System, an API call is made for theses IDs, which are then based back and used to target the push notification to individual devices. 
 
 \subsection{Android Application}
 
