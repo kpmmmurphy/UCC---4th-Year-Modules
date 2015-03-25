@@ -522,6 +522,150 @@ When registration with the Google Cloud Messaging Service is complete, the resul
 
 \subsection{Android Application}
 
+\subsubsection{Application Structure}
+There are three basic components of an Android application: activities, fragments and views. These form the basis for the Android view hierarchy. \\\\
+The notion of an activity is a single, focused thing that the user can do. Activities create the window in which other components can be situated. They maintain a lifecycle, allowing the invocation of functionality depending on the current lifecycle stage. \\\\
+A fragment is a self contained module which encapsulates a variable number of view components. It can only exist within an activity. It represents a behavior or a portion of a user interface. It too maintains a lifecycle, which is more extensive than that of an activity.\\\\
+Views are the building blocks for a UI. Views can be static, like a TextView, or interactive, like a Button. \\\\
+The choice was made to only uses a single activity within the application, and delegate functionality to individual fragments, which are subsequently embedded within this activity. In this way a clear separation of functionality can be maintained, and cohesion can be kept high. The benefit of this structure is that it facilitates more efficient application lifecycle and resource management, with single points of entry and exit. For example, in the eventuality of the application being closed, any active tasks such as API calls can be halted in a single location. 
+
+\subsubsection{UI Development}
+Implementation of the Android application began with development of a general user interface structure.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=10cm, height=14cm]{"opening_screen_shot".png}
+\caption{Sensor Data Screen within the Application}
+\label{fig:android_opening_screen}
+\end{figure}
+
+\noindent
+The UI follows a standard tabular design, which provides the user with an easy means of navigation. This can be seen in Figure~\ref{fig:android_navigation} below. The benefits of this navigational pattern is the flexibility it provides for introducing new fragments, or alternatively removing them.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{"nav_tabs".png}
+\caption{Navigation Bar within the Application}
+\label{fig:android_navigation}
+\end{figure}
+
+\noindent
+Four fragments exist within the application, corresponding to the tabs in Figure~\ref{fig:android_navigation}. They serve the following individual purposes:
+\begin{enumerate}
+  \item Displaying of Sensor Readings, located under the Sensor tab
+  \item Camera Operation, located under the Image tab
+  \item Data graphing, located under the Stats tab
+  \item System configuration, located under the Control tab
+\end{enumerate}	
+
+\subsubsection{Data Presentation}
+Sensor value data is the first thing the user is presented with when opening the application. A GridView was used to achieve an extensible layout, with each sensor dedicated its own tile within the grid. Figure~\ref{fig:android_sensor_tile} shows a tile corresponding to the carbon monoxide sensor.  The sensor name is located at the bottom of the tile. The maximum and minimum values for the current day are placed at the right hand top corner. Directly in the center is the latest value, and just below is the measurement, in this case parts per million.
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{"sensor_output".png}
+\caption{Sensor Tile}
+\label{fig:android_sensor_tile}
+\end{figure}
+
+\noindent
+When a user defined sensor alerting threshold is reached, an additional icon appears on the tile corresponding to the alerting sensor. This can be seen in Figure~\ref{fig:android_sensor_tile_alerting} below. Note that this tile is for the infrared motion detector, and is binary valued, 1 denoting motion being detected. The value in the right top corner is the percentage of motion detected for the current day. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{"sensor_output_alert".png}
+\caption{An Alerting Sensor Tile }
+\label{fig:android_sensor_tile_alerting}
+\end{figure}
+
+\noindent
+Located above the sensor tiles is the name of the physical system the data is being displayed from. For the Sensor Management System this name is set by the user. Alternatively, when data is being displayed from a peripheral sensing node, it simply states the number of the node.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{"system_name".png}
+\caption{Input System Label}
+\label{fig:android_sensor_input_system}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{"peripheral_name".png}
+\caption{Input System Label for Peripheral Device}
+\label{fig:android_sensor_input_system_peripheral}
+\end{figure}
+
+\noindent
+Underneath the sensor tiles in the bottom left corner is a text view which displays the date and time of the sensor readings, this can be seen in Figure~\ref{fig:android_sensor_timestamp}. In the right corner is the button which toggles between the physical sensing systems.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{"last_updated".png}
+\caption{Last Updated Timestamp and System Toggle Button}
+\label{fig:android_sensor_timestamp}
+\end{figure}
+
+\noindent
+Figure~\ref{fig:android_peripheral_sensing_values} below shows the result of toggling the sensing system, where the readings are being displayed for the Peripheral Sensing Node, which was running on the Intel Galileo.
+\begin{figure}[H]
+\centering
+\includegraphics[width=10cm, height=14cm]{"peripheral_screen".png}
+\caption{Peripheral Sensing Node Sensor Values}
+\label{fig:android_peripheral_sensing_values}
+\end{figure}
+
+\noindent
+Each sensor tile has an on touch listener registered, so when a user touches a tile a dialog box appears. Context sensitive feedback corresponding to the current sensor value is presented to the user, and some information on the sensor itself. An example of which can be seen in Figure~\ref{fig:android_sensor_context_help} below.
+\begin{figure}[H]
+\centering
+\includegraphics[width=10cm, height=14cm]{"context_help".png}
+\caption{Context sensitive feedback for carbon monoxide reading of 100ppm}
+\label{fig:android_sensor_context_help}
+\end{figure}
+
+\subsubsection{API Communication}
+All network activity in the application is handled by a single HTTP library called Volley, which is developed by Google. It simplifies and optimises request management. It provides automatic scheduling, multiple concurrent connections, caching for both text and image data, and easy cancellation of requests. Volley utilises a priority queue as its underlying data structure for request execution. Optimisation is handled through the use of background asynchronous tasks, ensuring the main UI thread is not blocked which can result in latency that is apparent to the user. Volley offers extensible objects for creating JSON HTTP requests, a key feature that was required for interacting with the server side RESTful API.	\\\\
+When developing the infrastructure for API communication, a singleton pattern was applied. This ensured that all network connectivity is coordinated by a single entity. Multiple benefits result from the use of this design pattern: classes which utilised API requests are kept simple as it is a noninvasive means of providing functionality, all currently executing requests can be cancelled simultaneously, which is useful when the application is halted by the user, and debugging is quarantined to a single location. Listing~\ref{lst:java_api_singlton} demonstrates the invocation of a request for the latest sensor values. 
+
+\begin{lstlisting}[caption={Singleton API object method invocation},label={lst:java_api_singlton}]
+API.getInstance(getActivity()).requestSensorValues(sccssListener, errListener);
+\end{lstlisting}
+
+\noindent
+As mentioned in previous sections, in order to identify what service is being requested, an additional value is set in the header of the HTTP request. Volley allows a Map object to be added to the request specifying the header fields. The request itself is generic, using a placeholder object called APIResponse, which is populated when the response for the RESTful API is recieved. The APIResponse object can be seen in Listing~\ref{lst:java_api_response_obj}. The request object possesses two event listeners, one for handling errors, and the other for successful responses. The APIResponse object is delivered to one of these listeners when the request is complete. 
+
+\begin{lstlisting}[caption={Java method API call for request latest sensor readings},label={lst:java_api_call}]
+public void requestSensorValues(Response.Listener<APIResponse> listener,
+Response.ErrorListener errorListener){
+        Utils.methodDebug(LOGTAG);
+
+	      //Create a Map for the HTTP headers
+        Map<String, String> headers = new HashMap<String, String>();
+        //Add the service for getting the latest sensor values
+        headers.put(Constants.API_REQUEST_HEADER_SERVICE,
+         Constants.API_REQUEST_SERVICE_GET_SENSOR_VALUES);
+
+		    //Create the request object
+        GsonRequest<APIResponse> sensorValueRequest = 
+        new GsonRequest<APIResponse>(URL, APIResponse.class, 
+        headers, listener, errorListener);
+        
+        //Add request to queue to be executed
+        addToQueue(sensorValueRequest);
+    }
+
+\end{lstlisting}
+\newpage
+
+\begin{lstlisting}[caption={APIResponse class, used when parsing the RESTful API response},label={lst:java_api_response_obj}]
+public class APIResponse {
+    //MetaData Params
+    public int status_code;
+    public String pi_public_ip;
+
+    //Requested Objects
+    public CurrentSensorValuesFromServer sensor_values;
+
+}
+\end{lstlisting}		
+
+
 \subsubsection{Push Notifications}
 \label{sssec:android_push_notifications}
 
