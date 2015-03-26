@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.19)  25 MAR 2015 20:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.19)  26 MAR 2015 13:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -406,38 +406,68 @@ Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count130
+\Gm@cntv=\count131
+\c@Gm@tempcnt=\count132
+\Gm@bindingoffset=\dimen161
+\Gm@wd@mp=\dimen162
+\Gm@odd@mp=\dimen163
+\Gm@even@mp=\dimen164
+\Gm@layoutwidth=\dimen165
+\Gm@layoutheight=\dimen166
+\Gm@layouthoffset=\dimen167
+\Gm@layoutvoffset=\dimen168
+\Gm@dimlist=\toks32
 ) (./report.aux
 
 LaTeX Warning: Label `overflow' multiply defined.
 
+
+LaTeX Warning: Label `fig:android_current_day_chart' multiply defined.
+
 )
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
-\scratchdimen=\dimen161
+\scratchcounter=\count133
+\scratchdimen=\dimen169
 \scratchbox=\box41
-\nofMPsegments=\count131
-\nofMParguments=\count132
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count133
-\MPscratchDim=\dimen162
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
-\everyMPtoPDFconversion=\toks33
+\nofMPsegments=\count134
+\nofMParguments=\count135
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count136
+\MPscratchDim=\dimen170
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
+\everyMPtoPDFconversion=\toks34
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -445,10 +475,6 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -487,18 +513,52 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count136
-LaTeX Font Info:    Try loading font information for U+lasy on input line 51.
+\c@lstlisting=\count139
 
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(93.95122pt, 426.39256pt, 93.95122pt)
+* v-part:(T,H,B)=(93.95122pt, 607.06755pt, 93.95122pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=426.39256pt
+* \textheight=607.06755pt
+* \oddsidemargin=21.68123pt
+* \evensidemargin=21.68123pt
+* \topmargin=-15.31877pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+lasy on input line 53.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 51.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 51.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -509,134 +569,124 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `report.toc'.
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 84.
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
-
- []
-
-[6]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
- <"Open Day General System Diagram".jpg, id=31, 963.6pt x 722.7pt>
+[6] <"Open Day General System Diagram".jpg, id=31, 963.6pt x 722.7pt>
 File: "Open Day General System Diagram".jpg Graphic file (type jpg)
 
 <use "Open Day General System Diagram".jpg>
 Package pdftex.def Info: "Open Day General System Diagram".jpg used on input li
-ne 153.
-(pdftex.def)             Requested size: 345.0pt x 258.74925pt.
+ne 155.
+(pdftex.def)             Requested size: 426.39256pt x 319.78645pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
-[7] [8 <./Open Day General System Diagram.jpg>]
+[7 <./Open Day General System Diagram.jpg>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
-[9]
+
 Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
@@ -651,47 +701,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
-
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--199
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--199
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--199
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--199
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
+
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
+
+ []
+
+[9]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
+
+ []
+
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ú in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ù in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ú in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ù in font cmtt9!
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--224
 
  []
 
 [10]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--203
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--203
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--203
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
@@ -699,79 +799,22 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Overfull \hbox (2.2228pt too wide) in paragraph at lines 205--207
-\OT1/cmr/m/n/10 Developing a dis-tributed ar-chi-tec-ture in-volved de-sign-ing
- a mes-sage pass-ing mech-
- []
-
-
-Overfull \hbox (5.77847pt too wide) in paragraph at lines 205--207
-\OT1/cmr/m/n/10 a-nism util-is-ing Javascript Ob-ject No-ta-tion(JSON), a light
-weight data-interchange
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
-
- []
-
-Missing character: There is no ‚ in font cmtt9!
-Missing character: There is no Ä in font cmtt9!
-Missing character: There is no ú in font cmtt9!
-Missing character: There is no ‚ in font cmtt9!
-Missing character: There is no Ä in font cmtt9!
-Missing character: There is no ù in font cmtt9!
-Missing character: There is no ‚ in font cmtt9!
-Missing character: There is no Ä in font cmtt9!
-Missing character: There is no ú in font cmtt9!
-Missing character: There is no ‚ in font cmtt9!
-Missing character: There is no Ä in font cmtt9!
-Missing character: There is no ù in font cmtt9!
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 220--222
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
-
- []
-
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
-
- []
-
-[13] [14] <"Sensor Management System Diagram".jpg, id=62, 963.6pt x 722.7pt>
+[11] [12] <"Sensor Management System Diagram".jpg, id=55, 963.6pt x 722.7pt>
 File: "Sensor Management System Diagram".jpg Graphic file (type jpg)
 
 <use "Sensor Management System Diagram".jpg>
 Package pdftex.def Info: "Sensor Management System Diagram".jpg used on input l
-ine 245.
-(pdftex.def)             Requested size: 345.0pt x 258.74925pt.
+ine 247.
+(pdftex.def)             Requested size: 426.39256pt x 319.78645pt.
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -782,66 +825,114 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--260
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
 
  []
 
-[15 <./Sensor Management System Diagram.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 262--264
+[13 <./Sensor Management System Diagram.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 264--266
+
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--274
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--274
+
+ []
+
+[14] [15]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--339
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--339
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 335--339
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 344--346
 
  []
 
 [16]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--272
+Underfull \hbox (badness 10000) in paragraph at lines 348--350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--272
+Underfull \hbox (badness 10000) in paragraph at lines 354--357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 354--357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--371
 
  []
 
@@ -850,154 +941,94 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--337
+Underfull \hbox (badness 10000) in paragraph at lines 376--378
+
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--337
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--337
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--396
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 342--344
+Underfull \hbox (badness 10000) in paragraph at lines 409--415
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
+Underfull \hbox (badness 10000) in paragraph at lines 409--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--415
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--415
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 352--355
+Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--355
+Underfull \hbox (badness 10000) in paragraph at lines 423--427
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--369
+Underfull \hbox (badness 10000) in paragraph at lines 423--427
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--369
+Underfull \hbox (badness 10000) in paragraph at lines 423--427
 
  []
 
-[20]
-Overfull \hbox (9.37088pt too wide) in paragraph at lines 371--372
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--431
+
  []
 
+[20] [21]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--376
-
- []
-
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--394
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--394
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--394
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--394
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--394
-
- []
-
-
-Overfull \hbox (4.16727pt too wide) in paragraph at lines 385--394
-\OT1/cmr/m/n/10 The Sen-sor Man-age-ment Sys-tem main-tains a mul-ti-cast chan-
-nel, on a pre-specified
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--394
-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 407--413
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--413
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--413
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--413
-
- []
-
-[22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 417--419
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 421--425
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 421--425
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 421--425
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 427--429
-
- []
-
-[24] [25]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 448--450
+Underfull \hbox (badness 10000) in paragraph at lines 450--452
 
  []
 
@@ -1005,26 +1036,29 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--489
+Underfull \hbox (badness 10000) in paragraph at lines 467--491
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--489
+Underfull \hbox (badness 10000) in paragraph at lines 467--491
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--489
+Underfull \hbox (badness 10000) in paragraph at lines 467--491
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 465--489
+Underfull \hbox (badness 10000) in paragraph at lines 467--491
 
  []
 
-[26]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
@@ -1035,149 +1069,227 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--503
+Underfull \hbox (badness 10000) in paragraph at lines 501--505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--503
+Underfull \hbox (badness 10000) in paragraph at lines 501--505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--503
+Underfull \hbox (badness 10000) in paragraph at lines 501--505
 
  []
 
-[27] [28] <"API SQL Schema".jpg, id=107, 963.6pt x 722.7pt>
+[23] <"API SQL Schema".jpg, id=91, 963.6pt x 722.7pt>
 File: "API SQL Schema".jpg Graphic file (type jpg)
 
 <use "API SQL Schema".jpg>
-Package pdftex.def Info: "API SQL Schema".jpg used on input line 510.
-(pdftex.def)             Requested size: 345.0pt x 258.74925pt.
+Package pdftex.def Info: "API SQL Schema".jpg used on input line 512.
+(pdftex.def)             Requested size: 426.39256pt x 319.78645pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--513
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 507--513
+Underfull \hbox (badness 10000) in paragraph at lines 509--515
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--519
+Underfull \hbox (badness 10000) in paragraph at lines 509--515
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--519
-
- []
-
-[29 <./API SQL Schema.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 526--531
+Underfull \hbox (badness 10000) in paragraph at lines 518--521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--531
+Underfull \hbox (badness 10000) in paragraph at lines 518--521
+
+ []
+
+[24 <./API SQL Schema.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 528--533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--531
+Underfull \hbox (badness 10000) in paragraph at lines 528--533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--531
+Underfull \hbox (badness 10000) in paragraph at lines 528--533
 
  []
 
-<"opening_screen_shot".png, id=111, 1204.5pt x 1927.2pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--533
+
+ []
+
+<"opening_screen_shot".png, id=95, 1204.5pt x 1927.2pt>
 File: "opening_screen_shot".png Graphic file (type png)
 
 <use "opening_screen_shot".png>
-Package pdftex.def Info: "opening_screen_shot".png used on input line 537.
+Package pdftex.def Info: "opening_screen_shot".png used on input line 539.
 (pdftex.def)             Requested size: 284.52788pt x 398.3133pt.
- [30]
-<"nav_tabs".png, id=116, 903.375pt x 86.57344pt>
+ [25]
+<"nav_tabs".png, id=101, 903.375pt x 86.57344pt>
 File: "nav_tabs".png Graphic file (type png)
  <use "nav_tabs".png>
-Package pdftex.def Info: "nav_tabs".png used on input line 547.
-(pdftex.def)             Requested size: 345.0pt x 33.06335pt.
- [31 <./opening_screen_shot.png>] <"sensor_output".png, id=122, 529.98pt x 525.
-965pt>
+Package pdftex.def Info: "nav_tabs".png used on input line 549.
+(pdftex.def)             Requested size: 426.39256pt x 40.86388pt.
+ [26 <./opening_screen_shot.png> <./nav_tabs.png>]
+<"sensor_output".png, id=107, 529.98pt x 525.965pt>
 File: "sensor_output".png Graphic file (type png)
-
-<use "sensor_output".png>
-Package pdftex.def Info: "sensor_output".png used on input line 565.
+ <use "sensor_output".png>
+Package pdftex.def Info: "sensor_output".png used on input line 567.
 (pdftex.def)             Requested size: 227.62204pt x 225.89569pt.
 
-<"sensor_output_alert".png, id=123, 529.98pt x 525.965pt>
+<"sensor_output_alert".png, id=108, 529.98pt x 525.965pt>
 File: "sensor_output_alert".png Graphic file (type png)
 
 <use "sensor_output_alert".png>
-Package pdftex.def Info: "sensor_output_alert".png used on input line 574.
+Package pdftex.def Info: "sensor_output_alert".png used on input line 576.
 (pdftex.def)             Requested size: 227.62204pt x 225.89569pt.
- [32 <./nav_tabs.png> <./sensor_output.png>]
-<"system_name".png, id=129, 1120.185pt x 176.66pt>
+ [27 <./sensor_output.png>]
+<"system_name".png, id=113, 1120.185pt x 176.66pt>
 File: "system_name".png Graphic file (type png)
  <use "system_name".png>
-Package pdftex.def Info: "system_name".png used on input line 583.
-(pdftex.def)             Requested size: 345.0pt x 54.4082pt.
+Package pdftex.def Info: "system_name".png used on input line 585.
+(pdftex.def)             Requested size: 426.39256pt x 67.2447pt.
 
-<"peripheral_name".png, id=130, 1176.395pt x 176.66pt>
+<"peripheral_name".png, id=114, 1176.395pt x 176.66pt>
 File: "peripheral_name".png Graphic file (type png)
 
 <use "peripheral_name".png>
-Package pdftex.def Info: "peripheral_name".png used on input line 590.
-(pdftex.def)             Requested size: 345.0pt x 51.80695pt.
- [33 <./sensor_output_alert.png> <./system_name.png>] <"last_updated".png, id=1
-36, 1164.35pt x 232.87pt>
+Package pdftex.def Info: "peripheral_name".png used on input line 592.
+(pdftex.def)             Requested size: 426.39256pt x 64.03154pt.
+ <"last_updated".png, id=115, 1164.35pt x 232.87pt>
 File: "last_updated".png Graphic file (type png)
- <use "last_updated".png>
-Package pdftex.def Info: "last_updated".png used on input line 599.
-(pdftex.def)             Requested size: 345.0pt x 68.99808pt.
 
-<"peripheral_screen".png, id=137, 1003.75pt x 1606.0pt>
+<use "last_updated".png>
+Package pdftex.def Info: "last_updated".png used on input line 601.
+(pdftex.def)             Requested size: 426.39256pt x 85.27577pt.
+ [28 <./sensor_output_alert.png> <./system_name.png> <./peripheral_name.png>] <
+"peripheral_screen".png, id=122, 1003.75pt x 1606.0pt>
 File: "peripheral_screen".png Graphic file (type png)
 
 <use "peripheral_screen".png>
-Package pdftex.def Info: "peripheral_screen".png used on input line 608.
+Package pdftex.def Info: "peripheral_screen".png used on input line 610.
 (pdftex.def)             Requested size: 284.52481pt x 398.3378pt.
- [34 <./peripheral_name.png> <./last_updated.png>] <"context_help".png, id=143,
- 1003.75pt x 1606.0pt>
+
+<"context_help".png, id=123, 1003.75pt x 1606.0pt>
 File: "context_help".png Graphic file (type png)
  <use "context_help".png>
-Package pdftex.def Info: "context_help".png used on input line 617.
+Package pdftex.def Info: "context_help".png used on input line 619.
 (pdftex.def)             Requested size: 284.52481pt x 398.3378pt.
 
-[35 <./peripheral_screen.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 623--625
+[29 <./last_updated.png> <./peripheral_screen.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 625--627
 
  []
 
-[36 <./context_help.png>]
-Overfull \hbox (28.27066pt too wide) in paragraph at lines 627--628
-[][][][][][][][][][][][][][][] 
+[30 <./context_help.png>] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 671--674
+
  []
 
-[37]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 676.
+Underfull \hbox (badness 10000) in paragraph at lines 671--674
 
-[38] (./report.aux)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 683--685
+
+ []
+
+[32] [33] <"Push Notification Diagram".png, id=141, 925.4575pt x 690.58pt>
+File: "Push Notification Diagram".png Graphic file (type png)
+
+<use "Push Notification Diagram".png>
+Package pdftex.def Info: "Push Notification Diagram".png used on input line 695
+.
+(pdftex.def)             Requested size: 426.39256pt x 318.17645pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [34 <./Push Notification Diagram.png>]
+<"pn_showing".png, id=146, 903.375pt x 773.89125pt>
+File: "pn_showing".png Graphic file (type png)
+ <use "pn_showing".png>
+Package pdftex.def Info: "pn_showing".png used on input line 716.
+(pdftex.def)             Requested size: 398.34087pt x 341.43427pt.
+
+<"context_help_2".png, id=147, 752.8125pt x 824.32968pt>
+File: "context_help_2".png Graphic file (type png)
+
+<use "context_help_2".png>
+Package pdftex.def Info: "context_help_2".png used on input line 726.
+(pdftex.def)             Requested size: 398.34544pt x 341.43637pt.
+ [35 <./pn_showing.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 735--738
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 735--738
+
+ []
+
+[36 <./context_help_2.png>]
+<"current_hour_graph".png, id=155, 903.375pt x 792.71156pt>
+File: "current_hour_graph".png Graphic file (type png)
+
+<use "current_hour_graph".png>
+Package pdftex.def Info: "current_hour_graph".png used on input line 741.
+(pdftex.def)             Requested size: 426.40585pt x 341.43993pt.
+
+<"current_day_sum".png, id=156, 903.375pt x 710.655pt>
+File: "current_day_sum".png Graphic file (type png)
+
+<use "current_day_sum".png>
+Package pdftex.def Info: "current_day_sum".png used on input line 751.
+(pdftex.def)             Requested size: 426.40585pt x 341.43584pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--754
+
+ []
+
+[37 <./current_hour_graph.png>]
+<"complete_sum_graph".png, id=162, 903.375pt x 700.86844pt>
+File: "complete_sum_graph".png Graphic file (type png)
+
+<use "complete_sum_graph".png>
+Package pdftex.def Info: "complete_sum_graph".png used on input line 760.
+(pdftex.def)             Requested size: 426.40585pt x 341.43939pt.
+ [38 <./current_day_sum.png>]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 782.
+
+[39 <./complete_sum_graph.png>] (./report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 12175 strings out of 493304
- 218715 string characters out of 6139871
- 296147 words of memory out of 5000000
- 15360 multiletter control sequences out of 15000+600000
+ 12704 strings out of 493304
+ 226924 string characters out of 6139871
+ 293147 words of memory out of 5000000
+ 15873 multiletter control sequences out of 15000+600000
  12913 words of font info for 54 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,9n,55p,1188b,1505s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1192,10 +1304,10 @@ lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.
 pfb>
-Output written on report.pdf (38 pages, 734085 bytes).
+Output written on report.pdf (39 pages, 1209002 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 210 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

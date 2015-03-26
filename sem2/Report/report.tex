@@ -41,6 +41,8 @@
   tabsize=2
 }
 
+\usepackage[margin=1.3in]{geometry}
+
 
 \begin{document}
 
@@ -663,10 +665,114 @@ public class APIResponse {
     public CurrentSensorValuesFromServer sensor_values;
 
 }
-\end{lstlisting}		
+\end{lstlisting}	
 
+\subsubsection{Direct Communication}	
+To provide direct communication from the Sensor Management System to the application, the Android device must be connected via the access point which is being administered by the Raspberry Pi. When pairing with the system, the application creates a multicast socket and joins the group, which the Sensor Management System is perpetually a member of. A pairing session object, encoded in JSON, is sent to the multicast channel from the application. The session object identifies the device and provides some general monitoring information. An example of this JSON session object can be seen in Listing~\ref{lst:json_device_connect} in Section~\ref{sssec:sms_direct_comm}. \\\\
+On receiving this session object, the Sensor Management System performs the necessary pairing operations and sends back a status message, either verifying a successful connection, or failure. \\\\
+Natively on Android multicast networking is switched off to reduce battery consumption. To perform multicast operations, a lock must be acquired from the operating system, seen in Listing~\ref{lst:java_multicast_lock}. Because of this limitation, the only multicast message sent from the application is the pairing session object, and after sending the multicast socket is closed, and the lock released. All further communication is handled via TCP sockets. This has the additional benefit of reliability.
+\begin{lstlisting}[caption={Multicast lock acquisition},label={lst:java_multicast_lock}]
+//Get the WifiManager Server from the OS
+WifiManager wifiManager = 
+(WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+//Get the lock object from the WifiManager
+WifiManager.MulticastLock lock = wifiManager.createMulticastLock(LOGTAG);
+//Aquire the lock and begin multicast networking
+lock.acquire();
+\end{lstlisting}	
+The singleton design pattern was applied to the object that was delegated the responsibility of communication between the application and the Sensor Management System. The object was entitled SocketManager, as its main duty is the orchestration of TCP/IP sockets. By maintaining a single point of interaction, the management of communication is straightforward. Overall application complexity is reduced as messages can be passed from any code location, without having the implementational overhead of passing the SocketManager object to each class which requires its use. \\\\
+Below in Listing~\ref{lst:java_socket_send} is an example of a direct message to the Sensor Management System, in this case a new configuration is being sent. We simple utilise a static method, getInstance, on the SocketManager object, passing to it the Android application context, this returns the singleton object which can subsequently be used to send a direct message to the Sensor Management System. The sendMsgToPi method simply takes a JSON encoded string and sends it to the Raspberry Pi. 
+\begin{lstlisting}[caption={Singleton SocketManager object send message method invocation},label={lst:java_socket_send}]
+SocketManager.getInstance(getAppContext()).sndMsgToPi(Utils.toJson(newConfig);
+\end{lstlisting}	
 
+\newpage
 \subsubsection{Push Notifications}
+A number of steps are required to implement push notification alerting. Figure~\ref{fig:android_pn_interaction} shows the interaction between the 4 entities involved. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{"Push Notification Diagram".png}
+\caption{Push notification interaction doagram}
+\label{fig:android_pn_interaction}
+\end{figure}
+
+The steps involved are as follows:  
+\begin{enumerate}
+  \item Create a new project in the Google Cloud Developer Console
+  \item Authorise the project to grant it access to the Google Cloud Messaging(GCM) Service
+  \item Authorise the project to grant it access to the Google Cloud Messaging(GCM) Service
+  \item Perform in app registration of the device to the GCM server, which generated a unique device identification number. This must be stored persistently by the RESTful API and is used to target notifications to the specific device
+  \item Extend a IntentService object within the app which will act as a daemon for receiving the notification payload from the GCM service
+  \item Extend an Wakeful Broadcast Receiver object within the app which will wake the device up if it’s on standby mode, and display the notification to the user
+  \item And the final step is to implement a program that performs the push notification request, via HTTP, to the GCM server, specifying the registration ids and the payload to be pushed to devices. 
+\end{enumerate}	
+
+\noindent
+After an alert threshold has been broken and a push notification has been sent from the Sensor Management System to the Android Application, the resulting event of receiving the notification can be seen in the Figure~\ref{fig:android_pn_displayed} below. A white popup box appears at the very top of the screen. This box will appear regardless of the current foreground application. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm, height=12cm]{"pn_showing".png}
+\caption{Push notification being displayed}
+\label{fig:android_pn_displayed}
+\end{figure}
+
+\noindent
+Android has a mechanism, called PendingIntent, for opening an application by touching a push notification. This allows users to navigate directly to the application which has performed the alerting. When the push notification is above is clicked on, the application will open and display some context sensitive help regarding the current sensor value. This can be seen in the diagram below.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm, height=12cm]{"context_help_2".png}
+\caption{Conrext sensitive help after touching push notification}
+\label{fig:android_pn_help}
+\end{figure}
+
+\subsubsection{Context Sensitive Help}
+Little indication of safety conditions is provided by the sensor readings alone. In order to provide them with genuine feedback on the current environment and their own safety, a small dataset of sensor specific safety metrics was gathered from the internet. The entire dataset can be seen in [Appendix A].\\\\
+
+\subsubsection{Graphing}
+Graphing is provided by an open source library call MPAndroidChart \footnote{https://github.com/PhilJay/MPAndroidChart}. This library provides a comprehensive range of charts, and a large amount of functionality, including touch scaling, real time graphing and animations. All graphing is designated to the Stats fragment within the application.\\\\
+The application requests the graphing data from either the RESTful API, or directly from the Sensor Management System depending on the method of communication being utilized. All data aggregation is performed outside of the application. When a request for graphing data is executed, the respective RDBMS handles the aggregation via SQL query. This facilitates the generation of average, max and minimum values for each column. \\\\
+Line charts were chosen as the most effective way of conveying the data to the user. All graphs are interactive, and allow the user to zoom in or out on specific areas. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=12cm]{"current_hour_graph".png}
+\caption{Current hour sensor values line chart}
+\label{fig:android_current_hour_chart}
+\end{figure}
+
+\noindent
+The Current Hour Sensor Readings chart graphs the current hour sensor values. The Y-axis denoted the sensor value, while the X-axis marks time.\\\\
+The Current Day Summary chart plots aggregated values for each hour the system has been active that day. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=12cm]{"current_day_sum".png}
+\caption{Current day sensor values aggregated by hour line chart}
+\label{fig:android_current_day_chart}
+\end{figure}
+\noindent
+The Complete Summary chart graphs aggregated values for each day the system has been active.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=12cm]{"complete_sum_graph".png}
+\caption{Summary of sensor values aggregated by day}
+\label{fig:android_current_day_chart}
+\end{figure}
+\noindent
+The motion detector sensor data is displayed in the Current Day Summary and the Complete Summary charts as a percentage. This acts as an activity measurement, providing the user with the level of activity for a given time. This data could be used for home automation.
+
+
+
+
+
+
+
+
+
+
 \label{sssec:android_push_notifications}
 
 
