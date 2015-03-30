@@ -73,13 +73,11 @@
 \subsection{Literature Review}
 \subsubsection{Internet of Things}
 \subsubsection{Current Safety Applications}
-Safety applications are becoming more prevalent in the home and in industry. Irish building regulations now require that all new houses be fitted with mains powered smoke detectors. By monitoring environmental data, early warning signs of threats can be detected, appropriate alerts made and lives can be saved.\\\
+Safety applications are becoming more prevalent in the home and in industry. Irish building regulations now require that all new houses be fitted with mains powered smoke detectors. By monitoring environmental data, early warning signs of threats can be detected, appropriate alerts made and lives can be saved.\\\\
+Many companies offer monitor systems for break-ins on a subscription basis. The alerting model usually involves the detection of a breach in security, which triggers an alert to a remote operations centre, which then alerts the emergency services, neighbours or any other listed third parties. PhoneWatch offer by Eircom is an example of this type of service. \\\\
+Nest Labs have created a number of embedded solutions for home automation and safety. For safety specifically, the Nest Protect system incorporates smoke, carbon monoxide, heat, and activity detection sensors. Surveillance cameras can be added also, to provide additional security. The system they have implemented is limited in terms of sensor configuration, not providing the user with any access to sensor managemnet. Their UI focuses on environmental events, such as spikes in carbon monoxide, but does not allow the checking of the actual sensor value. My solution aims to display detailed sensor readings and aggregated values, which will give acute insight into environmental conditions across varying periods of time. 
 
-Many companies offer monitor systems for break-ins on a subscription basis. The alerting model usually involves the detection of a breach in security, which triggers an alert to a remote operations centre, which then alerts the emergency services, neighbours or any other listed third parties. PhoneWatch offer by Eircom is an example of this type of service. \\\
-
-Nest Labs have created a number of embedded solutions for home automation and safety. For safety specifically, the Nest Protect system incorporates smoke, carbon monoxide, heat, and activity detection sensors. Surveillance cameras can be added also, to provide additional security. 
-
-\subsubsection{Achieving Safety and Security within the Home}
+\subsection{Achieving Safety and Security within the Home}
 Choosing periphery sensors to improve safety and security involved identifying the main threats which can occur within a domestic environment. I settled on the following as a basis for what my system was to mitigate against.
 
 \begin{itemize}
@@ -99,11 +97,11 @@ Providing the user with appropriate feedback on current sensor levels is an esse
   \item SMS 
 \end{itemize}
 
-\subsubsection{Embedded Computing}
+\subsection{Embedded Computing}
 \paragraph{Raspberry Pi}
 \paragraph{Intel Galileo}
 
-\subsubsection{Functional Specification}
+\subsection{Functional Specification}
 An embedded sensor system and Android smart phone application which supplies the user with live environmental data and security services. \\\
 
 The following sensor modules will be included:
@@ -268,6 +266,7 @@ The Sensor Manager class see in Figure~\ref{fig:sms_high_level_arch} facilitates
 The Raspberry Pi’s processor, the ARM1176JZF-S, has a single core. While it is not a true multithreaded environment, the decision to multithread the system was taken to ensure a high level of portability. Over the course of this project a new Raspberry Pi model was released. The new model contains 4 cores, and an increase amount of RAM, of 1GB. The multithreading already featuring in the system would allow for swift migration to this new Raspberry Pi model, and instant performance benefits.
 
 \subsubsection{System Configuration}
+\label{sssec:sms_sys_config}
 In order to make the system fully configurable, an abstract base class, called Configurable, was implemented, which all manager classes in Figure~\ref{fig:sms_high_level_arch} inherit from. This class provides the layer of abstraction needed to dynamically update the state of each class. The system does not required halting when reconfiguring. \\\\
 The Javascript Object Notation(JSON) was utilised as the means for specifying the required state configuration of individual classes. The Configuration Manager was delegated the responsibility for administering the updating of the system\lq s configuration. Listing~\ref{lst:sms_json_config} shows the default JSON configuration structure. It contains an object for each manager class present in the system, and an array of sensor objects with individual state values for each. \\\\
 The System is configurable form two sources, via the RESTful API, or direct from the Android Application. To achieve remote configuration, the system periodically polls the RESTful API for an updated configuration file. If present, it requests the raw JSON string, parses it, and then reconfigures the system accordingly. The time interval at which the system polls is also configurable. Via direct communication, the user can push a new configuration at their own discretion. 
@@ -378,12 +377,6 @@ Incorporated in the class are a number of fault tolerance mechanisms to protect 
 
 \subsubsection{Direct Communication}
 \label{sssec:sms_direct_comm}
-\begin{itemize}
-  \item Uploading of current sensor values
-  \item Requesting of updated system configurations
-  \item Uploading of images and videos
-  \item Retrieving of device registration ids for push notification alerting
-\end{itemize}
 The system required the ability to directly communicate to the Android application, allowing operation in situations where there is no available connection to the internet.\\\\
 Originally Wifi Direct was chosen as the means for direct communication. The Wi-Fi Direct certification program is developed and administered by the Wi-Fi Alliance.
 Wifi Direct allows for communication without an access point, and can cater for multiple peer connectivity at normal Wifi speeds. 
@@ -498,6 +491,7 @@ When the request originated from the Android application, the Sensor Management 
 \end{lstlisting}
 
 \subsubsection{Video Streaming and Image Capture}
+\label{sssec:api_video_and_image}
 The API maintains a camera flag, stored persistently, which signifies the currently desired camera function to be executed, denoted by a numeric value. When the Android application makes a request for a remote stream, or image capture, the API updates this flag accordingly. \\\\
 As described in section~\ref{sssec:api_response_mgmt} above, when the Sensor Management System makes a request to the API, contained in the response is the ‘camera\_ operation’ field, populated by the value of the previously described camera flag. \\\\
 In this way, camera functionality can be invoked by the user, without the need for additional HTTP requests. There is a problem with this implementation however. The invoking of the camera function is constrained by the frequency of communication from the Sensor Management System to the RESTful API. In situations when communication is taking place in large time intervals, the same latency is experienced by the user. \\\\
@@ -559,6 +553,45 @@ Four fragments exist within the application, corresponding to the tabs in Figure
   \item Data graphing, located under the Stats tab
   \item System configuration, located under the Control tab
 \end{enumerate}	
+
+\subsubsection{Data Modelling and Management}
+In order to maximise performance and reduce code within the application, no persistent database storage is used. Instead, when possible computation is delegated to either the server side API, or the Sensor management system. This is to ensure that the application runs seamlessly, and is only required to perform small computational tasks. This allows for better management of limited resources to be designated to the application\rq s user interface components, ensuring their fluid operation. \\\\
+Data is modelled within the application using JSON, maintaining the same structure as used in the other subsystems of the project. A key component to achieving swift parsing and serialization of JSON objects is a library called Gson. Gson, also known as Google Gson, is an open source Java library to serialize and deserialize Java objects to, and from, JSON. \\\\
+To facilitate the easy inflation of Java objects, first a standard java object must be defined, with the appropriate attributes, as seen in Listing~\ref{lst:java_sensor_obj} below. The names of each attribute must match that of the JSON object being deserialized. 
+
+\begin{lstlisting}[caption={Sensor object to be serialized},label={lst:java_sensor_obj}]
+public class Sensor {
+    protected String  name;
+    protected boolean is_active;
+    protected int     priority;
+    protected int     alert_threshold;
+    protected int     probe_rate;
+}
+\end{lstlisting}	
+
+\noindent
+To serialize, you create a new GsonBuilder object, and pass the object to be serialized to the "toJson" method, as seen in Listing~\ref{lst:java_sensor_string}. This will return a JSON formatted string corresponding to the attributes present in the object, displayed in Listing~\ref{lst:java_sensor_as_string}.
+
+\begin{lstlisting}[caption={Serialize object to string},label={lst:java_sensor_string}]
+String sensorJsonString = GsonBuilder().create().toJson(sensor);
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Sensor string resulting from serialization},label={lst:java_sensor_as_string}]
+{  
+   name:"temperature",
+   alert_threshold:50,
+   is_active:true,
+   priority:1,
+   probe_rate:10
+}
+\end{lstlisting}
+
+\noindent
+To deserialise the string, a new Gson object is created, and the “fromJson” method is invoked, passing in the JSON string and the Java class implementation to be populated. This returns a pure Java Sensor object, shown in Listing~\ref{lst:java_sensor_deserialize}.
+
+\begin{lstlisting}[caption={Deserialize string to sensor object},label={lst:java_sensor_deserialize}]
+Sensor sensor = new Gson().fromJson(sensorJsonString, Sensor.class);
+\end{lstlisting}	
 
 \subsubsection{Data Presentation}
 Sensor value data is the first thing the user is presented with when opening the application. A GridView was used to achieve an extensible layout, with each sensor dedicated its own tile within the grid. Figure~\ref{fig:android_sensor_tile} shows a tile corresponding to the carbon monoxide sensor.  The sensor name is located at the bottom of the tile. The maximum and minimum values for the current day are placed at the right hand top corner. Directly in the center is the latest value, and just below is the measurement, in this case parts per million.
@@ -688,6 +721,7 @@ SocketManager.getInstance(getAppContext()).sndMsgToPi(Utils.toJson(newConfig);
 
 \newpage
 \subsubsection{Push Notifications}
+\label{sssec:android_push_notifications}
 A number of steps are required to implement push notification alerting. Figure~\ref{fig:android_pn_interaction} shows the interaction between the 4 entities involved. 
 
 \begin{figure}[H]
@@ -762,7 +796,77 @@ The Complete Summary chart graphs aggregated values for each day the system has 
 \label{fig:android_current_day_chart}
 \end{figure}
 \noindent
-The motion detector sensor data is displayed in the Current Day Summary and the Complete Summary charts as a percentage. This acts as an activity measurement, providing the user with the level of activity for a given time. This data could be used for home automation.
+The motion detector sensor data is displayed in the Current Day Summary and the Complete Summary charts as a percentage. This acts as an activity measurement, providing the user with the level of activity for a given time. This data could be used for home automation. An example of motion graphed as a precentage can be seen in Figure~\ref{fig:android_summary_motion} below.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=12cm]{"motion_graph".png}
+\caption{Motion graphed as a precentage}
+\label{fig:android_summary_motion}
+\end{figure}
+
+\subsubsection{Camera Control and Video Streaming}
+The application provides image capture, streaming, and a gallery of images and videos previously captured. As describe in Section~\ref{sssec:api_video_and_image}, RESTful API Video Streaming and Image Capture, image capture and streaming is facilitated by means of a HTTP request to the RESTful API where a flag is set, and delivered to the Sensor Management System, where the desired operation is executed.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm, height=16cm]{"image_fragment".png}
+\caption{Image fragment for controling camera operation}
+\label{fig:android_camera_fragment}
+\end{figure}
+
+\noindent
+When communicated via the RESTFUL API, all images and videos are stored server side and requested when the the user navigated to the Image fragment. All requested assets are cached, which is handled by the Volley Networking library. \\\\
+When communicated directly via the AP, the application connects to the SFTP server that's running as a daemon process on the Raspberry Pi. Image and video files can then be transferred programmatically directly to the device’s internal storage, or more specifically the application’s private storage directory. When the user presses the refresh button, which can be seen in the Figure~\ref{fig:android_camera_fragment} above, an SFTP connection is made, and all new image and video files are transferred to the device. These file are then simply read from internal storage each time the user navigates to the Image fragment within the application. \\\\
+Streaming and video playback are handled by the native Android VideoView API. A uniform resource identifier(URI) is passed to the VideoView, and in the case of a static video, depending on the communication medium, the URI is either a URL pointing to the video stored remotely on the RESTful API, or when directly communicating, a file location within internal device storage. The Android VideoView has the functionality to download and play a video file simultaneously. \\\\
+When a request is made for a remote video stream, the URI given to the VideoView is the URL constructed from the Sensor Management System\rq s public IP address, and a predefined port number. The application polls this URL until the stream starts. 
+
+\subsubsection{System Configuration}
+As described in the Section~\ref{sssec:sms_sys_config}, Sensor Management System Configuration, the JSON object notation is used to configure the system. The Control fragment within the application provides the user with an interface for altering configurations. It was implemented as a form, with each section titled by the underlying system component it configures. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm, height=16cm]{"config_1".png}
+\caption{System Details, Sensor Manager, and Alert Manager configuration form fields}
+\label{fig:android_config_1}
+\end{figure}
+
+\noindent
+The System Details section, in Figure~\ref{fig:android_config_1} above,  allows the user to name the Sensor Management System, set its location, and GPS latitude and longitude values. \\\\
+\noindent
+The Sensor Manager section, in Figure~\ref{fig:android_config_1} above, handles the time interval, in seconds, at which the sensor data is written out to persistent storage. This affects the granularity of the data being provided to the charts in the Stats fragment.  A priority can also be set on the thread which executes the sensor data storage. \\\\
+The Alert Manager section, in Figure~\ref{fig:android_config_1} above, provides the ability to turn on or off the camera, alert buzzer, push notifications, and lockdown mode. When the lockdown mode is active, if motion is detected, the camera will be activated and a push notification will be sent to the user. Switching from the default of image capture to video capture is also facilitated. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm, height=7cm]{"config_2".png}
+\caption{API Manger and Access Point Manager configuration form fields}
+\label{fig:android_config_2}
+\end{figure}
+
+\noindent
+The API Manager section, in Figure~\ref{fig:android_config_2} above, configures how often sensor values, and camera files are uploaded to the RESTful API. It also allows the user to set how often the system should check for new configurations.\\\\
+The Access Point Manager section, in Figure~\ref{fig:android_config_2} above, sets the rate at which sensor values are sent to the application when directly communicating. \\\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm, height=10cm]{"config_4".png}
+\caption{Sensor configuration fields}
+\label{fig:android_config_3}
+\end{figure}
+
+\noindent
+Each sensor connected to the Sensor Management System is configurable by the user, including its alerting threshold, probe rate and priority. Sensors can also be turned on or off. This can be seen in Figures~\ref{fig:android_config_3} and~\ref{fig:android_config_4}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm, height=10cm]{"config_3".png}
+\caption{Sensor configuration fields}
+\label{fig:android_config_4}
+\end{figure}
+
+\noindent
+The form\rq s submit button can be seen in Figure~\ref{fig:android_config_4}. This will execute the collection of form field data, and will format it as JSON. The subsequent action is dependant on the communication medium. If directly communicating, the configuration will be delivered straight to the Sensor Management System, and it will be reconfigured within 1 second. When communicating via the RESTful API, the new config file will be uploaded, and requested by the Sensor Management System at the time interval set by the API Manager in Figure~\ref{fig:android_config_2}.
 
 
 
@@ -773,7 +877,8 @@ The motion detector sensor data is displayed in the Current Day Summary and the 
 
 
 
-\label{sssec:android_push_notifications}
+
+
 
 
 

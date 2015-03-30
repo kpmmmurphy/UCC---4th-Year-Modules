@@ -4,11 +4,11 @@
 \contentsline {subsection}{\numberline {2.1}Literature Review}{4}
 \contentsline {subsubsection}{\numberline {2.1.1}Internet of Things}{4}
 \contentsline {subsubsection}{\numberline {2.1.2}Current Safety Applications}{4}
-\contentsline {subsubsection}{\numberline {2.1.3}Achieving Safety and Security within the Home}{4}
-\contentsline {subsubsection}{\numberline {2.1.4}Embedded Computing}{5}
-\contentsline {paragraph}{\numberline {2.1.4.1}Raspberry Pi}{5}
-\contentsline {paragraph}{\numberline {2.1.4.2}Intel Galileo}{5}
-\contentsline {subsubsection}{\numberline {2.1.5}Functional Specification}{5}
+\contentsline {subsection}{\numberline {2.2}Achieving Safety and Security within the Home}{4}
+\contentsline {subsection}{\numberline {2.3}Embedded Computing}{5}
+\contentsline {paragraph}{\numberline {2.3.0.1}Raspberry Pi}{5}
+\contentsline {paragraph}{\numberline {2.3.0.2}Intel Galileo}{5}
+\contentsline {subsection}{\numberline {2.4}Functional Specification}{5}
 \contentsline {section}{\numberline {3}Design}{6}
 \contentsline {subsection}{\numberline {3.1}Development Approach and Methodology}{6}
 \contentsline {subsection}{\numberline {3.2}Architecture}{6}
@@ -53,9 +53,12 @@
 \contentsline {subsection}{\numberline {4.5}Android Application}{25}
 \contentsline {subsubsection}{\numberline {4.5.1}Application Structure}{25}
 \contentsline {subsubsection}{\numberline {4.5.2}UI Development}{25}
-\contentsline {subsubsection}{\numberline {4.5.3}Data Presentation}{27}
-\contentsline {subsubsection}{\numberline {4.5.4}API Communication}{30}
-\contentsline {subsubsection}{\numberline {4.5.5}Direct Communication}{32}
-\contentsline {subsubsection}{\numberline {4.5.6}Push Notifications}{34}
-\contentsline {subsubsection}{\numberline {4.5.7}Context Sensitive Help}{36}
-\contentsline {subsubsection}{\numberline {4.5.8}Graphing}{36}
+\contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{27}
+\contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{28}
+\contentsline {subsubsection}{\numberline {4.5.5}API Communication}{31}
+\contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{33}
+\contentsline {subsubsection}{\numberline {4.5.7}Push Notifications}{35}
+\contentsline {subsubsection}{\numberline {4.5.8}Context Sensitive Help}{37}
+\contentsline {subsubsection}{\numberline {4.5.9}Graphing}{37}
+\contentsline {subsubsection}{\numberline {4.5.10}Camera Control and Video Streaming}{41}
+\contentsline {subsubsection}{\numberline {4.5.11}System Configuration}{43}

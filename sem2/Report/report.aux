@@ -5,11 +5,11 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Literature Review}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Internet of Things}{4}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Current Safety Applications}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Achieving Safety and Security within the Home}{4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}Embedded Computing}{5}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {2.1.4.1}Raspberry Pi}{5}}
-\@writefile{toc}{\contentsline {paragraph}{\numberline {2.1.4.2}Intel Galileo}{5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}Functional Specification}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Achieving Safety and Security within the Home}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Embedded Computing}{5}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {2.3.0.1}Raspberry Pi}{5}}
+\@writefile{toc}{\contentsline {paragraph}{\numberline {2.3.0.2}Intel Galileo}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Functional Specification}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Design}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Development Approach and Methodology}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Architecture}{6}}
@@ -42,6 +42,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Sensor Management}{14}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Multithreading}{14}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}System Configuration}{15}}
+\newlabel{sssec:sms_sys_config}{{4.2.4}{15}}
 \newlabel{lst:sms_json_config}{{2}{15}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {2}JSON Configuration Structure}{15}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}Alerting}{16}}
@@ -73,6 +74,7 @@
 \newlabel{lst:json_api_response_android}{{8}{23}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {8}JSON API Response to Android Application}{23}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.4}Video Streaming and Image Capture}{23}}
+\newlabel{sssec:api_video_and_image}{{4.4.4}{23}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5}Data Storage}{24}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Entity Relationship Diagram for RESTful API Database Schema}}{24}}
 \newlabel{fig:api_schema}{{3}{24}}
@@ -85,46 +87,69 @@
 \newlabel{fig:android_opening_screen}{{4}{26}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Navigation Bar within the Application}}{26}}
 \newlabel{fig:android_navigation}{{5}{26}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3}Data Presentation}{27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Sensor Tile}}{27}}
-\newlabel{fig:android_sensor_tile}{{6}{27}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces An Alerting Sensor Tile }}{28}}
-\newlabel{fig:android_sensor_tile_alerting}{{7}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Input System Label}}{28}}
-\newlabel{fig:android_sensor_input_system}{{8}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Input System Label for Peripheral Device}}{28}}
-\newlabel{fig:android_sensor_input_system_peripheral}{{9}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Last Updated Timestamp and System Toggle Button}}{29}}
-\newlabel{fig:android_sensor_timestamp}{{10}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Peripheral Sensing Node Sensor Values}}{29}}
-\newlabel{fig:android_peripheral_sensing_values}{{11}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Context sensitive feedback for carbon monoxide reading of 100ppm}}{30}}
-\newlabel{fig:android_sensor_context_help}{{12}{30}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.4}API Communication}{30}}
-\newlabel{lst:java_api_singlton}{{9}{31}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}Singleton API object method invocation}{31}}
-\newlabel{lst:java_api_call}{{10}{31}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}Java method API call for request latest sensor readings}{31}}
-\newlabel{lst:java_api_response_obj}{{11}{32}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {11}APIResponse class, used when parsing the RESTful API response}{32}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.5}Direct Communication}{32}}
-\newlabel{lst:java_multicast_lock}{{12}{32}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {12}Multicast lock acquisition}{32}}
-\newlabel{lst:java_socket_send}{{13}{33}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {13}Singleton SocketManager object send message method invocation}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.6}Push Notifications}{34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Push notification interaction doagram}}{34}}
-\newlabel{fig:android_pn_interaction}{{13}{34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Push notification being displayed}}{35}}
-\newlabel{fig:android_pn_displayed}{{14}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Conrext sensitive help after touching push notification}}{36}}
-\newlabel{fig:android_pn_help}{{15}{36}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.7}Context Sensitive Help}{36}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.8}Graphing}{36}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Current hour sensor values line chart}}{37}}
-\newlabel{fig:android_current_hour_chart}{{16}{37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Current day sensor values aggregated by hour line chart}}{38}}
-\newlabel{fig:android_current_day_chart}{{17}{38}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Summary of sensor values aggregated by day}}{39}}
-\newlabel{fig:android_current_day_chart}{{18}{39}}
-\newlabel{sssec:android_push_notifications}{{4.5.8}{39}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{27}}
+\newlabel{lst:java_sensor_obj}{{9}{27}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}Sensor object to be serialized}{27}}
+\newlabel{lst:java_sensor_string}{{10}{27}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}Serialize object to string}{27}}
+\newlabel{lst:java_sensor_as_string}{{11}{27}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {11}Sensor string resulting from serialization}{27}}
+\newlabel{lst:java_sensor_deserialize}{{12}{28}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {12}Deserialize string to sensor object}{28}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Sensor Tile}}{28}}
+\newlabel{fig:android_sensor_tile}{{6}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces An Alerting Sensor Tile }}{29}}
+\newlabel{fig:android_sensor_tile_alerting}{{7}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Input System Label}}{29}}
+\newlabel{fig:android_sensor_input_system}{{8}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Input System Label for Peripheral Device}}{29}}
+\newlabel{fig:android_sensor_input_system_peripheral}{{9}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Last Updated Timestamp and System Toggle Button}}{30}}
+\newlabel{fig:android_sensor_timestamp}{{10}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Peripheral Sensing Node Sensor Values}}{30}}
+\newlabel{fig:android_peripheral_sensing_values}{{11}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Context sensitive feedback for carbon monoxide reading of 100ppm}}{31}}
+\newlabel{fig:android_sensor_context_help}{{12}{31}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.5}API Communication}{31}}
+\newlabel{lst:java_api_singlton}{{13}{32}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {13}Singleton API object method invocation}{32}}
+\newlabel{lst:java_api_call}{{14}{32}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {14}Java method API call for request latest sensor readings}{32}}
+\newlabel{lst:java_api_response_obj}{{15}{33}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {15}APIResponse class, used when parsing the RESTful API response}{33}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{33}}
+\newlabel{lst:java_multicast_lock}{{16}{33}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {16}Multicast lock acquisition}{33}}
+\newlabel{lst:java_socket_send}{{17}{34}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {17}Singleton SocketManager object send message method invocation}{34}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.7}Push Notifications}{35}}
+\newlabel{sssec:android_push_notifications}{{4.5.7}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Push notification interaction doagram}}{35}}
+\newlabel{fig:android_pn_interaction}{{13}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Push notification being displayed}}{36}}
+\newlabel{fig:android_pn_displayed}{{14}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Conrext sensitive help after touching push notification}}{37}}
+\newlabel{fig:android_pn_help}{{15}{37}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.8}Context Sensitive Help}{37}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.9}Graphing}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Current hour sensor values line chart}}{38}}
+\newlabel{fig:android_current_hour_chart}{{16}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Current day sensor values aggregated by hour line chart}}{39}}
+\newlabel{fig:android_current_day_chart}{{17}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Summary of sensor values aggregated by day}}{40}}
+\newlabel{fig:android_current_day_chart}{{18}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Motion graphed as a precentage}}{41}}
+\newlabel{fig:android_summary_motion}{{19}{41}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.10}Camera Control and Video Streaming}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Image fragment for controling camera operation}}{42}}
+\newlabel{fig:android_camera_fragment}{{20}{42}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.11}System Configuration}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces System Details, Sensor Manager, and Alert Manager configuration form fields}}{44}}
+\newlabel{fig:android_config_1}{{21}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces API Manger and Access Point Manager configuration form fields}}{45}}
+\newlabel{fig:android_config_2}{{22}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Sensor configuration fields}}{46}}
+\newlabel{fig:android_config_3}{{23}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Sensor configuration fields}}{47}}
+\newlabel{fig:android_config_4}{{24}{47}}
