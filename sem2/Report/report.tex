@@ -149,6 +149,61 @@ From the beginning of the project it was evident that a process heavy methodolog
 \subsubsection{Hardware}
 The final hardware architecture of the system comprised of a Raspberry Pi, with four sensors attached; a thermistor for temperature readings, an MQ7 carbon monoxide sensor, an MQ2 flammable gas sensor, and a passive infrared motion detection sensor. Also connect to the Raspberry Pi was a high definition camera module, a wifi dongle and a buzzer for alerting the user.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=12cm]{"rasp_pi".JPG}
+\caption{Raspberry Pi board}
+\label{fig:hard_rasp_pi}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm]{"temp".JPG}
+\caption{Thermistor sensor module}
+\label{fig:hard_temp}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm, height=9cm]{"mq7".JPG}
+\caption{MQ7 carbon monoxide sensor module}
+\label{fig:hard_mq7}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm, height=9cm]{"mq2".JPG}
+\caption{MQ2 flammable gas sensor module}
+\label{fig:hard_mq2}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=6cm, height=6cm]{"infrared_motion".JPG}
+\caption{Passive infrared motion detection sensor}
+\label{fig:hard_motion}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm, height=8cm]{"camera".JPG}
+\caption{HD camera}
+\label{fig:hard_camera}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm, height=8cm]{"dongle".JPG}
+\caption{Broadcom Wifi dongle}
+\label{fig:hard_camera}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm, height=8cm]{"buzzer".JPG}
+\caption{Buzzer}
+\label{fig:hard_camera}
+\end{figure}
 
 \subsubsection{Software}
 The final software architecture was composed of three main components, with the addition of a peripheral sensing node.
@@ -164,7 +219,8 @@ The final software architecture was composed of three main components, with the 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{"Open Day General System Diagram".jpg}
-\caption{High Level System Architecture Diagram\label{overflow}}
+\caption{High Level System Architecture Diagram}
+\label{overflow}
 \end{figure}
 
 \paragraph{Sensor Management System}\
@@ -263,6 +319,14 @@ Python was also used when developing this additional entity of the system. This 
 \subsubsection{Sensors and Peripheries}
 To control sensors connected to the Raspberry Pi, the open source WiringPi C/C++ general purpose input/output(GPIO) library was employed. It provides basic interaction mechanisms for both analog and digital sensors. The community support for this library is substantial, and has become the de facto standard library for embedded Raspberry Pi projects. \\\\
 A limitation of the Raspberry Pi is that is does not provide any analog GPIO pins. To overcome this, an additional analog to digital converter(ADC) was added to the system’s circuitry. The MCP3008 ADC, an 8 channel 10-bit analog input,  was chosen due to its support in the WiringPi GPIO code library. This facilitated easy access to any analog sensor that needed to be included. \\\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=6cm, height=10cm]{"mcp3008".JPG}
+\caption{MCP3008 analog to digital converter}
+\label{fig:hard_adc}
+\end{figure}
+
 Each individual sensor required a slightly different code implementation. \\\\
 The MQ7 carbon monoxide(CO) analog sensor needs a heating cycle of 5v for 60 seconds, and 1.3v for 90 seconds continuously for 48 hours, until a true value of 0 is output. This is due to the sensor being sensitive to other chemical elements, in particular hydrogen. The heating cycle is designed to burn off excess molecules touching the senor’s filament, resulting in more accurate readings. \\\ While in the heating cycle, the sensor is capable of detecting variances in CO levels. In order to provide the user with accurate data, an algorithm was defined to monitor differences in CO levels. By recording previous values, tracking current value increases or decreases, and presenting the user with the difference in values, allowed accurate CO readings from the moment the system is started. \\\\
 The MQ7 flammable gas analog sensor can detect liquefied petroleum gas, i-butane, methane, alcohol, Hydrogen, and smoke. It also required a heating cycle identical to the MQ7. \\\
@@ -426,9 +490,47 @@ A scaled down version of the Sensor Management System was designed and implement
 Two threads exist in the Peripheral Sensing System, both are used for communication with the Sensor Management System. One thread is purposed for gathering and sending sensor data, the other thread is for receiving data. 
 
 \subsubsection{Hardware}
-For this project, the Intel Galileo generation 1 was used as the hardware for the peripheral node. The Galileo was chosen to highlight the Sensor Management Systems ability to manage a heterogeneous network. The Grove Starter Kit Plus - Intel IoT Edition provides the base shield and sensors, which have a modular plug-and-play design.  \\\\
+For this project, the Intel Galileo generation 1 was used as the hardware for the peripheral node. The Galileo was chosen to highlight the Sensor Management Systems ability to manage a heterogeneous network. The Grove Starter Kit Plus - Intel IoT Edition provides the base shield and sensors, which have a modular plug-and-play design. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=10cm]{"galileo_board".JPG}
+\caption{Intel Galileo gen 1}
+\label{fig:hard_galileo}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=6cm, height=8cm]{"grove_kit".JPG}
+\caption{Grove IoT sensor kit}
+\label{fig:hard_grove_kit}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=8cm, height=6cm]{"grove_sheild".JPG}
+\caption{Grove base shield}
+\label{fig:hard_grove_sheild}
+\end{figure}
+
+\noindent
 Attached to the Galileo, via the Grove base shield, are an LED, a temperature sensor, a light sensor, and a touch sensor.\\\\
-The touch sensor was included to demonstrate remote alerting, as when it receives input, it sends a message to the core Sensor Management System, which sounds a buzzer. Similarly, the LED was included to demonstrate message passing in the opposite direction, from the core system to the Galileo. \\\\
+The touch sensor was included to demonstrate remote alerting, as when it receives input, it sends a message to the core Sensor Management System, which sounds a buzzer. Similarly, the LED was included to demonstrate message passing in the opposite direction, from the core system to the Galileo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=6cm, height=6cm]{"grove_light".JPG}
+\caption{Grove light sensor module}
+\label{fig:hard_grove_light}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=6cm, height=6cm]{"grove_temp".JPG}
+\caption{Grove temperature sensor module}
+\label{fig:hard_grove_light}
+\end{figure}
+
 In order to avail of high level software, such as Python and Git, it was necessary to boot the Galileo from an SD card with the Yocto system image. Yocto is a lightweight version of Linux, which is specifically purposed for embedded systems. 
 
 \subsubsection{Communication with Sensor Management System}
@@ -938,14 +1040,13 @@ For the Android application, I performed all development and testing on an Asus 
 In my opinion the most significant failure in the project was not being able to successfully implement the Wifi Direct infrastructure originally proposed. This would have allowed peer-2-peer communication directly with the system, while simultaneously maintaining a normal connection with local networking infrastructure. The overall functionality of the system would have been largely the same, but in terms of the Android application operation, Wifi Direct would have provided a more elegant solution with less scope for implementation errors. In general, low level networking on mobile devices is difficult to implement optimally. Instead of being able to use Android\rq s comprehensive Wifi Direct APIs, I had to implement all wireless networking functionality manually, which increased the development phase of the project considerably. The main repercussion of meant that the Android device has to be connect to the Raspberry Pi\rq s access point in order to communicate directly. This forces the user off their own wifi connection and is a poor solution in terms of user experience. \\\\
 Something I took away from this failure is that new technologies should only be included in a system\rq s architecture after a thorough feasibility analysis has taken place. Only after a concrete prototype has been implemented, should the technology be adopted. I made the mistake of basing a central component on an emerging technology which has not found mainstream usage yet. While Wifi Direct promises the functionality of Bluetooth, but at much greater speeds, without developer community support its inclusion in projects will remain a risk. 
 
-
-
-
-
-
-
-\begin{thebibliography}{fi99}
-
-\end{thebibliography}
+\subsection{Potential Improvements and Going Further}
+A key aspect not addressed is the intelligent use of the data to automate other systems present in the home. For example, as the infrared motion detection sensor can anonymously monitor activity, the data could be used along with the temperature to schedule central heating for times when motion is highest, and temperature is low. Similarly, the system could switch off alerting services if someone is cooking, and then switch alerting back on once they have vacated the room. \\\\
+The configurable nature of the system allows a lot of flexibility, but for the end user, this would result in more confusion than benefit. A better solution would be to introduce an intelligent agent within the system to automate its configuration to best suit its environment. This could be achieved by using aggregated sensor values to set alerting thresholds.\\\\
+Introducing a duel alert monitoring system to improve safety protection. This would add to the original mechanism for sensor value alerting by introducing monitoring server side. This could proactively alert the user if early warning signs of danger occur. A prediction model could be learned from previously experienced events, and used to deduce the likelihood of potential dangers from current sensor values. \\\\	
+Changing the direct communication interface from Wifi to Bluetooth would be an essential alteration to the current implementation. This would improve the system\rq s overall usability considerably, no longer requiring the user to connect directly to the system\rq s access point. \\\\
+Security doesn’t feature in the current implementation. I chose to focus on developing the core functionality of the system, and did not get to spend development time on improving security. Going forward, security would have to take a central role. \\\\
+The polling mechanism the Sensor Management System currently utilises for API communication is not very optimal. A better solution would be to implement a distributed publish-subscribe architecture server side, that could push out events as the occur. To accomplish this, the Raspberry Pi would be required to maintain a web server, something the current implementation could not withstand. However, with the latest Raspberry Pi model 2, this would be feasible. \\\\
+Migrating to a NoSQL database system would improve system flexibility, and allow the dynamic inclusion of sensors. Moving forward, this is an essential change, providing the infrastructure to allow users to plug in new sensors at will.
 
 \end{document}
