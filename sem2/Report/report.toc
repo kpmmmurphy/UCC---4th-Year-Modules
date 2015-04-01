@@ -71,3 +71,5 @@
 \contentsline {subsection}{\numberline {5.5}Failures}{58}
 \contentsline {section}{\numberline {6}Conclusions}{58}
 \contentsline {subsection}{\numberline {6.1}Potential Improvements and Going Further}{58}
+\contentsline {section}{\numberline {7}Appendix A}{60}
+\contentsline {section}{\numberline {8}Appendix B}{62}

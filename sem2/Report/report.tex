@@ -20,6 +20,8 @@
 
 \usepackage{listings}
 \usepackage{color}
+\usepackage{array}
+\usepackage{varwidth}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -44,6 +46,9 @@
 
 \usepackage[margin=1.3in,bottom=1in,top=1in]{geometry}
 
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 \begin{document}
 
@@ -882,7 +887,7 @@ Android has a mechanism, called PendingIntent, for opening an application by tou
 \end{figure}
 
 \subsubsection{Context Sensitive Help}
-Little indication of safety conditions is provided by the sensor readings alone. In order to provide them with genuine feedback on the current environment and their own safety, a small dataset of sensor specific safety metrics was gathered from the internet. The entire dataset can be seen in [Appendix A].\\\\
+Little indication of safety conditions is provided by the sensor readings alone. In order to provide them with genuine feedback on the current environment and their own safety, a small dataset of sensor specific safety metrics was gathered from the internet. The entire dataset can be seen in Appendix B, Section~\ref{sec:appendix_b}.\\\\
 
 \subsubsection{Graphing}
 Graphing is provided by an open source library call MPAndroidChart \footnote{https://github.com/PhilJay/MPAndroidChart}. This library provides a comprehensive range of charts, and a large amount of functionality, including touch scaling, real time graphing and animations. All graphing is designated to the Stats fragment within the application.\\\\
@@ -1052,5 +1057,177 @@ Changing the direct communication interface from Wifi to Bluetooth would be an e
 Security doesn’t feature in the current implementation. I chose to focus on developing the core functionality of the system, and did not get to spend development time on improving security. Going forward, security would have to take a central role. \\\\
 The polling mechanism the Sensor Management System currently utilises for API communication is not very optimal. A better solution would be to implement a distributed publish-subscribe architecture server side, that could push out events as the occur. To accomplish this, the Raspberry Pi would be required to maintain a web server, something the current implementation could not withstand. However, with the latest Raspberry Pi model 2, this would be feasible. \\\\
 Migrating to a NoSQL database system would improve system flexibility, and allow the dynamic inclusion of sensors. Moving forward, this is an essential change, providing the infrastructure to allow users to plug in new sensors at will.
+
+\newpage
+\section{Appendix A}
+\label{sec:appendix_a}
+\begin{figure}[h!btp]
+\centering
+\includegraphics[width=\textwidth , height=.74\paperheight]{"schematic_rasp_pi".png}
+\caption{Wiring diagram for Raspberry Pi running the Sensor Management System}
+\label{fig:schematic_rasp_pi}
+\end{figure}
+
+\begin{figure}[h!btp]
+\centering
+\includegraphics[width=\textwidth , height=.74\paperheight]{"schematic_galileo".png}
+\caption{Wiring diagram for Intel Galileo running the Peripheral Sensor System}
+\label{fig:schematic_galileo}
+\end{figure}
+
+\newpage
+\section{Appendix B}
+\label{sec:appendix_b}
+Carbon monoxide context sensitive help table, taken from http://www.detectcarbonmonoxide.com/co-health-risks/.
+
+
+\begin{table}[H]
+\def\arraystretch{2}% 
+\begin{center}
+ \begin{tabular}{|| L{8cm} | c ||} 
+ \hline
+ \textbf{Feedback Text} & \textbf{Level in Pars Per Million(PPM)}  \\ [0.5ex] 
+ \hline\hline
+ Safe Level & 0 \\ 
+ \hline
+ Maximum legal level for the work place & 25 \\
+ \hline
+ Headache and Dizziness within 6 to 8 hours of constant exposure & 35 \\
+ \hline
+ Headache after 1 to 2 hours of constant exposure & 100 \\ [1ex] 
+ \hline
+ Dizziness, Nausea, Fatigue, Headache after 2 to 3 hours of constant exposure & 200 \\ [1ex] 
+ \hline
+ Nausea and Headache after 1 to 2 hours, life threatening in 3 hours. & 400 \\ [1ex] 
+ \hline
+ Dizziness, Nausea and Headache after 45 minutes, unconsciousness after 2 hours & 800 \\ [1ex] 
+ \hline
+ Dizziness, Nausea and Headache after 20 minutes, unconsciousness and possible death after 2 hours & 1600 \\ [1ex] 
+ \hline
+ Dizziness, Nausea and Headache after 5 to 10 minutes, unconsciousness and possible death after 15 minutes & 3200 \\ [1ex] 
+ \hline
+ Dizziness and Headache after 1 to 2 minutes, unconsciousness and possible death between 2 and 15 minutes & 6400 \\ [1ex] 
+ \hline
+ Danger of death in 1 to 3 minutes & 12800 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\caption{Carbon monoxide context sensitive help table}
+\label{table:testing_op_timings}
+\end{table}
+
+\newpage
+\noindent
+Flammable gas context sensitive help table, http://inspectapedia.com/sickhouse/Gas\_ Exposure\_ Limits.php
+
+\begin{table}[H]
+\def\arraystretch{2}% 
+\begin{center}
+ \begin{tabular}{|| L{8cm} | c ||} 
+ \hline
+ \textbf{Feedback Text} & \textbf{Level in Pars Per Million(PPM)}  \\ [0.5ex] 
+ \hline\hline
+ Safe Level & 0 \\ 
+ \hline
+ Check gas appliances, potential leakage. Do not light any open flames. & 25 \\
+ \hline
+ Check gas appliances, potential leakage. Open all windows. Do not light any open flames & 50 \\
+ \hline
+ Open all windows and doors, leave building and contact Gas Networks Ireland on 1850 20 50 50 & 100 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\caption{Flammable gas context sensitive help table}
+\label{table:testing_op_timings}
+\end{table}
+
+\noindent
+Temperature context sensitive help table, taken from http://en.wikipedia.org/wiki/Orders\_ of\_ magnitude\_ (temperature)
+
+\begin{table}[H]
+\def\arraystretch{2}% 
+\begin{center}
+ \begin{tabular}{|| L{8cm} | c ||} 
+ \hline
+ \textbf{Feedback Text} & \textbf{Level in Celsius}  \\ [0.5ex] 
+ \hline\hline
+ Sub-zero, greatly increased risk of Pneumonia & Below 0 \\ 
+ \hline
+ Close to Freezing, increased risk of Pneumonia & 0 \\
+ \hline
+ Below recommended room temperature, turn on heating to decrease risk of Pneumonia & 10 \\
+ \hline
+ Regular room temperature & 20 \\ [1ex] 
+ \hline
+ Above recommend average room temperature & 30 \\ [1ex] 
+ \hline
+ Possible fire, perform safety checks & 40 \\ [1ex] 
+ \hline
+ Possible fire, time to exit the building & 50 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\caption{Temperature context sensitive help table}
+\label{table:testing_op_timings}
+\end{table}
+
+\newpage
+\noindent
+Motion context sensitive help table.
+
+\begin{table}[H]
+\def\arraystretch{2}% 
+\begin{center}
+ \begin{tabular}{|| L{8cm} | c ||} 
+ \hline
+ \textbf{Feedback Text} & \textbf{Boolean}  \\ [0.5ex] 
+ \hline\hline
+ No motion currently being detected & 0 \\ 
+ \hline
+ Motion currently being detected! & 1 \\
+ \hline
+\end{tabular}
+\end{center}
+\caption{Motion context sensitive help table}
+\label{table:testing_op_timings}
+\end{table}
+
+\noindent
+Light Ccntext sensitive help table, taken from http://www.engineeringtoolbox.com/light\- level\- rooms\- d\_ 708.html
+
+\begin{table}[H]
+\def\arraystretch{2}% 
+\begin{center}
+ \begin{tabular}{|| L{8cm} | c ||} 
+ \hline
+ \textbf{Feedback Text} & \textbf{Level in LUX}  \\ [0.5ex] 
+ \hline\hline
+ Typical level for a moonless night & Below 0 \\ 
+ \hline
+ Typical level for a full moon on a clear night & 1 \\
+ \hline
+ Typical level around twilight period & 5 \\
+ \hline
+ Typical level family living room lights & 50 \\ [1ex] 
+ \hline
+ Typical level office building hallways/bath rooms & 80 \\ [1ex] 
+ \hline
+ Typical level for a dark overcast day & 100 \\ [1ex] 
+ \hline
+ Typical level for office lighting & 300 \\ [1ex] 
+ \hline
+ Typical level for sunset or sunrise on a clear day & 400 \\ [1ex] 
+ \hline
+ Typical level for overcast day, or TV studio lighting & 1000 \\ [1ex] 
+ \hline
+ Typical level for full daylight & 10000 \\ [1ex] 
+ \hline
+ Typical level for direct sunlight & 30000 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+\caption{Light context sensitive help table}
+\label{table:testing_op_timings}
+\end{table}
 
 \end{document}
