@@ -1,7 +1,9 @@
-\documentclass{article}
+
 \iffalse
-\documentclass[a4paper,12pt,titlepage]{scrartcl}
+\documentclass{article}
 \fi
+
+\documentclass[a4paper,10pt]{article}
 
 \newenvironment{proof}{\par \noindent {\bf Proof:}}{\begin{flushright}$\Box$\end{flushright}\par \noindent}
 \newtheorem{theorem}{\bf Theorem}
@@ -17,7 +19,7 @@
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{float}
-
+\usepackage{titlepic}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{array}
@@ -50,18 +52,72 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
+\usepackage{fix-cm}
+\newcommand{\bigsize}{\fontsize{24pt}{20pt}\selectfont}
+\newcommand{\meiumsize}{\fontsize{16pt}{20pt}\selectfont}
+
 \begin{document}
 
-\iffalse
-\titlehead{\centering\includegraphics[width=6cm]{"header".jpg}}
-\fi
+\begin{titlepage}
 
-\title{Automated Safety and Security System for the Home}
+\centering
+\includegraphics[width=\textwidth]{"header".jpg}
 
-\author{Kevin Patrick Murphy}
+\vspace{2cm}
+{\bigsize \textbf{Automated Safety and Security System for the Home}}
+\vspace{2cm}
 
-\maketitle
+\begin{table}[H]
+\def\arraystretch{2}% 
+\begin{center}
+ \begin{tabular}{ R{5cm} c } 
 
+ {\meiumsize \textbf{Student Name:}} & {\meiumsize Kevin Patrick Murphy}
+ \\\
+ {\meiumsize \textbf{Student ID:}} & {\meiumsize 111314826} 
+ \\\\\\\
+ {\meiumsize \textbf{Supervisor:}} & {\meiumsize Professor Cormac J. Sreenan} 
+ \\\
+ {\meiumsize \textbf{Second Reader:}} & {\meiumsize Professor John Morrison}
+ 
+\end{tabular}
+\end{center}
+\end{table}
+
+\vspace{2cm}
+
+\begin{center}
+{\meiumsize B. Sc. Final Year Project Report}\\
+\vspace{1cm}
+{\meiumsize 2015}\\
+\end{center}
+
+\end{titlepage}
+
+\section*{Declaration of Originality}
+In signing this declaration, you are confirming, in writing, that the submitted work is entirely your own original work, except where clearly attributed otherwise, and that it has not been submitted partly or wholly for any other educational award.\\\\
+I hereby declare that :
+\begin{itemize}
+  \item This is all my own work, unless clearly indicated otherwise, with full and proper accreditation;
+  \item With respect to my own work: none of it has been submitted at any educational institution contributing in any way towards an educational award
+  \item with respect to another\rq s work: all text, diagrams, code, or ideas, whether verbatim, paraphrased or otherwise modified or adapted, have been duly attributed to the source in a scholarly manner, whether from books, papers, lecture notes or any other student\rq s work, whether published or unpublished, electronically or in print.  \ldots
+\end{itemize}
+
+\begin{table}[H]
+\def\arraystretch{2}% 
+ \begin{tabular}{ R{5cm} c } 
+
+ {\meiumsize \textbf{Name:}} & {\meiumsize Kevin Patrick Murphy}
+ \\\
+ {\meiumsize \textbf{Signed:}} & {\meiumsize } 
+ \\\
+ {\meiumsize \textbf{Date:}} & {\meiumsize }
+ 
+\end{tabular}
+\end{table}
+
+
+\newpage
 \begin{abstract}
 
 {\ The investigation, design and implementation of a distributed system for monitoring and controlling safety-related sensors in the home. By leveraging the areas of embedded computing, mobile applications development and server side development, the creation of a full software ecosystem was undertaken. Close attention was devoted to the software and hardware architecture required to provide optimal supporting infrastructure for the system. Configuration, communication, and alerting are the core problems addressed.
