@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.19)  1 APR 2015 19:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.19)  1 APR 2015 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -466,28 +466,7 @@ LaTeX Warning: Label `fig:hard_camera' multiply defined.
 LaTeX Warning: Label `fig:hard_camera' multiply defined.
 
 
-LaTeX Warning: Label `overflow' multiply defined.
-
-
 LaTeX Warning: Label `fig:hard_grove_light' multiply defined.
-
-
-LaTeX Warning: Label `fig:android_current_day_chart' multiply defined.
-
-
-LaTeX Warning: Label `table:testing_op_timings' multiply defined.
-
-
-LaTeX Warning: Label `table:testing_op_timings' multiply defined.
-
-
-LaTeX Warning: Label `table:testing_op_timings' multiply defined.
-
-
-LaTeX Warning: Label `table:testing_op_timings' multiply defined.
-
-
-LaTeX Warning: Label `table:testing_op_timings' multiply defined.
 
 )
 \openout1 = `report.aux'.
@@ -628,138 +607,128 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
- [1] [2] (./report.toc
-[3])
+ [1] [2] [3]
+(./report.toc)
 \tf@toc=\write4
 \openout4 = `report.toc'.
 
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 138--141
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--141
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--148
+Underfull \hbox (badness 10000) in paragraph at lines 145--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--148
+Underfull \hbox (badness 10000) in paragraph at lines 145--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--148
+Underfull \hbox (badness 10000) in paragraph at lines 145--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--148
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--153
+Underfull \hbox (badness 10000) in paragraph at lines 145--150
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 155--158
+Underfull \hbox (badness 10000) in paragraph at lines 154--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--158
+Underfull \hbox (badness 10000) in paragraph at lines 158--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--184
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 181--184
+Underfull \hbox (badness 10000) in paragraph at lines 158--161
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+Underfull \hbox (badness 10000) in paragraph at lines 185--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 190--192
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
@@ -767,60 +736,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--211
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
 
  []
 
 <"rasp_pi".JPG, id=42, 3068.46375pt x 2139.49312pt>
 File: "rasp_pi".JPG Graphic file (type jpg)
  <use "rasp_pi".JPG>
-Package pdftex.def Info: "rasp_pi".JPG used on input line 225.
+Package pdftex.def Info: "rasp_pi".JPG used on input line 230.
 (pdftex.def)             Requested size: 341.43306pt x 238.05458pt.
 
 <"temp".JPG, id=43, 1285.05093pt x 563.10374pt>
 File: "temp".JPG Graphic file (type jpg)
  <use "temp".JPG>
-Package pdftex.def Info: "temp".JPG used on input line 232.
+Package pdftex.def Info: "temp".JPG used on input line 237.
 (pdftex.def)             Requested size: 227.62204pt x 99.73895pt.
  [9 <./rasp_pi.JPG>] <"mq7".JPG, id=47, 1273.00594pt x 1658.44594pt>
 File: "mq7".JPG Graphic file (type jpg)
  <use "mq7".JPG>
-Package pdftex.def Info: "mq7".JPG used on input line 239.
+Package pdftex.def Info: "mq7".JPG used on input line 244.
 (pdftex.def)             Requested size: 227.61607pt x 256.06953pt.
 
 <"mq2".JPG, id=48, 1503.36656pt x 1835.35687pt>
 File: "mq2".JPG Graphic file (type jpg)
  <use "mq2".JPG>
-Package pdftex.def Info: "mq2".JPG used on input line 246.
+Package pdftex.def Info: "mq2".JPG used on input line 251.
 (pdftex.def)             Requested size: 227.60568pt x 256.05205pt.
  [10 <./temp.JPG> <./mq7.JPG>] <"infrared_motion".JPG, id=52, 1319.68031pt x 10
 50.17343pt>
 File: "infrared_motion".JPG Graphic file (type jpg)
 
 <use "infrared_motion".JPG>
-Package pdftex.def Info: "infrared_motion".JPG used on input line 253.
+Package pdftex.def Info: "infrared_motion".JPG used on input line 258.
 (pdftex.def)             Requested size: 170.69858pt x 170.70724pt.
  <"camera".JPG, id=53, 1514.65875pt x 1595.20969pt>
 File: "camera".JPG Graphic file (type jpg)
 
 <use "camera".JPG>
-Package pdftex.def Info: "camera".JPG used on input line 260.
+Package pdftex.def Info: "camera".JPG used on input line 265.
 (pdftex.def)             Requested size: 227.60503pt x 227.61183pt.
  [11 <./mq2.JPG> <./infrared_motion.JPG>]
 <"dongle".JPG, id=57, 2201.97656pt x 2064.96469pt>
 File: "dongle".JPG Graphic file (type jpg)
  <use "dongle".JPG>
-Package pdftex.def Info: "dongle".JPG used on input line 267.
+Package pdftex.def Info: "dongle".JPG used on input line 272.
 (pdftex.def)             Requested size: 227.60242pt x 227.61945pt.
 
 <"buzzer".JPG, id=58, 912.40875pt x 946.28531pt>
 File: "buzzer".JPG Graphic file (type jpg)
  <use "buzzer".JPG>
-Package pdftex.def Info: "buzzer".JPG used on input line 274.
+Package pdftex.def Info: "buzzer".JPG used on input line 279.
 (pdftex.def)             Requested size: 227.61435pt x 227.61848pt.
  [12 <./camera.JPG> <./dongle.JPG>]
 <"Open Day General System Diagram".jpg, id=63, 963.6pt x 722.7pt>
@@ -828,165 +799,151 @@ File: "Open Day General System Diagram".jpg Graphic file (type jpg)
 
 <use "Open Day General System Diagram".jpg>
 Package pdftex.def Info: "Open Day General System Diagram".jpg used on input li
-ne 291.
-(pdftex.def)             Requested size: 409.60544pt x 307.20409pt.
- [13 <./buzzer.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 297--301
+ne 296.
+(pdftex.def)             Requested size: 455.24408pt x 341.43344pt.
+
+Overfull \hbox (45.63864pt too wide) in paragraph at lines 296--297
+ [][] 
+ []
+
+[13 <./buzzer.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 302--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--301
-
- []
-
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--320
+Underfull \hbox (badness 10000) in paragraph at lines 302--306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--320
+Underfull \hbox (badness 10000) in paragraph at lines 319--325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--320
+Underfull \hbox (badness 10000) in paragraph at lines 319--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 319--325
 
  []
 
 [14 <./Open Day General System Diagram.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
+Underfull \hbox (badness 10000) in paragraph at lines 332--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
+Underfull \hbox (badness 10000) in paragraph at lines 332--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
+Underfull \hbox (badness 10000) in paragraph at lines 332--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
+Underfull \hbox (badness 10000) in paragraph at lines 332--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--328
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--332
+Underfull \hbox (badness 10000) in paragraph at lines 332--338
 
  []
 
 [15]
+Underfull \hbox (badness 10000) in paragraph at lines 339--342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 339--342
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--346
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--346
+
+ []
+
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--336
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--336
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--336
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--340
+Underfull \hbox (badness 10000) in paragraph at lines 347--349
 
  []
 
-Missing character: There is no ‚ in font cmtt9!
-Missing character: There is no Ä in font cmtt9!
-Missing character: There is no ú in font cmtt9!
-Missing character: There is no ‚ in font cmtt9!
-Missing character: There is no Ä in font cmtt9!
-Missing character: There is no ù in font cmtt9!
-Missing character: There is no ‚ in font cmtt9!
-Missing character: There is no Ä in font cmtt9!
-Missing character: There is no ú in font cmtt9!
-Missing character: There is no ‚ in font cmtt9!
-Missing character: There is no Ä in font cmtt9!
-Missing character: There is no ù in font cmtt9!
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ú in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ù in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ú in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ù in font cmtt9!
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--355
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--363
-
- []
-
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
+Underfull \hbox (badness 10000) in paragraph at lines 366--368
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
 
  []
 
@@ -995,65 +952,77 @@ File: "Sensor Management System Diagram".jpg Graphic file (type jpg)
 
 <use "Sensor Management System Diagram".jpg>
 Package pdftex.def Info: "Sensor Management System Diagram".jpg used on input l
-ine 378.
+ine 400.
 (pdftex.def)             Requested size: 409.60544pt x 307.20409pt.
+
+
+LaTeX Warning: Reference `sec:appendix_a' on page 19 undefined on input line 40
+6.
+
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
 <"mcp3008".JPG, id=88, 814.54312pt x 1118.67938pt>
 File: "mcp3008".JPG Graphic file (type jpg)
  <use "mcp3008".JPG>
-Package pdftex.def Info: "mcp3008".JPG used on input line 389.
+Package pdftex.def Info: "mcp3008".JPG used on input line 411.
 (pdftex.def)             Requested size: 170.71109pt x 284.51694pt.
  [19 <./Sensor Management System Diagram.jpg>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--401
+Underfull \hbox (badness 10000) in paragraph at lines 416--423
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--401
+Underfull \hbox (badness 10000) in paragraph at lines 416--423
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--401
+Underfull \hbox (badness 10000) in paragraph at lines 416--423
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--401
+Underfull \hbox (badness 10000) in paragraph at lines 416--423
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--401
+Underfull \hbox (badness 10000) in paragraph at lines 416--423
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--405
+Underfull \hbox (badness 10000) in paragraph at lines 416--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--427
 
  []
 
@@ -1062,12 +1031,12 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--414
+Underfull \hbox (badness 10000) in paragraph at lines 433--436
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 411--414
+Underfull \hbox (badness 10000) in paragraph at lines 433--436
 
  []
 
@@ -1076,126 +1045,124 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--479
+Underfull \hbox (badness 10000) in paragraph at lines 497--501
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--479
+Underfull \hbox (badness 10000) in paragraph at lines 497--501
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--479
+Underfull \hbox (badness 10000) in paragraph at lines 497--501
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 484--486
+Underfull \hbox (badness 10000) in paragraph at lines 506--508
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--490
+Underfull \hbox (badness 10000) in paragraph at lines 510--512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 494--497
+Underfull \hbox (badness 10000) in paragraph at lines 516--519
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 494--497
+Underfull \hbox (badness 10000) in paragraph at lines 516--519
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 508--511
+Underfull \hbox (badness 10000) in paragraph at lines 530--533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--511
-
- []
-
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 516--518
-
- []
-
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
-
-Underfull \hbox (badness 10000) in paragraph at lines 521--530
+Underfull \hbox (badness 10000) in paragraph at lines 530--533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--530
+Underfull \hbox (badness 10000) in paragraph at lines 538--540
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--530
+Underfull \hbox (badness 10000) in paragraph at lines 543--551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--530
+Underfull \hbox (badness 10000) in paragraph at lines 543--551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--530
+Underfull \hbox (badness 10000) in paragraph at lines 543--551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--530
+Underfull \hbox (badness 10000) in paragraph at lines 543--551
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--551
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--551
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 543--549
+Underfull \hbox (badness 10000) in paragraph at lines 564--570
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--549
+Underfull \hbox (badness 10000) in paragraph at lines 564--570
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--549
+Underfull \hbox (badness 10000) in paragraph at lines 564--570
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--549
+Underfull \hbox (badness 10000) in paragraph at lines 564--570
 
  []
 
 [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 553--555
+Underfull \hbox (badness 10000) in paragraph at lines 574--576
 
  []
+
+
+LaTeX Warning: Reference `sec:appendix_a' on page 27 undefined on input line 57
+8.
 
 <"galileo_board".JPG, id=114, 4625.28pt x 3468.96pt>
 File: "galileo_board".JPG Graphic file (type jpg)
  <use "galileo_board".JPG>
-Package pdftex.def Info: "galileo_board".JPG used on input line 561.
+Package pdftex.def Info: "galileo_board".JPG used on input line 582.
 (pdftex.def)             Requested size: 409.55252pt x 284.50949pt.
 
 <"grove_kit".JPG, id=115, 2299.8422pt x 3392.92593pt>
 File: "grove_kit".JPG Graphic file (type jpg)
  <use "grove_kit".JPG>
-Package pdftex.def Info: "grove_kit".JPG used on input line 568.
+Package pdftex.def Info: "grove_kit".JPG used on input line 589.
 (pdftex.def)             Requested size: 170.691pt x 227.5889pt.
 
 [27 <./galileo_board.JPG>]
@@ -1203,10 +1170,10 @@ Package pdftex.def Info: "grove_kit".JPG used on input line 568.
 File: "grove_sheild".JPG Graphic file (type jpg)
 
 <use "grove_sheild".JPG>
-Package pdftex.def Info: "grove_sheild".JPG used on input line 575.
+Package pdftex.def Info: "grove_sheild".JPG used on input line 596.
 (pdftex.def)             Requested size: 227.59326pt x 170.71109pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 580--583
+Underfull \hbox (badness 10000) in paragraph at lines 601--604
 
  []
 
@@ -1214,17 +1181,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 580--583
 File: "grove_light".JPG Graphic file (type jpg)
 
 <use "grove_light".JPG>
-Package pdftex.def Info: "grove_light".JPG used on input line 586.
+Package pdftex.def Info: "grove_light".JPG used on input line 607.
 (pdftex.def)             Requested size: 170.70718pt x 170.71051pt.
  [28 <./grove_kit.JPG> <./grove_sheild.JPG>]
 <"grove_temp".JPG, id=124, 1416.04031pt x 1440.13031pt>
 File: "grove_temp".JPG Graphic file (type jpg)
  <use "grove_temp".JPG>
-Package pdftex.def Info: "grove_temp".JPG used on input line 593.
+Package pdftex.def Info: "grove_temp".JPG used on input line 614.
 (pdftex.def)             Requested size: 170.71696pt x 170.69862pt.
 
 [29 <./grove_light.JPG> <./grove_temp.JPG>]
-Underfull \hbox (badness 10000) in paragraph at lines 601--603
+Underfull \hbox (badness 10000) in paragraph at lines 623--625
 
  []
 
@@ -1233,7 +1200,7 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--624
+Underfull \hbox (badness 10000) in paragraph at lines 644--646
 
  []
 
@@ -1241,22 +1208,22 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--664
+Underfull \hbox (badness 10000) in paragraph at lines 661--686
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--664
+Underfull \hbox (badness 10000) in paragraph at lines 661--686
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--664
+Underfull \hbox (badness 10000) in paragraph at lines 661--686
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--664
+Underfull \hbox (badness 10000) in paragraph at lines 661--686
 
  []
 
@@ -1274,17 +1241,17 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--679
+Underfull \hbox (badness 10000) in paragraph at lines 697--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--679
+Underfull \hbox (badness 10000) in paragraph at lines 697--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--679
+Underfull \hbox (badness 10000) in paragraph at lines 697--701
 
  []
 
@@ -1292,45 +1259,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 675--679
 File: "API SQL Schema".jpg Graphic file (type jpg)
 
 <use "API SQL Schema".jpg>
-Package pdftex.def Info: "API SQL Schema".jpg used on input line 686.
+Package pdftex.def Info: "API SQL Schema".jpg used on input line 708.
 (pdftex.def)             Requested size: 409.60544pt x 307.20409pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--689
+Underfull \hbox (badness 10000) in paragraph at lines 705--711
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--689
+Underfull \hbox (badness 10000) in paragraph at lines 705--711
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--695
+Underfull \hbox (badness 10000) in paragraph at lines 714--717
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--695
+Underfull \hbox (badness 10000) in paragraph at lines 714--717
 
  []
 
 [33 <./API SQL Schema.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 702--707
+Underfull \hbox (badness 10000) in paragraph at lines 724--729
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--707
+Underfull \hbox (badness 10000) in paragraph at lines 724--729
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--707
+Underfull \hbox (badness 10000) in paragraph at lines 724--729
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 702--707
+Underfull \hbox (badness 10000) in paragraph at lines 724--729
 
  []
 
@@ -1338,21 +1305,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 702--707
 File: "opening_screen_shot".png Graphic file (type png)
 
 <use "opening_screen_shot".png>
-Package pdftex.def Info: "opening_screen_shot".png used on input line 713.
+Package pdftex.def Info: "opening_screen_shot".png used on input line 735.
 (pdftex.def)             Requested size: 284.52788pt x 398.3133pt.
  [34]
 <"nav_tabs".png, id=147, 903.375pt x 86.57344pt>
 File: "nav_tabs".png Graphic file (type png)
  <use "nav_tabs".png>
-Package pdftex.def Info: "nav_tabs".png used on input line 723.
+Package pdftex.def Info: "nav_tabs".png used on input line 745.
 (pdftex.def)             Requested size: 409.60544pt x 39.2549pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 738--741
+Underfull \hbox (badness 10000) in paragraph at lines 760--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 738--741
+Underfull \hbox (badness 10000) in paragraph at lines 760--763
 
  []
 
@@ -1367,20 +1334,20 @@ Missing character: There is no ù in font cmr10!
 <"sensor_output".png, id=153, 529.98pt x 525.965pt>
 File: "sensor_output".png Graphic file (type png)
  <use "sensor_output".png>
-Package pdftex.def Info: "sensor_output".png used on input line 780.
+Package pdftex.def Info: "sensor_output".png used on input line 802.
 (pdftex.def)             Requested size: 227.62204pt x 225.89569pt.
 
 [36] <"sensor_output_alert".png, id=158, 529.98pt x 525.965pt>
 File: "sensor_output_alert".png Graphic file (type png)
 
 <use "sensor_output_alert".png>
-Package pdftex.def Info: "sensor_output_alert".png used on input line 789.
+Package pdftex.def Info: "sensor_output_alert".png used on input line 811.
 (pdftex.def)             Requested size: 227.62204pt x 225.89569pt.
 
 <"system_name".png, id=159, 1120.185pt x 176.66pt>
 File: "system_name".png Graphic file (type png)
  <use "system_name".png>
-Package pdftex.def Info: "system_name".png used on input line 798.
+Package pdftex.def Info: "system_name".png used on input line 820.
 (pdftex.def)             Requested size: 409.60544pt x 64.59761pt.
 
 [37 <./sensor_output.png> <./sensor_output_alert.png>]
@@ -1388,45 +1355,45 @@ Package pdftex.def Info: "system_name".png used on input line 798.
 File: "peripheral_name".png Graphic file (type png)
 
 <use "peripheral_name".png>
-Package pdftex.def Info: "peripheral_name".png used on input line 805.
+Package pdftex.def Info: "peripheral_name".png used on input line 827.
 (pdftex.def)             Requested size: 409.60544pt x 61.51114pt.
  <"last_updated".png, id=166, 1164.35pt x 232.87pt>
 File: "last_updated".png Graphic file (type png)
 
 <use "last_updated".png>
-Package pdftex.def Info: "last_updated".png used on input line 814.
+Package pdftex.def Info: "last_updated".png used on input line 836.
 (pdftex.def)             Requested size: 409.60544pt x 81.9179pt.
 
 <"peripheral_screen".png, id=167, 1003.75pt x 1606.0pt>
 File: "peripheral_screen".png Graphic file (type png)
 
 <use "peripheral_screen".png>
-Package pdftex.def Info: "peripheral_screen".png used on input line 823.
+Package pdftex.def Info: "peripheral_screen".png used on input line 845.
 (pdftex.def)             Requested size: 284.52481pt x 398.3378pt.
  [38 <./system_name.png> <./peripheral_name.png> <./last_updated.png>] <"contex
 t_help".png, id=174, 1003.75pt x 1606.0pt>
 File: "context_help".png Graphic file (type png)
 
 <use "context_help".png>
-Package pdftex.def Info: "context_help".png used on input line 832.
+Package pdftex.def Info: "context_help".png used on input line 854.
 (pdftex.def)             Requested size: 284.52481pt x 398.3378pt.
  [39 <./peripheral_screen.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 838--840
+Underfull \hbox (badness 10000) in paragraph at lines 860--862
 
  []
 
 [40 <./context_help.png>] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 884--887
+Underfull \hbox (badness 10000) in paragraph at lines 906--909
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 884--887
+Underfull \hbox (badness 10000) in paragraph at lines 906--909
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--898
+Underfull \hbox (badness 10000) in paragraph at lines 918--920
 
  []
 
@@ -1434,7 +1401,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 896--898
 File: "Push Notification Diagram".png Graphic file (type png)
 
 <use "Push Notification Diagram".png>
-Package pdftex.def Info: "Push Notification Diagram".png used on input line 909
+Package pdftex.def Info: "Push Notification Diagram".png used on input line 931
 .
 (pdftex.def)             Requested size: 409.60544pt x 305.64749pt.
 Missing character: There is no ‚ in font cmr10!
@@ -1444,7 +1411,7 @@ Missing character: There is no ô in font cmr10!
 <"pn_showing".png, id=192, 903.375pt x 776.9025pt>
 File: "pn_showing".png Graphic file (type png)
  <use "pn_showing".png>
-Package pdftex.def Info: "pn_showing".png used on input line 930.
+Package pdftex.def Info: "pn_showing".png used on input line 952.
 (pdftex.def)             Requested size: 398.34087pt x 341.43509pt.
 
 [44 <./Push Notification Diagram.png>]
@@ -1452,25 +1419,30 @@ Package pdftex.def Info: "pn_showing".png used on input line 930.
 File: "context_help_2".png Graphic file (type png)
 
 <use "context_help_2".png>
-Package pdftex.def Info: "context_help_2".png used on input line 940.
+Package pdftex.def Info: "context_help_2".png used on input line 962.
 (pdftex.def)             Requested size: 398.34087pt x 341.43109pt.
  [45 <./pn_showing.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 946--947
+
+LaTeX Warning: Reference `sec:appendix_b' on page 46 undefined on input line 96
+8.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--969
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 946--947
+Underfull \hbox (badness 10000) in paragraph at lines 968--969
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--952
+Underfull \hbox (badness 10000) in paragraph at lines 971--974
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--952
+Underfull \hbox (badness 10000) in paragraph at lines 971--974
 
  []
 
@@ -1478,17 +1450,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 949--952
 File: "current_hour_graph".png Graphic file (type png)
 
 <use "current_hour_graph".png>
-Package pdftex.def Info: "current_hour_graph".png used on input line 955.
+Package pdftex.def Info: "current_hour_graph".png used on input line 977.
 (pdftex.def)             Requested size: 409.61649pt x 341.43993pt.
  [46 <./context_help_2.png>]
 <"current_day_sum".png, id=207, 903.375pt x 710.655pt>
 File: "current_day_sum".png Graphic file (type png)
 
 <use "current_day_sum".png>
-Package pdftex.def Info: "current_day_sum".png used on input line 965.
+Package pdftex.def Info: "current_day_sum".png used on input line 987.
 (pdftex.def)             Requested size: 409.61649pt x 341.43584pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 960--968
+Underfull \hbox (badness 10000) in paragraph at lines 982--990
 
  []
 
@@ -1497,13 +1469,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 960--968
 File: "complete_sum_graph".png Graphic file (type png)
 
 <use "complete_sum_graph".png>
-Package pdftex.def Info: "complete_sum_graph".png used on input line 974.
+Package pdftex.def Info: "complete_sum_graph".png used on input line 996.
 (pdftex.def)             Requested size: 409.61649pt x 341.43939pt.
  [48 <./current_day_sum.png>]
+
+LaTeX Warning: Reference `fig:android_summary_motion' on page 49 undefined on i
+nput line 1001.
+
 <"motion_graph".png, id=218, 903.375pt x 685.05937pt>
 File: "motion_graph".png Graphic file (type png)
  <use "motion_graph".png>
-Package pdftex.def Info: "motion_graph".png used on input line 983.
+Package pdftex.def Info: "motion_graph".png used on input line 1005.
 (pdftex.def)             Requested size: 409.61649pt x 341.44171pt.
 
 [49 <./complete_sum_graph.png>]
@@ -1511,7 +1487,7 @@ Package pdftex.def Info: "motion_graph".png used on input line 983.
 File: "image_fragment".png Graphic file (type png)
 
 <use "image_fragment".png>
-Package pdftex.def Info: "image_fragment".png used on input line 993.
+Package pdftex.def Info: "image_fragment".png used on input line 1015.
 (pdftex.def)             Requested size: 398.34087pt x 455.23174pt.
  [50 <./motion_graph.png>]
 Missing character: There is no ‚ in font cmr10!
@@ -1521,17 +1497,22 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1003
+
+LaTeX Warning: Reference `fig:android_camera_fragment' on page 51 undefined on 
+input line 1022.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1025
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1003
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1025
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1003
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1025
 
  []
 
@@ -1539,15 +1520,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 998--1003
 File: "config_1".png Graphic file (type png)
 
 <use "config_1".png>
-Package pdftex.def Info: "config_1".png used on input line 1009.
+Package pdftex.def Info: "config_1".png used on input line 1031.
 (pdftex.def)             Requested size: 398.34087pt x 455.24919pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1014--1019
+
+LaTeX Warning: Reference `fig:android_config_1' on page 52 undefined on input l
+ine 1037.
+
+
+LaTeX Warning: Reference `fig:android_config_1' on page 52 undefined on input l
+ine 1039.
+
+
+LaTeX Warning: Reference `fig:android_config_1' on page 52 undefined on input l
+ine 1040.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1041
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1014--1019
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1041
 
  []
 
@@ -1555,71 +1549,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 1014--1019
 File: "config_2".png Graphic file (type png)
 
 <use "config_2".png>
-Package pdftex.def Info: "config_2".png used on input line 1022.
+Package pdftex.def Info: "config_2".png used on input line 1044.
 (pdftex.def)             Requested size: 398.34087pt x 199.16692pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1030
+
+LaTeX Warning: Reference `fig:android_config_2' on page 53 undefined on input l
+ine 1050.
+
+
+LaTeX Warning: Reference `fig:android_config_2' on page 53 undefined on input l
+ine 1051.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1052
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1030
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1052
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1030
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1052
 
  []
 
 <"config_4".png, id=239, 903.375pt x 849.1725pt>
 File: "config_4".png Graphic file (type png)
  <use "config_4".png>
-Package pdftex.def Info: "config_4".png used on input line 1033.
+Package pdftex.def Info: "config_4".png used on input line 1055.
 (pdftex.def)             Requested size: 398.34087pt x 284.52962pt.
- [53 <./config_2.png>] <"config_3".png, id=244, 903.375pt x 840.13875pt>
+ [53 <./config_2.png>]
+
+LaTeX Warning: Reference `fig:android_config_3' on page 54 undefined on input l
+ine 1061.
+
+
+LaTeX Warning: Reference `fig:android_config_4' on page 54 undefined on input l
+ine 1061.
+
+<"config_3".png, id=244, 903.375pt x 840.13875pt>
 File: "config_3".png Graphic file (type png)
-
-<use "config_3".png>
-Package pdftex.def Info: "config_3".png used on input line 1043.
+ <use "config_3".png>
+Package pdftex.def Info: "config_3".png used on input line 1065.
 (pdftex.def)             Requested size: 398.34087pt x 284.5281pt.
- [54 <./config_4.png> <./config_3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1056
+
+
+LaTeX Warning: Reference `fig:android_config_4' on page 54 undefined on input l
+ine 1071.
+
+
+LaTeX Warning: Reference `fig:android_config_2' on page 54 undefined on input l
+ine 1071.
+
+[54 <./config_4.png> <./config_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1076--1078
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1062
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1084
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1062
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1084
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1058--1062
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1084
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1064--1066
+LaTeX Warning: Reference `table:testing_op_timings' on page 55 undefined on inp
+ut line 1087.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1088
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1064--1066
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1088
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1064--1066
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1088
 
  []
 
 [55]
-Overfull \hbox (31.7565pt too wide) in paragraph at lines 1070--1090
+Overfull \hbox (31.7565pt too wide) in paragraph at lines 1092--1112
  [] 
  []
 
@@ -1627,27 +1651,27 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1096--1102
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1096--1102
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1096--1102
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1096--1102
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1124
 
  []
 
 [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1104--1106
+Underfull \hbox (badness 10000) in paragraph at lines 1126--1128
 
  []
 
@@ -1655,32 +1679,32 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1131--1138
 
  []
 
@@ -1688,44 +1712,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 1109--1116
 File: "schematic_rasp_pi".png Graphic file (type png)
 
 <use "schematic_rasp_pi".png>
-Package pdftex.def Info: "schematic_rasp_pi".png used on input line 1122.
+Package pdftex.def Info: "schematic_rasp_pi".png used on input line 1144.
 (pdftex.def)             Requested size: 409.60442pt x 625.35242pt.
 
 <"schematic_galileo".png, id=264, 1192.455pt x 1655.4347pt>
 File: "schematic_galileo".png Graphic file (type png)
 
 <use "schematic_galileo".png>
-Package pdftex.def Info: "schematic_galileo".png used on input line 1129.
+Package pdftex.def Info: "schematic_galileo".png used on input line 1151.
 (pdftex.def)             Requested size: 409.59608pt x 625.35852pt.
  [59 <./schematic_rasp_pi.png>] [60 <./schematic_galileo.png>]
-Overfull \hbox (30.81212pt too wide) in paragraph at lines 1137--1138
+Overfull \hbox (30.81212pt too wide) in paragraph at lines 1159--1160
 \OT1/cmr/m/n/10 Carbon monox-ide con-text sen-si-tive help ta-ble, taken from h
 ttp://www.detectcarbonmonoxide.com/co-
  []
 
 
-Overfull \hbox (10.7046pt too wide) in paragraph at lines 1143--1170
+Overfull \hbox (10.7046pt too wide) in paragraph at lines 1165--1192
  [] 
  []
 
 [61]
-Overfull \hbox (10.7046pt too wide) in paragraph at lines 1182--1195
+Overfull \hbox (10.7046pt too wide) in paragraph at lines 1204--1217
  [] 
  []
 
 [62] [63] (./report.aux)
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13354 strings out of 493304
- 239656 string characters out of 6139871
+ 13368 strings out of 493304
+ 239860 string characters out of 6139871
  301738 words of memory out of 5000000
- 16487 multiletter control sequences out of 15000+600000
+ 16501 multiletter control sequences out of 15000+600000
  12472 words of font info for 51 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,12n,55p,1188b,1493s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,55p,1176b,1493s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -1737,7 +1764,7 @@ ic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.p
 fb>
-Output written on report.pdf (64 pages, 15545902 bytes).
+Output written on report.pdf (64 pages, 15545169 bytes).
 PDF statistics:
  321 PDF objects out of 1000 (max. 8388607)
  180 compressed objects within 2 object streams

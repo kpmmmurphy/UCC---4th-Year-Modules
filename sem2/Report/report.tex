@@ -116,11 +116,15 @@ I hereby declare that :
 \end{tabular}
 \end{table}
 
+\newpage
+\section*{Acknowledgments}
+I would like to thank Professor Cormac J. Sreenan for supervising this project, and for providing invaluable guidence throughout its duration. I would also like to thank my family for their everlasting support. 
+
 
 \newpage
 \begin{abstract}
 
-{\ The investigation, design and implementation of a distributed system for monitoring and controlling safety-related sensors in the home. By leveraging the areas of embedded computing, mobile applications development and server side development, the creation of a full software ecosystem was undertaken. Close attention was devoted to the software and hardware architecture required to provide optimal supporting infrastructure for the system. Configuration, communication, and alerting are the core problems addressed.
+{\ The investigation, design and implementation of a distributed system for monitoring and controlling safety-related sensors in the home. By leveraging the areas of embedded computing, mobile applications development and server side development, the creation of a full software ecosystem was undertaken. Close attention was devoted to the software and hardware architectures required to provide the optimal supporting infrastructure for the system. Configuration, communication, and alerting are the core problems addressed.
 
 Four subsystems exist within the project, a Sensor Management System, a Peripheral Sensing System, a RESTful server side API, and an Android mobile application. At the core of each subsystem is a middleware layer providing JSON message passing services, linking all entities together. }
 
@@ -132,8 +136,6 @@ Four subsystems exist within the project, a Sensor Management System, a Peripher
 
 \newpage
 
-\section*{Acknowledgments}
-
 \section{Introduction}
 The ceiling in my kitchen is 7 feet tall, and with little ventilation, steam and smoke accumulate rapidly. This results in the smoke alarm being triggering numerous times each evening. To overcome this problem, while cooking, the batteries in the alarm are removed, and replaced when finished. However, in the event of someone forgetting to replace the batteries, there is virtually no means of alerting if a fire does occur. This began the initial conceptualization for this project. \\\\
 The simplistic functionality of the smoke alarm left much to be desired. I started to devise an embedded sensor system solution that would allow complete control over alerting functionality. This lead to further ideas on how to control and manage the integrated sensors, or more specifically, giving the user the ability to configure them as required. \\\\
@@ -143,17 +145,18 @@ The main question I then asked myself was: how can safety and security be improv
 Previous to starting the project I have no experience working with embedded systems, or electronics in general. Creating the circuit at the beginning of the project was one of the most challenging aspects I had to face. Without a reliable hardware implementation, the system is rendered completely futile.\\\\
 Python is fastly growing as a popular multi-purpose language. It is used right across the IT spectrum, from machine learning to web development. I had never written a single line of Python before the project started, and wanted to acquire a working knowledge of the language before leaving university. \\\\
 Similarly, I had only written minimal C programs previous to the project. As C++ is used for high performance programming in many areas, I wanted to gain some experience in developing with it. While the amount of C++ code in the project is small, I got to learn the basic principles of C++ development. \\\\
-I had experimented with the Raspberry Pi an number of times over the last two years, but not for software development. I had previously employed it as a home media center solution. As for the Intel Galileo, I had never come into contact with one. I also had no experience with the Arduino board, so development with the Galileo started at a slow pace.  \\\\
+I had experimented with the Raspberry Pi a number of times over the last two years, but not for software development. I had previously employed it as a home media center solution. As for the Intel Galileo, I had never come into contact with one. I also had no experience with the Arduino board, so development with the Galileo started at a slow pace.  \\\\
 My work placement was spent at a mobile applications development company, where I worked as an Android developer. I was comfortable with the basic APIs available, but as a new version of the Android operating system was released around November of 2014, I wanted to gain experience with its new features and UI styles. 
 
+\newpage
 \section{Problem Analysis}
-\subsection{Internet of Things}
+\subsection{The Internet of Things}
 The Internet of Things(IoT) is the term used to describe the ever increasing number of networked devices and appliances in the world around us. Employing embedded systems with networking capabilities has opened a range of opportunities, both within and outside of the home. These devices can be remotely monitored, controlled, and configured, offering ultimate freedom of how they are utilised. \\\\
 Newfound levels of automation can be achieved through the creation of intelligent systems which can learn from the vast amounts of data generated by these devices. This generated data can be used in a multitude of ways, such as to provide insightful feedback, or improve operation. The application of these systems can be seen in problem areas stretching from environmental monitoring and energy management, to air and road traffic control. 
 
 \subsection{Current Safety Applications}
 Safety applications are becoming more prevalent in the home and in industry. Irish building regulations now require that all new houses be fitted with mains powered smoke detectors. By monitoring environmental data, early warning signs of threats can be detected, appropriate alerts made and lives can be saved.\\\\
-Many companies offer monitor systems for break-ins on a subscription basis. The alerting model usually involves the detection of a breach in security, which triggers an alert to a remote operations centre, which then alerts the emergency services, neighbours or any other listed third parties. PhoneWatch offer by Eircom is an example of this type of service. \\\\
+Many companies offer monitoring systems for break-ins on a subscription basis. The alerting model usually involves the detection of a breach in security, which triggers an alert to a remote operations centre, which then alerts the emergency services, neighbours or any other listed third parties. PhoneWatch offer by Eircom is an example of this type of service. \\\\
 Nest Labs have created a number of embedded solutions for home automation and safety. For safety specifically, the Nest Protect system incorporates smoke, carbon monoxide, heat, and activity detection sensors. Surveillance cameras can be added also, to provide additional security. The system they have implemented is limited in terms of sensor configuration, not providing the user with any access to sensor managemnet. Their UI focuses on environmental events, such as spikes in carbon monoxide, but does not allow the checking of the actual sensor value experienced. My solution aims to display detailed sensor readings and aggregated values, which will give acute insight into environmental conditions across varying periods of time. 
 
 \subsection{Achieving Safety and Security within the Home}
@@ -166,7 +169,8 @@ Choosing periphery sensors to improve safety and security involved identifying t
   \item Intruders 
 \end{itemize}
 
-Providing the user with appropriate feedback on current sensor levels is an essential aspect of ensuring safety. The methods of delivering this varying type of feedback depends on both the proximity of the user, and the severity of the particular sensor reading. Giving the user the ability to configure the way in which the system alerts them ensures that they consciously choose the most appropriate method of doing so. The possible methods of alerting that were considered for the project are.
+\noindent
+Providing the user with appropriate feedback on current sensor levels is an essential aspect of ensuring safety. The methods of delivering this varying type of feedback depends on both the proximity of the user, and the severity of the particular sensor reading. Giving the user the ability to configure the way in which the system alerts them ensures that they consciously choose the most appropriate method of doing so. The possible methods of alerting that were considered for the project are:
 
 \begin{itemize}
   \item Smart phone push notifications
@@ -178,9 +182,9 @@ Providing the user with appropriate feedback on current sensor levels is an esse
 
 \subsection{Embedded Computing}
 \subsubsection{Raspberry Pi}
-The Raspberry Pi is a single board microcomputer, roughly the size of a credit card. It has a 700MHz Single Core 32-bit RISC ARM Processor(ARM11), along with 512 MBs of SDRAM. There are 26 general purpose input and output pins present on the board. A Secure Digital(SD) provides all storage, including the Raspbian operating system. Raspbian is a lightweight version of Debian Linux, which has been customised specifically by the Raspberry Pi Foundation. There is a full GPU on board, and a HDMI port for connection to a monitor. The Raspberry Pi model 1 B was used for the project. \\\\
-The community behind the Raspberry Pi is very extensive, and having over 5 million sold since its initial release, a lot of experimentation has been done with the board. The original purpose was to provide a cost effective educational computer, but the applications of the Pi have far exceeded this.\\\\
-The Pi can be up and running within 20 minutes of first receiving it. The simplistic documentation and well maintained repositories present on the Raspbian OS mean that development can begin rapidly. 
+The Raspberry Pi is a single board microcomputer, roughly the size of a credit card. It has a 700MHz single core 32-bit RISC ARM Processor(ARM11), along with 512 MBs of SDRAM. There are 26 general purpose input and output pins present on the board. A Secure Digital(SD) card provides all storage, including the Raspbian operating system. Raspbian is a lightweight version of Debian Linux, which has been customised specifically by the Raspberry Pi Foundation. There is a full GPU on board, and a HDMI port for connection to a monitor. The Raspberry Pi model 1 B was used for the project. \\\\
+The community behind the Raspberry Pi is very extensive, and having over 5 million units sold since its initial release, a lot of experimentation has been done with the board. The original purpose was to provide a cost effective educational computer, but the applications of the Pi have far exceeded this.\\\\
+The Pi can be up and running within 20 minutes of first receiving it. The simplistic documentation and well maintained repositories present on the Raspbian OS mean that development with the board can begin rapidly. 
 \subsubsection{Intel Galileo}
 The Intel Galileo is a single board microcomputer, slightly larger than the size of a credit card. It has a 400MHz Quark SoC X1000 32-bit single core pentium-class x86 CISC processor, along with 256 MBs DRAM and 512KB on-chip SRAM. There is no GPU present on the board. The Galileo is Arduino-Certified, and can use a version of the Arduino IDE for development. For the Galileo\rq s operating system, a lightweight embedded Linux distribution called Yocto is used. \\\\
 The community behind the Intel Galileo is considerably smaller than that of the Raspberry Pi. When dealing with problems with the Galileo board, it is much more difficult to find online solutions or tutorials. Intel maintain two repositories for the Yocto OS, one with preinstalled development software, and the other without. Getting setup with the Galileo takes some additional time as there are many options for connecting to it: direct ethernet, serial, or USB. 
@@ -200,10 +204,10 @@ The following sensor modules will be included:
 \end{itemize}
 
 \noindent
-This application will take advantage of the latest Android APIs, and follow modern UI and UX guidelines. \\\
+The Android application will take advantage of the latest Android APIs, and follow modern UI and UX guidelines. 
 
 \subsubsection{Functional Requirements}
-The system should be configurable by the user, allowing the control of each individual sensor, data management, alerting services, and general system details. \\\\ The system should have the ability to alert the user remotely.  \\\\ The gathered sensor statistical data will be graphed for the user to monitor readings over extended periods of time. \\\\ Context sensitive feedback will be provided to the user on current sensor readings. \\\\ The system should include a mechanism for direct communication, allowing the system to operate in environments where network connectivity is limited. All original functionality should be available when directly communicating. \\\\ The system should provide a device authorisation process, where one single user can have full administrative control, and allow all others only limited access.  \\\\ The system should maintain a database table for general system details.\\\\
+The system should be configurable by the user, allowing the control of each individual sensor, data management, alerting services, and general system details. \\\\ The system should have the ability to alert the user remotely.  \\\\ The gathered sensor statistical data will be graphed for the user to monitor readings over extended periods of time. \\\\ Context sensitive feedback will be provided to the user on current sensor readings. \\\\ The system should include a mechanism for direct communication, allowing the system to operate in environments where network connectivity is limited. All original functionality should be available when directly communicating. \\\\ The system should provide a device authorisation process, where one single user can have full administrative control, and allow all others only limited access.  \\\\
 The system should have a interface for connection with additional sensing devices. 
 
 \subsubsection{Non-Functional Requirements}
@@ -213,12 +217,13 @@ The system should be operable irrespective of network connectivity. \\\\ The imp
 \section{Design}
 \subsection{Development Approach and Methodology}
 In a development project of this scale and time frame, a hybrid development approach of Agile and Rapid Application Development(RAD) was determined to the most suitable. This hybrid model offered flexibility for the system to change and evolve during its design and implementation, while also providing working software early on. During the implementation phase of development the prototyping aspects of RAD were utilised for the feasibility testing of design decisions. \\\\
-From the beginning of the project it was evident that a process heavy methodology to development would constrict the time frame of the system’s overall development. Applying an iterative and incremental agile approach reduced the time spend in planning, allowing a longer development phase. This is not to say that planning played a lesser role in the system’s life cycle, but that essential core functionality was defined and a rudimentary version of the system designed early in the project\rq s life cycle. Using this initial core design, implementation of the subsystems began, and in parallel with their development, any desired additional functionality or feature was incrementally designed and integrated.
+From the beginning of the project it was evident that a process heavy methodology to development would constrict the time frame of the system\rq s overall development. Applying an iterative and incremental agile approach reduced the time spent in planning, allowing a longer development phase. This is not to say that planning played a lesser role in the system’s life cycle, but that essential core functionality was defined and a rudimentary version of the system designed early in the project\rq s life cycle. Using this initial core design, implementation of the subsystems began, and in parallel with their development, any desired additional functionality or feature was incrementally designed and integrated.
 
 \subsection{Architecture}
 
 \subsubsection{Hardware}
-The final hardware architecture of the system comprised of a Raspberry Pi, with four sensors attached; a thermistor for temperature readings, an MQ7 carbon monoxide sensor, an MQ2 flammable gas sensor, and a passive infrared motion detection sensor. Also connect to the Raspberry Pi was a high definition camera module, a wifi dongle and a buzzer for alerting the user.
+The final hardware architecture of the system comprised of a Raspberry Pi, with four sensors attached; a thermistor for temperature readings, an MQ7 carbon monoxide sensor, an MQ2 flammable gas sensor, and a passive infrared motion detection sensor. Also connect to the Raspberry Pi was a high definition camera module, a wifi dongle and a buzzer for alerting the user. \\\\
+The Raspberry Pi was chosen as I had some experience working with it at a high level.
 
 \begin{figure}[H]
 \centering
@@ -277,18 +282,18 @@ The final hardware architecture of the system comprised of a Raspberry Pi, with 
 \end{figure}
 
 \subsubsection{Software}
-The final software architecture was composed of three main components, with the addition of a peripheral sensing node.
+The final software architecture was composed of three main components, with the addition of a peripheral sensing system, which was something introduced during the development phase.
 
 \begin{itemize}
   \item The Sensor Management System physically running on the Raspberry Pi
   \item The server side RESTful API running on CS1
   \item The Android application
-  \item Peripheral sensing node running on an Intel Galileo 
+  \item Peripheral Sensing System running on an Intel Galileo 
 \end{itemize}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{"Open Day General System Diagram".jpg}
+\includegraphics[width=16cm]{"Open Day General System Diagram".jpg}
 \caption{High level system architecture diagram}
 \label{overflow}
 \end{figure}
@@ -301,42 +306,49 @@ Three local database tables will be required for operation:
 
 \begin{itemize}
   \item Sensor values table
-  \item System meta data, including name, location, approximate and GPS coordinates 
+  \item System meta data, including name, location, and approximate GPS coordinates 
   \item System admin details for authentication and control
 \end{itemize}
 
 \paragraph{RESTful API}
 \noindent
 \\\
-This will form the server side backend of the system, and provide the application programming interface(API) for both the Sensor Management System, and the Android application. Functionality includeds persistent cloud storage and retrieval of sensor readings, camera assets management, and remote configuration of the Sensor Management System.
+This will form the server side backend of the system, and provide the application programming interface(API) for both the Sensor Management System, and the Android application. Functionality includes persistent cloud storage and retrieval of sensor readings, camera assets management, and remote configuration of the Sensor Management System.
 
 \paragraph{Android Application}
 \noindent
 \\\
 This will form the user interface of the overall system. The application will provide sensor output levels, a gallery of camera stills and videos, graphed statistical data on previous sensor readings, and a configuration interface for the system.\\\\
 Related safety feedback information should be delivered to the user via the app. A dataset of safety metrics linked to the sensor output readings will be developed offering the user real time advice in plain english.\\\\\
-The app will utilise the server side RESTful API as its main communication intermediary to the system, but will also have the ability to connect directly, allowing it to read the sensor data straight from the system, and update the system’s configuration. \\\\
+The app will utilise the server side RESTful API as its main communication intermediary to the system, but will also have the ability to connect directly, allowing it to read sensor data straight from the Sensor Management System, and update the system\rq s configuration. \\\\
 Push notification functionality should also be include to provide the user with remote alerting.
 
+\paragraph{Peripheral Sensing System}
+\noindent
+\\\
+A scaled back version of the Sensor Management System, only operating at a rudimentary level. This will act mainly as a proof of concept, to demonstrate the core system\rq s ability to connect and interact with peripheral devices. 
+
 \subsection{Design Decisions}
-The initial software architecture was for a self contained system with each component running natively on the Raspberry Pi. While it is a very capable device, as more computational power was required for the operation of the system, the feasibility of running a server in parallel came into question. Using the Glances Python utility \footnote{http://pypi.python.org/pypi/Glances/} I was able to actively monitor the CPU performance of the Raspberry Pi while the system was in operation, which consitantly remained above 60\%, even in the early stages of development. In order to safeguard against congestion and drops in overall performance, an alternative solution was devised to reduce load on the Raspberry Pi. This lead to the adoption of a client-server architecture involving the system periodically sending data to CS1, where it could be stored, and delivered to smart phone applications, greatly reducing the computational load on the physical device. \\\\
-A Representational State Transfer(REST) architecture was chosen to provide the server side backend functionality required to service both the Sensor Management System and the Android smartphone application.  REST is a lightweight alternative to a Simple Object Access Protocol(SOAP), which utilised the Web Services Description Language(WSDL), an XML based interface definition language. The advantages of REST are its extensibility, simplistic design and portability. \\\\
+The initial software architecture was for a self contained system with each component running natively on the Raspberry Pi. While it is a very capable device, as more computational power was required for the operation of the system, the feasibility of running a server in parallel came into question. Using the Glances Python utility \footnote{http://pypi.python.org/pypi/Glances/}, I was able to actively monitor the CPU performance of the Raspberry Pi while the system was in operation, which constantly remained above 60\%, even in the early stages of development. In order to safeguard against congestion and drops in overall performance, an alternative solution was devised to reduce load on the Raspberry Pi. This lead to the adoption of a client-server architecture involving the system periodically sending data to CS1, where it could be stored, and delivered to smart phone applications, greatly reducing the computational load on the physical device. \\\\
+A Representational State Transfer(REST) architecture was chosen to provide the server side backend functionality required to service both the Sensor Management System and the Android application. REST is a lightweight alternative to a Simple Object Access Protocol(SOAP) solution, which would utilise the Web Services Description Language(WSDL), an XML based interface definition language. The main advantages of REST are its extensibility, simplistic design and portability. \\\\
 The user Interface for the system was initially in two parts, a web interface for graphing the collected sensor data, and the Android application, for current readings, control and alerting. As the project progressed, the choice was made to unify the UI, providing all functionality in the Android application.  \\\\
-In order to maximise performance, every subsection of the system was multithreaded where possible. With this decision came the added complexity of appropriate thread management and synchronization. The Raspberry Pi has a single core, so no substantial benefits were apparent when developing the system, but in the eventuality of migrating to more powerful hardware will result in instant performance improvements. \\\\
+In order to maximise performance, every subsection of the system was multithreaded where possible. With this decision came the added complexity of appropriate thread management and synchronization. The Raspberry Pi has a single core, so no substantial benefits were apparent when developing the system, but in the eventuality of migrating to more powerful hardware, instant performance improvements will be experienced. \\\\
 In order to maximise sensor performance, all interaction directly with sensor modules is implemented in C, with a C++ infrastructure to avail of basic object oriented principles such as inheritance and extensibility. This was chosen to reduce the CPU load when probing sensor modules. In order to utilize the C++ implementation, it was necessary to develop a Python wrapper, providing the ability to access sensor values at greater speeds than a standalone Python implementation. \\\\
-A core feature of the overall system is providing the user with rapid alerting. With that in mind, it was decided that alerting should be handled natively in the sensor management system. The alternative was to perform safety checking server side, but this may lead to alert latency. \\\\
+A core feature of the overall system is providing the user with rapid alerting. With that in mind, it was decided that alerting should be handled natively in the Sensor Management System. The alternative was to perform safety checking server side, but this may lead to alert latency.
 \subsection{Data Storage}
 MySQL was chosen as the Relational Database Management System(RDBMS). While its use and interaction is facilitated in most modern programming languages, the real benefit comes from its aggregation functions. Having the ability to select maximum, minimum, and average values from the database in a concise SQL statement greatly reduces the amount of code required, and as rows can be indexed and prepared statements optimized, overall performance is booted also. \\\\
 Using a NoSQL database was considered as the performance and scalability benefits can be substantial when compared with generic SQL databases. NoSQL databases required a substantial amount of code to be written for interaction and aggregation, something which comes as standard in all SQL storage systems. This deterred adoption. \\\\
-The Raspberry Pi is running an instance of the MySQL RDBMS, while the RESTful server side system is maintaining a database of tables which is identical to those present in the natively running instance. This provides data redundancy, and in the eventuality of the server side system becoming unreachable no data will be lost. \\\\
+The Raspberry Pi is running an instance of the MySQL RDBMS, while the RESTful server side system is maintaining a database of tables which is identical to those present in the natively running instance. This provides data redundancy, and in the eventuality of the server side system becoming unreachable no data will be lost.
 \subsection{Data Modelling}
 As memory is a constant constraint when dealing with an embedded system, consideration was put into optimising the structures of the tables within the RDBMS. Due to a lack of time when implementing the system, only one table was eventually used for sensor readings, however the original design contained three tables to minimise memory usage. A table for all current day sensor readings, another table for aggregated readings per hour of each day, and a final table for a summary of aggregated readings per day. The data was then to be aggregated automatically at a given time interval, and reduced into the subsequent table. This way, over time the data growth would be limited. \\\\
-A table was created to storage the system’s details, such as its user specified name, location, and GPS co-ordinated. \\\\
-For push notifications, it is necessary to maintain a table for all registered device identification numbers. These IDs are to be stored via the RESTful API and are used when sending out a push notification to a device. \\\
-
+A table was created to store the system\rq s details, such as its name, location, and GPS co-ordinates. \\\\
+For push notifications, it is necessary to maintain a table for all registered device identification numbers. These IDs are to be stored via the RESTful API and are used when sending out a push notification to a device. 
 \subsection{Communication Design}
 Developing a distributed architecture involved designing a message passing mechanism utilising Javascript Object Notation(JSON), a lightweight data-interchange format. It’s native support in most modern programming languages and easy to manipulate syntax facilitated fast integration in each subsystem. \\\\
-XML was considered, but its use is more applicable to heavily structured documents.  Library support for object serialization to JSON greatly promoted rapid application development, providing the ability to easily communicate current sensor readings and system configurations across a network. \\\ A standard structure was defined for the JSON messages being communicated. \\\ The basic structure was as followed: 
+XML was considered, but its use is more applicable to heavily structured documents.  Library support for object serialization to JSON greatly promoted rapid application development, providing the ability to easily communicate current sensor readings and system configurations across a network. \\\\ A standard structure was defined for the JSON messages being communicated. \\\\
+\newpage
+\noindent
+The basic structure was as followed: 
 \begin{lstlisting}[caption={JSON Message Structure},label={lst:json_message}]
 { 
   “service” : "Requested Service",
@@ -344,31 +356,41 @@ XML was considered, but its use is more applicable to heavily structured documen
 }
 \end{lstlisting}
 
+\noindent
 The service key indicating the service being requested, and the payload containing the data to be acted upon.
 
 \subsection{User Interface}
-The Android smart phone application is the only user Interface(UI) for the project. The platform provides a UI framework and a large amount of extensible UI view components, which can be combined with ease. The Android OS offers native animations and effects for improving user experience(UX), allowing the creation of visually responsive features with little effort. \\\\ The UI was designed with simplicity in mind. The clear and concise presentation of data to the user was the main priority. To achieve this, core aspects of functionality were designated individual screens within the app. \\\\ The UI is composed of 4 screens. The initial screen where the latest sensor data is presented. The camera screen, where captured images and videos are presented. The graphing section, were line charts display sensor value statistical information. And the final section is the control and configuration options, where the system can be reconfigured. \\\\ As smart phone application has the build in functionality for communicating directly with the sensor management system, it was necessary to design the UI to respond accordingly to how the application is receiving its data.
+The Android application is the only user Interface(UI) for the project. The platform provides a UI framework and a large amount of extensible UI view components, which can be combined with ease. The Android OS offers native animations and effects for improving user experience(UX), allowing the creation of visually responsive features with little effort. \\\\ The UI was designed with simplicity in mind. The clear and concise presentation of data to the user was the main priority. To achieve this, core aspects of functionality were designated individual screens within the application. \\\\ The UI is composed of 4 screens. The initial screen where the latest sensor data is presented. The camera screen, where captured images and videos are presented. The graphing section, were line charts display sensor value statistical information. And the final section is the control and configuration options, where the system can be reconfigured. \\\\ As the application has the build in functionality for communicating directly with the sensor management system, it was necessary to design the UI to respond accordingly to how the application is receiving its data.
 
 \subsection{Alerting}
 The method of remote alerting chosen was push notifications, via the Google Cloud Messaging(GCM) Service. \\\\ 
 The GCM is a free service that enables developers to send downstream messages (from servers to GCM-enabled client apps), and upstream messages (from the GCM-enabled client apps to servers). This could be a lightweight message telling the client app that there is new data to be fetched from the server (for instance, a "new email" notification informing the app that it is out of sync with the back end), or it could be a message containing up to 4kb of payload data (so apps like instant messaging can consume the message directly). The GCM service handles all aspects of queueing of messages and delivery to and from the target client app.\footnote{Description taken from http://developer.android.com/google/gcm/gcm.html}
 
+\newpage
 \section{Implementation	}
 
 \subsection{Tools and Techniques}
-Each component of the system was implemented using a different programming languages, with the exception of the Principal Sensing Node. As a result, each was developed using a different set of tools, techniques and libraries. The reliance on Integrated Development Environments(IDE) to increase productivity and mitigate against syntactical errors was paramount to the rapid development of the project. 
+Each component of the system was implemented using a different programming language, with the exception of the Principal Sensing System. As a result, each was developed using a different set of tools, techniques and libraries. The reliance on Integrated Development Environments(IDE) to increase productivity and mitigate against syntactical errors was paramount to the rapid development of the project. 
 
-\subsubsection{Sensor Management System}
-Implemented in Python, a very flexible and easy to use dynamically typed language. Its succinct nature and dynamic typing aid rapid application development. The community support behind the language also greatly encouraged its adoption for this section of the system. \\\\ To implement the sensor system, I used the PyCharm IDE. This provided real time code validation, automated code generation and syntactical checking.
+\paragraph{Sensor Management System}\
 
-\subsubsection{RESTful API}
-Implemented in the server side language PHP. PHP offers a lot of server side functionality as standard, and required no third-party libraries to facilitate the features that were required. This will prove beneficial in the situation of migrating servers. \\\\ Deployed on the university’s Apache web server, CS1. Utilizing this pre-existing infrastructure resulted in less overhead when initially starting the project, allowing the development phase to begin earlier. 
+\noindent
+Implemented in Python, a very flexible and easy to use dynamically typed language. Its succinct nature and dynamic typing aid rapid application development. The community support behind the language also greatly encouraged its adoption for this section of the system. \\\\ To implement, I used the PyCharm IDE. This provided real time code validation, automated code generation and syntactical checking.
 
-\subsubsection{Android Application}
-Native Android applications are implemented in Java, and use XML for specifying their user interfaces. It is possible to design applications in HTML and CSS, embedding them in the application within a WebView, which handles rendering, but this greatly hinders performance, and limits the use of the native device APIs, such as location services and animations. \\\\ Android Studio, the officially supported IDE for Android development, was used to develop the application. It is also based upon the Intellij platform of IDEs, and provides a graphical interface for developing user interfaces.  
+\paragraph{RESTful API}\
 
-\subsubsection{Peripheral Sensing Node}
-Python was also used when developing this additional entity of the system. This made interoperability more straightforward when integrating the two sensing systems together. Benefits also included code reuse for the previously written for the Sensor Management System. 
+\noindent
+Implemented in the server side language PHP. PHP offers a lot of server side functionality as standard, and required no third-party libraries to facilitate the features that were required. This will prove beneficial in the situation of migrating servers. \\\\ Deployed on the university\rq s Apache web server, CS1. Utilising this pre-existing infrastructure resulted in less overhead when initially starting the project, allowing the development phase to begin earlier. 
+
+\paragraph{Android Application}\
+
+\noindent
+Native Android applications are implemented in Java, and use XML for specifying their user interfaces. It is possible to design applications in HTML and CSS, embedding them in the application within a WebView, which handles rendering, but this greatly hinders performance, and limits the use of the native device APIs, such as location services and animations. \\\\ Android Studio, the officially supported IDE for Android development, was used to develop the application. It is based upon the Intellij platform of IDEs, and provides a graphical interface for developing Android user interfaces.  
+
+\paragraph{Peripheral Sensing Node}\
+
+\noindent
+Python was also used when developing this additional entity of the system, allowing a lot of code reuse. This made interoperability more straightforward when integrating the two sensing systems together.
 
 \newpage
 \subsection{Sensor Management System}
@@ -376,12 +398,12 @@ Python was also used when developing this additional entity of the system. This 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{"Sensor Management System Diagram".jpg}
-\caption{Sensor management system high level class diagram\label{overflow}}
+\caption{Sensor management system high level diagram}
 \label{fig:sms_high_level_arch}
 \end{figure}
 
 \subsubsection{Sensors and Peripheries}
-To control sensors connected to the Raspberry Pi, the open source WiringPi C/C++ general purpose input/output(GPIO) library was employed. It provides basic interaction mechanisms for both analog and digital sensors. The community support for this library is substantial, and has become the de facto standard library for embedded Raspberry Pi projects. \\\\
+To control sensors connected to the Raspberry Pi, the open source WiringPi C/C++ general purpose input/output(GPIO) library was employed. It provides basic interaction mechanisms for both analog and digital sensors. The community support for this library is substantial, and has become the de facto standard library for embedded Raspberry Pi projects. A wiring diagram can be seen in Appenix A, Section~\ref{sec:appendix_a}. \\\\
 A limitation of the Raspberry Pi is that is does not provide any analog GPIO pins. To overcome this, an additional analog to digital converter(ADC) was added to the system’s circuitry. The MCP3008 ADC, an 8 channel 10-bit analog input,  was chosen due to its support in the WiringPi GPIO code library. This facilitated easy access to any analog sensor that needed to be included. \\\\
 
 \begin{figure}[H]
@@ -392,54 +414,54 @@ A limitation of the Raspberry Pi is that is does not provide any analog GPIO pin
 \end{figure}
 
 Each individual sensor required a slightly different code implementation. \\\\
-The MQ7 carbon monoxide(CO) analog sensor needs a heating cycle of 5v for 60 seconds, and 1.3v for 90 seconds continuously for 48 hours, until a true value of 0 is output. This is due to the sensor being sensitive to other chemical elements, in particular hydrogen. The heating cycle is designed to burn off excess molecules touching the senor’s filament, resulting in more accurate readings. \\\ While in the heating cycle, the sensor is capable of detecting variances in CO levels. In order to provide the user with accurate data, an algorithm was defined to monitor differences in CO levels. By recording previous values, tracking current value increases or decreases, and presenting the user with the difference in values, allowed accurate CO readings from the moment the system is started. \\\\
-The MQ7 flammable gas analog sensor can detect liquefied petroleum gas, i-butane, methane, alcohol, Hydrogen, and smoke. It also required a heating cycle identical to the MQ7. \\\
+The MQ7 carbon monoxide(CO) analog sensor needs a heating cycle of 5v for 60 seconds, and 1.3v for 90 seconds continuously for 48 hours, until a true value of 0 is output. This is due to the sensor being sensitive to other chemical elements, in particular Hydrogen. The heating cycle is designed to burn off excess molecules touching the senor\rq s filament, resulting in more accurate readings. \\\\ While in the heating cycle, the sensor is capable of detecting variances in CO levels. In order to provide the user with accurate data, an algorithm was defined to monitor differences in CO levels. By recording previous values, tracking current value increases or decreases, and presenting the user with the difference in values, allowed accurate CO readings from the moment the system is started. \\\\
+The MQ2 flammable gas analog sensor can detect liquefied petroleum gas, i-butane, methane, alcohol, Hydrogen, and smoke. It also required a heating cycle identical to the MQ7. \\\\
 The passive infrared motion detection digital sensor measures infrared (IR) light radiating from objects in its field of view. It can detect humanoids/pets from up to 20 feet away. \\\\
 A passive analog thermistor was chosen to provide temperature readings. \\\\
 A passive buzzer was included in the system’s circuitry also, to provided local proximity alerting. \\\\
 To capture visual data, the high definition Raspberry Pi camera module was included. As this module is produced by the developers of the Raspberry Pi board, very little code implementation is required to perform interaction, and two comprehensive libraries, Raspivid and Raspistill,  are natively available to handle video and image capture respectively.
 
 \subsubsection{Sensor Management}
-Within the system, each sensor was defined within its own individual class. Abstracting individual sensors like this allows for granular configuration, and the delegation of alerting responsibility to the individual module. Each sensors has an alerting threshold, which when met will perform the necessary alerting functionality. The rate at which the sensor is probed is also configurable. Each sensor has its own priority that is used for multithreading, and also in the eventuality of the system becoming alternatively powered, it would allow for graceful degradation as power levels diminish. \\\\
+Within the system, each sensor was defined within its own individual class. Abstracting individual sensors like this allows for granular configuration, and the delegation of alerting responsibility to the individual module. Each sensor has an alerting threshold, which when met will perform the necessary alerting functionality. The rate at which the sensor is probed is also configurable. Each sensor has its own priority that is used for multithreading, and also in the eventuality of the system becoming alternatively powered, it would allow for graceful degradation as power levels diminish. \\\\
 The Sensor Manager class see in Figure~\ref{fig:sms_high_level_arch} facilitates high level sensor orchestration. Its incharge of data collection, and thread management. A thread is created for each sensor, which is scheduled to run in the interval denoted by its probe rate. It is not necessary for all sensors to be updated constantly, by implementing the probing in this way, safety critical sensors, such as the MQ2 Flammable Gas sensor, can be configured to update its value every second, while a non-safety critical sensor, such as the thermistor, can be probed at longer intervals. In the eventuality of changing the power source of the system, it would also facilitate the marshaling of power exhaustive sensors, allowing dynamic scheduling as resources diminish. 
 
 \subsubsection{Multithreading}
-The Raspberry Pi’s processor, the ARM1176JZF-S, has a single core. While it is not a true multithreaded environment, the decision to multithread the system was taken to ensure a high level of portability. Over the course of this project a new Raspberry Pi model was released. The new model contains 4 cores, and an increase amount of RAM, of 1GB. The multithreading already featuring in the system would allow for swift migration to this new Raspberry Pi model, and instant performance benefits.
+The Raspberry Pi’s processor, the ARM1176JZF-S, has a single core. While it is not a true multithreaded environment, the decision to multithread the system was taken to ensure a high level of portability. Over the course of this project a new Raspberry Pi model 2 was released. The new model contains 4 cores, and an increase amount of RAM, of 1GB. The multithreading already featuring in the system would allow for swift migration to this new Raspberry Pi model 2, and instant performance benefits.
 
 \subsubsection{System Configuration}
 \label{sssec:sms_sys_config}
-In order to make the system fully configurable, an abstract base class, called Configurable, was implemented, which all manager classes in Figure~\ref{fig:sms_high_level_arch} inherit from. This class provides the layer of abstraction needed to dynamically update the state of each class. The system does not required halting when reconfiguring. \\\\
-The Javascript Object Notation(JSON) was utilised as the means for specifying the required state configuration of individual classes. The Configuration Manager was delegated the responsibility for administering the updating of the system\lq s configuration. Listing~\ref{lst:sms_json_config} shows the default JSON configuration structure. It contains an object for each manager class present in the system, and an array of sensor objects with individual state values for each. \\\\
-The System is configurable form two sources, via the RESTful API, or direct from the Android Application. To achieve remote configuration, the system periodically polls the RESTful API for an updated configuration file. If present, it requests the raw JSON string, parses it, and then reconfigures the system accordingly. The time interval at which the system polls is also configurable. Via direct communication, the user can push a new configuration at their own discretion. 
+In order to make the system fully configurable, an abstract base class, called Configurable, was implemented, which all manager classes in Figure~\ref{fig:sms_high_level_arch} inherit from. This class provides the layer of abstraction needed to dynamically update the state of each object. The system does not required halting when reconfiguring. \\\\
+The Javascript Object Notation(JSON) was utilised as the means for specifying the required state configuration of individual classes. The Configuration Manager, in Figure~\ref{fig:sms_high_level_arch}, was delegated the responsibility for administering the updating of the system\lq s configuration. Listing~\ref{lst:sms_json_config} shows the default JSON configuration structure. It contains an object for each manager class present in the system, and an array of sensor objects with individual state values for each. \\\\
+The System is configurable form two sources, via the RESTful API, or direct from the Android application. To achieve remote configuration, the system periodically polls the RESTful API for an updated configuration file. If present, it requests the raw JSON string, parses it, and then reconfigures the system accordingly. The time interval at which the system polls is also configurable. Via direct communication, the user can push a new configuration at their own discretion. 
 \newpage
-\begin{lstlisting}[caption={JSON Configuration Structure},label={lst:sms_json_config}]
+\begin{lstlisting}[caption={JSON configuration structure},label={lst:sms_json_config}]
 {
-  "alert_manager": {
+  alert_manager: {
     "buzzer_on": false,
     "camera_on": true,
     "lockdown_on": false,
     "push_on": false,
     "video_mode": false
   },
-  "api_manager": {
+  api_manager: {
     "camera_image_upload_rate": 60,
     "sensor_value_upload_rate": 30,
     "sys_config_request_rate": 60
   },
-  "sensor_manager": {
+  sensor_manager: {
     "collection_priority": 1,
     "collection_rate": 15
   },
-  "system_details_manager": {
+  system_details_manager: {
     "gps_lat": "Not set",
     "gps_lng": "Not set",
     "location": "Sitting Room",
     "name": "Kevin's Safety System"
   },
-  "wifi_direct_manager": {
+  wifi_direct_manager: {
     "sensor_value_send_rate": 10
   },
-  "sensors": [
+  sensors: [
     {
       "name": "carbon_monoxide",
       "alert_threshold": 50,
@@ -472,32 +494,32 @@ The System is configurable form two sources, via the RESTful API, or direct from
 \end{lstlisting}
 
 \subsubsection{Alerting}
-The system alerts in two ways. Proximity altering in the form of a physical buzzer present on on the circuitry, and direct mobile device push notification alerting via the Google Cloud Messaging(GCM) Service. The system can be configured to be in a lockdown state, where in the event of the infrared motion detector detecting activity, the on board camera is activated. \\\\
+The system alerts in two ways. Proximity altering in the form of a physical buzzer present on the circuitry, and direct mobile device push notification alerting via the Google Cloud Messaging(GCM) Service. The system can be configured to be in a lockdown state, where in the event of the infrared motion detector detecting activity, the on board camera is activated. \\\\
 Each sensor maintains its own alerting threshold, and when reached it performs its defined behaviour. For example, when the carbon monoxide sensor\lq s threshold is reached, a push notification is sent, and the physical buzzer attached to the system’s circuitry is sounded. \\\\
-To send a push notification, a registration process must first take place between the Android application and the GCM service. This process is described in Android application implementation section~\ref{sssec:android_push_notifications}. Resulting from this registration is a unique device identification number, which must be persistently stored. In this implementation, the registration ids were stored by the RESTful API, and retrieved prior to sending each push notification. \\\\
-The registration id is sent along with a JSON formatted payload via a HTTP request to the GCM service, which handles delivering the payload to the respective device. 
+To send a push notification, a registration process must first take place between the Android application and the GCM service. This process is described in the Android application implementation push notication section~\ref{sssec:android_push_notifications}. Resulting from this registration is a unique device identification number, which must be persistently stored. In this implementation, the registration ids were stored by the RESTful API, and retrieved prior to sending each push notification. \\\\
+The registration id is sent along with a JSON formatted payload via a HTTP request to the GCM service, which handles delivering the payload to the respective device. An example push notification payloa can be seen below in Listing~\ref{lst:sms_pn}.
 \begin{center}
-\begin{lstlisting}[caption={JSON Push Notification Payload Example},label={lst:sms_pn}]
-{"sensor" : "thermistor", "value" : 100, "location": "Sitting Room"}
+\begin{lstlisting}[caption={JSON push notification payload example},label={lst:sms_pn}]
+{sensor : "thermistor", value : 100, location: "Sitting Room"}
 \end{lstlisting}
 \end{center}
 The key "sensor" identifying the individual sensor module, the key "value" denoting the current sensor reading, and the "location" key is the user specified location of the system which has invoked the sending of the notification. \\\\
-In the implementation, the Alert Manager is delegated all alerting responsibilities. Other than push notification requests, it also handles sounding of the buzzer, and camera operation. 
+In the implementation, the Alert Manager, seen in Figure~\ref{fig:sms_high_level_arch}, is delegated all alerting responsibilities. Other than push notification requests, it also handles sounding of the buzzer, and camera operation. 
 
 \subsubsection{Video and Image Capture}
-The Raspberry Pi has an on board Mobile Industry Processor Interface(MIPI) compliant Camera Serial Interface. The HD camera module, also developed by the Raspberry Pi Foundation, is attached directly to this CSI port. The module has a five megapixel fixed-focus camera that supports 1080p30, 720p60 and VGA90 video modes, as well as still image capture. It attaches via a 15 cm ribbon cable. To interact with the camera, two command line tools are present natively in the Raspian OS, Raspstill and Raspvid. These allow still image and video capture respectively. \\\\
+The Raspberry Pi has an on board Mobile Industry Processor Interface(MIPI) compliant Camera Serial Interface. The HD camera module, also developed by the Raspberry Pi Foundation, is attached directly to this CSI port. The module has a five megapixel fixed-focus camera that supports 1080p30, 720p60 and VGA90 video modes, as well as still image capture. It attaches via a 15 cm ribbon cable. To interact with the camera, two command line tools are present natively in the Raspbian OS, Raspstill and Raspvid. These allow still image and video capture respectively. \\\\
 The system performs the following tasks with the camera module.
 \begin{itemize}
   \item Still image and video capture, uploaded to the backend server, or delivered 	directly to the Android application via a Secure File Transfer Protocol(SFTP) server running on the Raspberry Pi
   \item Local and Remote video streaming over HTTP
 \end{itemize}
 To perform video streaming, the open-source VLC Media Player was chosen to provide the necessary functionality. Inbuilt within VLC is a streaming media server, which can be invoked programmatically, and allows for the specification of a wide range of media encoding, streaming, and networking options.\\\\
-When called, the system simple uses the Raspvid command line utility to start video capture, and pipes the output to the VLC media streamer, which then constructs the necessary infrastructure for the network stream. \\\\
+When called, the system simply uses the Raspvid command line utility to start video capture, and pipes the output to the VLC media streamer, which then constructs the necessary infrastructure for the network stream. \\\\
 When directly communicating, the Raspberry Pi has a Secure File Transfer Protocol(SFTP) Server running as a daemon which allows protected access to the captured images and videos. This is later utilized programmatically by the Android application.
 
 \subsubsection{API Communication}
 \label{sssec:sms_api_comm}
-The API Manager class orchestrates all network communication with the RESTful API.
+The API Manager class, seen in Figure~\ref{fig:sms_high_level_arch}, orchestrates all network communication with the RESTful API.
 The API Manager performs the following tasks:
 \begin{itemize}
   \item Uploading of current sensor values
@@ -513,48 +535,47 @@ An example of the request body for sensor values to be uploaded to the RESTful A
 {'motion': 1, 'flammable_gas': 0, 'carbon_monoxide': 80, 'temperature': 65}
 \end{lstlisting}
 \end{center}
-With every HTTP request, there is a subsequent HTTP response. To minimise the overall number of HTTP requests needed for operation, additional information is passed back to the Sensor Management System in the response payload. Standard fields in the payload include a status code for reactive error handling, and a timestamp for monitoring latency. Additionally included is a flag for indicating which camera action is being requested. This allows for the requesting of remote video streaming, or still image capture without the need for additional API calls. \\\\
-Incorporated in the class are a number of fault tolerance mechanisms to protect against unexpected network loss. By employing Python’s Try/Except functionality, this class can gracefully fail when network connectivity is unavailable, and automatically continue performing its tasks once connectivity is re-established.
+With every HTTP request, there is a subsequent HTTP response. To minimise the overall number of HTTP requests needed for operation, additional information is passed back to the Sensor Management System in the response payload. Standard fields in the payload include a status code for reactive error handling, and a timestamp for monitoring latency. Additionally included is a flag for indicating which camera action is being requested. This allows for the requesting of remote video stream, or still image capture without the need for additional API calls. \\\\
+Incorporated in the API Manager class are a number of fault tolerance mechanisms to protect against unexpected network loss. By employing Python\rq s Try/Except functionality, this class can gracefully fail when network connectivity is unavailable, and automatically continue performing its tasks once connectivity is re-established.
 
 \subsubsection{Direct Communication}
 \label{sssec:sms_direct_comm}
 The system required the ability to directly communicate to the Android application, allowing operation in situations where there is no available connection to the internet.\\\\
 Originally Wifi Direct was chosen as the means for direct communication. The Wi-Fi Direct certification program is developed and administered by the Wi-Fi Alliance.
-Wifi Direct allows for communication without an access point, and can cater for multiple peer connectivity at normal Wifi speeds. 
-It works by creating a software access point(Soft AP) within the device that supports Direct. This Soft AP provides a Wifi Protected Setup(WPS) connection.\\\\
-The Broadcom Wifi Adaptor designed to integrate seamlessly with the Raspberry Pi was chosen to allow the inclusion of Wifi Direct in the system. However, due to limitations of the Adaptor’s firmware not supporting Wifi Direct at the time of development, an alternative solution was sought. \\\\
+Wifi Direct allows for communication without an access point, and can cater for multiple peer connectivity. It works by creating a software access point(Soft AP) within the device that supports Direct, which peers can connect to and exchange data.  This Soft AP provides a Wifi Protected Setup(WPS) connection. The device creating the Sort AP is know as the group owner. As long as one device supports Wifi Direct, legacy devices can also connect and communicate directly. The resulting user experience is similar to that of a Bluetooth connection, but at normal Wifi speeds.\\\\
+The Broadcom Wifi Adaptor designed to integrate seamlessly with the Raspberry Pi was chosen to allow the inclusion of Wifi Direct in the system. However, due to limitations of the Adaptor\rq s firmware not supporting Wifi Direct at the time of development, an alternative solution was sought. \\\\
 To accomplish this feature, an access point(AP) administered by the Raspberry Pi was implemented. This also required the Raspberry Pi to run a Dynamic Host Configuration Protocol(DHCP) server, to automate connected device IP allocation. The AP was configured to be completely local, and not forward any traffic to the wider internet. \\\\
-To connect to the system, firstly the device must be connected to the Sensor Management System\lq s AP. Next the device must initiate a connection handshake by sending a connection message to identify itself and specify the type of device it is. The identification is handled differently depending on the type of device. For an Android device, it uses a unique 64-bit hex string device id which is obtained directly from the Android OS. For peripheral sensing nodes, a 48 bit integer representing the device\lq s MAC address is used.. \\\\
-The Sensor Management System maintains a multicast channel, on a pre-specified IP address and port number. It listens on this IP address for connection messages, and drops all but those which conform to the defined format, seen in Listing~\ref{lst:json_device_connect}. \\\\
-The message in Listing~\ref{lst:json_device_connect} is sent from an Android device to the specified multicast channel IP address, where the Sensor Managment System is listening. A connection verification message is then sent back to the Android device, and if the connection was successful, data passing begins. Alternatively, if unsuccessful, pairing must be reinitiated by the Android device.
+To connect to the Sensor Management System, firstly the device must be connected to the Raspberry Pi\rq s AP. Next the device must initiate a connection handshake by sending a connection message to identify itself and specify the type of device it is. The identification is handled differently depending on the type of device. For an Android device, it uses a unique 64-bit hex string device id which is obtained directly from the Android OS. For peripheral sensing nodes, a 48 bit integer representing the device\rq s MAC address is used. \\\\
+The Sensor Management System maintains a multicast channel, on a pre-specified IP address and port number. It listens on this IP address for connection messages, and drops all but those which conform to the defined format, seen in Listing~\ref{lst:json_device_connect} below. \\\\
+The message in Listing~\ref{lst:json_device_connect} is sent from an Android device to the specified multicast channel IP address, where the Sensor Managment System is listening. A connection verification message is then sent back to the Android device, and if the connection was successful, data passing begins. Alternatively, if unsuccessful, pairing must be reinitiated by the Android device. In the case of the Peripheral Sensing System failing to connect, it retrys every 10 seconds.
 \begin{lstlisting}[caption={JSON Connection Message Object},label={lst:json_device_connect}]
 {  
-   "service":connect,
-   "payload":{  
-      "session":{  
-         "device_id":e1cadbafc6804e3f,
-         "ip_address":192.168.42.2,
-         "time_stamp":2015-03-09 20:23:26,
-         "type":android
+   service:"connect",
+   payload:{  
+      session:{  
+         device_id:"e1cadbafc6804e3f",
+         ip_address:"192.168.42.2",
+         time_stamp:"2015-03-09 20:23:26",
+         type:"android"
       }
    }
 }
 \end{lstlisting}
-Once the device and system are ready, all further interaction is handled via direct TCP socket communication.\\\\
+Once the connected, all further interaction is handled via direct TCP socket communication.\\\\
 An additinal benefit of implementing device connection in this way is that multiple devices can join a multicast channel, forming a group. This facilitates the communication of messages to all connected devices easily. As new devices connect, all nodes on the network listening on this multicast socket can react accordingly. In the case of alerting, if a sensing device experiences conditions that warrant an alert to be issued, a message can be pushed to this multicast channel, and all devices listening can sound their alarms. \\\\
 The Direct Communication Manager class encapsulates all the above system functionality. It periodically pushes data to the connected devices, and acts as an arbitrator for all incoming messages.\\\\
 The multicast IP range of 224.0.0.0 to 239.255.255.255 is specified in RFC 5771, an Internet Engineering Task Force (IETF) Best Current Practice document (BCP51)
 \footnote{http://tools.ietf.org/html/rfc5771}. The IP address 224.1.1.1 was used in the implemetation for the multicast channel. \\\\
-The obvious shortcoming of this implementation is that the device must be connected to the system\lq s AP, disconnecting it from the wider internet. In terms of user experience(UX), a better solution would be to use Bluetooth Low Energy for application to system communication. 
+The obvious shortcoming of this implementation is that the device must be connected to the system\rq s AP, disconnecting it from the wider internet. In terms of user experience(UX), a better solution would be to use Bluetooth Low Energy for the application to system communication. 
 
 \newpage
-\subsection{Peripheral Sensing Nodes}
+\subsection{Peripheral Sensing System}
 \subsubsection{General Operation}
 A scaled down version of the Sensor Management System was designed and implemented to act as an additional Peripheral Sensing System within the home. Due to time limitations, the Peripheral Sensing System implementation is focused on gathering sensor data, and relaying it to the Sensor Management System. There is not persistent storage of sensor readings, and the system is static in terms of user configuration. \\\\
 Two threads exist in the Peripheral Sensing System, both are used for communication with the Sensor Management System. One thread is purposed for gathering and sending sensor data, the other thread is for receiving data. 
 
 \subsubsection{Hardware}
-For this project, the Intel Galileo generation 1 was used as the hardware for the peripheral node. The Galileo was chosen to highlight the Sensor Management Systems ability to manage a heterogeneous network. The Grove Starter Kit Plus - Intel IoT Edition provides the base shield and sensors, which have a modular plug-and-play design. 
+For this project, the Intel Galileo generation 1 was used as the hardware for the peripheral node. The Galileo was chosen to highlight the Sensor Management Systems ability to manage a heterogeneous network. The Grove Starter Kit Plus - Intel IoT Edition provides the base shield and sensors, which have a modular plug-and-play design. A wiring diagram can be seen in Appenix A, Section~\ref{sec:appendix_a}, however no base shield is included in this diagram due to it not being available for use. 
 
 \begin{figure}[H]
 \centering
@@ -579,7 +600,7 @@ For this project, the Intel Galileo generation 1 was used as the hardware for th
 
 \noindent
 Attached to the Galileo, via the Grove base shield, are an LED, a temperature sensor, a light sensor, and a touch sensor.\\\\
-The touch sensor was included to demonstrate remote alerting, as when it receives input, it sends a message to the core Sensor Management System, which sounds a buzzer. Similarly, the LED was included to demonstrate message passing in the opposite direction, from the core system to the Galileo.
+The touch sensor was included to demonstrate remote alerting, as when it receives input, it sends a message to the core Sensor Management System, which sounds a buzzer. Similarly, the LED was included to demonstrate message passing in the opposite direction, from the core system to the Galileo. 
 
 \begin{figure}[H]
 \centering
@@ -595,22 +616,23 @@ The touch sensor was included to demonstrate remote alerting, as when it receive
 \label{fig:hard_grove_light}
 \end{figure}
 
-In order to avail of high level software, such as Python and Git, it was necessary to boot the Galileo from an SD card with the Yocto system image. Yocto is a lightweight version of Linux, which is specifically purposed for embedded systems. 
+\noindent
+In order to avail of high level software, such as Python and Git, it was necessary to boot the Galileo from an SD card with the Yocto system image.
 \newpage
 \subsubsection{Communication with Sensor Management System}
-The core Sensor Management System provides the communicational infrastructure to allow any device capable of connecting to the system\lq s AP to become a peripheral sensing node. The same connection mechanism is used in section~\ref{sssec:sms_direct_comm}. The only alteration is that the device looking to connect is required to specify its type as peripheral. \\\\
-The Peripheral Sensing System is configured to periodically gather all sensor data and send it to the Sensor Management System. Data is sent every 10 seconds, starting once the device is connected. An example of an outbound peripheral message can be seen in Listing~\ref{lst:json_peripheral_sensor_message}
+The core Sensor Management System provides the communicational infrastructure to allow any device capable of connecting to the system\rq s AP to become a peripheral sensing node. The same connection mechanism is used in Section~\ref{sssec:sms_direct_comm}, Sensor Managemnt System Direct Communication. The only alteration is that the device looking to connect is required to specify its type as peripheral. \\\\
+The Peripheral Sensing System is configured to periodically gather all sensor data and send it to the Sensor Management System. Data is sent every 10 seconds, starting once the device is connected. An example of an outbound peripheral message can be seen in Listing~\ref{lst:json_peripheral_sensor_message}.
 
-\begin{lstlisting}[caption={JSON Peripheral Sensor Readings Message Object},label={lst:json_peripheral_sensor_message}]
+\begin{lstlisting}[caption={JSON peripheral sensor readings message object},label={lst:json_peripheral_sensor_message}]
 {  
-   "service":peripheral_sensor_values,
-   "payload":{  
-      "peripheral_sensor_values":{  
-      	 "device_id":167469062838880,
-         "touch":false,
-         "light":14,
-         "temperature":15,
-         "time_stamp":2015-03-07 22:14:15
+   service:"peripheral_sensor_values",
+   payload:{  
+      peripheral_sensor_values:{  
+      	 device_id:"167469062838880",
+         time_stamp:"2015-03-07 22:14:15",
+         touch:false,
+         light:14,
+         temperature:15,
       }
 }
 \end{lstlisting}
