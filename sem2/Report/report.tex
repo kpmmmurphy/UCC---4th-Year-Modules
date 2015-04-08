@@ -124,9 +124,15 @@ I would like to thank Professor Cormac J. Sreenan for supervising this project, 
 \newpage
 \begin{abstract}
 
-{\ The investigation, design and implementation of a distributed system for monitoring and controlling safety-related sensors in the home. By leveraging the areas of embedded computing, mobile applications development and server side development, the creation of a full software ecosystem was undertaken. Close attention was devoted to the software and hardware architectures required to provide the optimal supporting infrastructure for the system. Configuration, communication, and alerting are the core problems addressed.
+{\ 
+The investigation, design and implementation of a distributed system for monitoring and controlling safety-related sensors in the home. By leveraging the areas of embedded computing, mobile applications development and server side development, the creation of a full software ecosystem was undertaken. Close attention was devoted to the software and hardware architecture required to provide optimal supporting infrastructure for the system. Configuration, communication, and alerting are the core problems addressed.
 
-Four subsystems exist within the project, a Sensor Management System, a Peripheral Sensing System, a RESTful server side API, and an Android mobile application. At the core of each subsystem is a middleware layer providing JSON message passing services, linking all entities together. }
+The final system is comprised of four components.  At the core of the architecture sits the Sensor Management System, orchestrating all sensor interaction. Each subsystem is designed to utilise or facilitate its operation. An Android mobile application forms the user interface for the system, and provides live sensor data, camera operation, data graphing, configuration and push notification alerting. 
+Cloud integration to achieve remote management and operation was introduced via a Representational State Transfer server side application programming interface. 
+
+An additional Peripheral Sensing System was included in the final implementation to provide remote monitoring. This acts as a scaled down version of the core Sensor Management System, with all  communication between sensing systems taking place wirelessly.  
+
+At the core of each subsystem is a middleware layer providing JSON message passing services, linking all entities together. Direct communication is facilitated via the Android application, and the Sensor Management System. }
 
 \end{abstract}
 
@@ -730,19 +736,30 @@ When registration with the Google Cloud Messaging Service is complete, the resul
 \subsection{Android Application}
 
 \subsubsection{Application Structure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth, height=10cm]{"Android Application Structure".png}
+\caption{Android application structure}
+\label{fig:android_app_struct}
+\end{figure}
+
 There are three basic components of an Android application: activities, fragments and views. These form the basis for the Android view hierarchy. \\\\
-The notion of an activity is a single, focused thing that the user can do. Activities create the window in which other components can be situated. They maintain a lifecycle, allowing the invocation of functionality depending on the current lifecycle stage. \\\\
-A fragment is a self contained module which encapsulates a variable number of view components. It can only exist within an activity. It represents a behavior or a portion of a user interface. It too maintains a lifecycle, which is more extensive than that of an activity.\\\\
+The notion of an activity is a single, focused thing that the user can do. Activities create the window in which other components can be situated. They maintain a lifecycle, allowing the invocation of functionality depending on the current lifecycle stage. Figure~\ref{fig:android_app_struct} above shows the basic application structure, with the Main Activity at the application\rq s core \\\\
+A fragment is a self contained module which encapsulates a variable number of view components. It can only exist within an activity. It represents a behavior or a portion of a user interface. It too maintains a lifecycle, which is more extensive than that of an activity. Figure~\ref{fig:android_app_struct} displays the four fragments embedded within the Main Activity, these are described in Section~\ref{sssec:android_ui_development} below.\\\\
 Views are the building blocks for a UI. Views can be static, like a TextView, or interactive, like a Button. \\\\
-The choice was made to only uses a single activity within the application, and delegate functionality to individual fragments, which are subsequently embedded within this activity. In this way a clear separation of functionality can be maintained, and cohesion can be kept high. The benefit of this structure, utilising an activity as the parent container, is that it facilitates more efficient application lifecycle and resource management, with single points of entry and exit. For example, in the eventuality of the application being closed, any active tasks such as API calls can be halted in a single location. 
+The choice was made to only uses a single activity within the application, and delegate functionality to individual fragments, which are subsequently embedded within this activity. In this way a clear separation of functionality can be maintained, and cohesion can be kept high. The benefit of this structure, utilising an activity as the parent container, is that it facilitates more efficient application lifecycle and resource management, with single points of entry and exit. For example, in the eventuality of the application being closed, any active tasks such as API calls can be halted in a single location. \\\\
+Also present in the application is a Wafeful Broadcast Receiver, seen in Figure~\ref{fig:android_app_struct} above, this is used for delivering and displaying push noifications. See Section~\ref{sssec:android_push_notifications} for a more indepth description.
 
 \subsubsection{UI Development}
+\label{sssec:android_ui_development}
 Implementation of the Android application began with development of a general user interface structure.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=8cm, height=10cm]{"opening_screen_shot".png}
-\caption{Sensor Data Screen within the Application}
+\caption{Sensor data screen within the application}
 \label{fig:android_opening_screen}
 \end{figure}
 
@@ -752,7 +769,7 @@ The UI follows a standard tabular design, which provides the user with an easy m
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{"nav_tabs".png}
-\caption{Navigation Bar within the Application}
+\caption{Navigation bar within the application}
 \label{fig:android_navigation}
 \end{figure}
 
@@ -1151,19 +1168,19 @@ Something I took away from this failure is that new technologies should only be 
 
 \newpage
 \section{Conclusions}
-Overall I think the project succeeded. The main goals I wanted to achieve from the very beginning were remote sensor readings, configuration and alerting. These were the things I focused on implementing with a high degree of attention. By taking development objectives in small increments I was able to prototype a system that was fully operational in less than 6 months. Some shortcuts were taken, and little protected variation was included in my implementation. If I was to continue working on the project, a large amount of functionality would have to be recoded to improve extensibility, and efficiency. It’s important to remember that the system is a prototype, and with the Raspberry Pi\rq s limited resources, it\rq s hard to differentiate resource limitations, and the systems limitation. I found the power and durability of the Raspberry Pi is extraordinary. The board I developed the system on was 2 years old, and not once did it show signs of fault. 
-
-With a large amount of technologies incorporated in the project, being able to manage and unify each one in an extensible way really challenged me. The Git code versioning system was invaluable to me, and without it the project would simply not have been possible. \\\\
-The main skills I obtained from working on this project are in the areas of software engineering and project management. As the project progressed it became more apparent the aspects of the system which were poorly implemented, as when going back to add new functionality, often my software was too specific, and not generic enough to be easily extensible. By having to critically review my code to deduce the most effective way of extending it really gave a good insight into how software should be designed to be robust and open to change. 
-In terms of project management, having to make design decisions everyday to ensure a final working piece of software is produce gave me experience in identifying the essential components in a system. The ability to quarantine the core structure of a system was a skill I acquired early in the project, and it stood to me throughout its duration. Focusing on the core components first, ensured a rudimental system was implemented, everything else was developed incrementally, on top of this initial structure. In my opinion, this is why the project succeed. 
-
+Overall I think the project succeeded. The main goals I wanted to achieve with the system from the very beginning were remote sensor readings, configuration and alerting. These were the things I focused on implementing with a high degree of attention, basing the entire system architecture predominantly on them. By taking development objectives in small increments I was able to prototype a system that was fully operational in less than 6 months. Some shortcuts were taken, and little protected variation was included in my implementation. If I was to continue working on the project, a large amount of functionality would have to be recoded to improve extensibility, and efficiency. It\rq s important to remember that the system is a prototype, and with the Raspberry Pi\rq s limited resources, it\rq s hard to differentiate resource limitations, and the system\rq s limitation. In terms of hardware, found the power and durability of the Raspberry Pi to be extraordinary. The board I developed the system on was 2 years old, and not once did it show signs of fault. The Intel Galileo is also a very capable device, but is not as easy to develop with. 
+\\\\
+With a large amount of technologies incorporated in the project, being able to manage and unify each one in an extensible way really challenged for me. The Git code versioning system was invaluable to me, and without it the project would simply not have been possible. 
+\\\\
+The main skills I obtained from working on this project are in the areas of software engineering and project management. As the project progressed the aspects of the system which were poorly implemented became more apparent. When going back to add new functionality, often my software was too specific, and not generic enough to be easily extensible. By having to critically review my code to deduce the most effective way of extending it really gave a good insight into how software should be designed to be robust and open to change. \\\\
+In terms of project management, having to make design decisions everyday to ensure a final working piece of software was produce gave me experience in identifying the essential components in a system. The ability to quarantine the core structure of a system was a skill I acquired early in the project, and it stood to me throughout its duration. Focusing on the core modules first, ensured a rudimental system was implemented, with everything else developed incrementally, on top of this initial structure. In my opinion managing design and development in small iterations was the reason the project succeeded overall. This is the most important takeaway from the project, and is something I will maintain in all subsequent projects I encounter from now on. 
 \subsection{Potential Improvements and Going Further}
 A key aspect not addressed is the intelligent use of the data to automate other systems present in the home. For example, as the infrared motion detection sensor can anonymously monitor activity, the data could be used along with the temperature to schedule central heating for times when motion is highest, and temperature is low. Similarly, the system could switch off alerting services if someone is cooking, and then switch alerting back on once they have vacated the room. \\\\
 The configurable nature of the system allows a lot of flexibility, but for the end user, this would result in more confusion than benefit. A better solution would be to introduce an intelligent agent within the system to automate its configuration to best suit its environment. This could be achieved by using aggregated sensor values to set alerting thresholds.\\\\
 Introducing a duel alert monitoring system to improve safety protection. This would add to the original mechanism for sensor value alerting by introducing monitoring server side. This could proactively alert the user if early warning signs of danger occur. A prediction model could be learned from previously experienced events, and used to deduce the likelihood of potential dangers from current sensor values. \\\\	
 Changing the direct communication interface from Wifi to Bluetooth would be an essential alteration to the current implementation. This would improve the system\rq s overall usability considerably, no longer requiring the user to connect directly to the system\rq s access point. \\\\
 Security doesn’t feature in the current implementation. I chose to focus on developing the core functionality of the system, and did not get to spend development time on improving security. Going forward, security would have to take a central role. \\\\
-The polling mechanism the Sensor Management System currently utilises for API communication is not very optimal. A better solution would be to implement a distributed publish-subscribe architecture server side, that could push out events as the occur. To accomplish this, the Raspberry Pi would be required to maintain a web server, something the current implementation could not withstand. However, with the latest Raspberry Pi model 2, this would be feasible. \\\\
+The polling mechanism the Sensor Management System currently utilises for API communication is not very optimal. A better solution would be to implement a distributed publish-subscribe architecture server side, that could push out events as they occur. To accomplish this, the Raspberry Pi would be required to maintain a web server, something the current implementation could not withstand. However, with the latest Raspberry Pi model 2, this would be feasible. \\\\
 Migrating to a NoSQL database system would improve system flexibility, and allow the dynamic inclusion of sensors. Moving forward, this is an essential change, providing the infrastructure to allow users to plug in new sensors at will.
 
 \newpage
@@ -1345,5 +1362,25 @@ Light Ccntext sensitive help table, taken from http://www.engineeringtoolbox.com
 \section{Appendix C}
 \label{sec:appendix_C}
 All code is housed on GitHub, and is open-source. 
+
+\begin{table}[H]
+\def\arraystretch{2}% 
+\begin{center}
+ \begin{tabular}{|| L{6cm} | c ||} 
+ \hline
+ \textbf{System} & \textbf{URL of Repository}  \\ [0.5ex] 
+ \hline\hline
+ Sensor Management System and RESTful API & https://github.com/kpmmmurphy/FinalYearProject \\ 
+ \hline
+ Peripheral Sensing System & https://github.com/kpmmmurphy/FYPGalileo \\
+ \hline
+ Android Application & https://github.com/kpmmmurphy/FYP-Android-App/ \\
+ \hline
+
+\end{tabular}
+\end{center}
+\caption{Code repository URLs}
+\label{table:testing_op_timings}
+\end{table}
 
 \end{document}

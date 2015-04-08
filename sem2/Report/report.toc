@@ -54,23 +54,24 @@
 \contentsline {subsubsection}{\numberline {4.4.7}Push Notifications}{34}
 \contentsline {subsection}{\numberline {4.5}Android Application}{35}
 \contentsline {subsubsection}{\numberline {4.5.1}Application Structure}{35}
-\contentsline {subsubsection}{\numberline {4.5.2}UI Development}{35}
+\contentsline {subsubsection}{\numberline {4.5.2}UI Development}{36}
 \contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{36}
-\contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{37}
-\contentsline {subsubsection}{\numberline {4.5.5}API Communication}{40}
-\contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{41}
-\contentsline {subsubsection}{\numberline {4.5.7}Push Notifications}{43}
-\contentsline {subsubsection}{\numberline {4.5.8}Context Sensitive Help}{45}
-\contentsline {subsubsection}{\numberline {4.5.9}Graphing}{45}
-\contentsline {subsubsection}{\numberline {4.5.10}Camera Control and Video Streaming}{50}
-\contentsline {subsubsection}{\numberline {4.5.11}System Configuration}{52}
-\contentsline {section}{\numberline {5}Testing and Evaluation}{55}
-\contentsline {subsection}{\numberline {5.1}Continuous Integration Testing}{55}
-\contentsline {subsection}{\numberline {5.2}Verification}{55}
-\contentsline {subsection}{\numberline {5.3}Operational Timing}{55}
-\contentsline {subsection}{\numberline {5.4}Performance and Stress Testing}{56}
-\contentsline {subsection}{\numberline {5.5}Failures}{57}
-\contentsline {section}{\numberline {6}Conclusions}{58}
-\contentsline {subsection}{\numberline {6.1}Potential Improvements and Going Further}{58}
-\contentsline {section}{\numberline {7}Appendix A}{59}
-\contentsline {section}{\numberline {8}Appendix B}{61}
+\contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{38}
+\contentsline {subsubsection}{\numberline {4.5.5}API Communication}{41}
+\contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{42}
+\contentsline {subsubsection}{\numberline {4.5.7}Push Notifications}{44}
+\contentsline {subsubsection}{\numberline {4.5.8}Context Sensitive Help}{46}
+\contentsline {subsubsection}{\numberline {4.5.9}Graphing}{46}
+\contentsline {subsubsection}{\numberline {4.5.10}Camera Control and Video Streaming}{51}
+\contentsline {subsubsection}{\numberline {4.5.11}System Configuration}{53}
+\contentsline {section}{\numberline {5}Testing and Evaluation}{56}
+\contentsline {subsection}{\numberline {5.1}Continuous Integration Testing}{56}
+\contentsline {subsection}{\numberline {5.2}Verification}{56}
+\contentsline {subsection}{\numberline {5.3}Operational Timing}{56}
+\contentsline {subsection}{\numberline {5.4}Performance and Stress Testing}{57}
+\contentsline {subsection}{\numberline {5.5}Failures}{58}
+\contentsline {section}{\numberline {6}Conclusions}{59}
+\contentsline {subsection}{\numberline {6.1}Potential Improvements and Going Further}{59}
+\contentsline {section}{\numberline {7}Appendix A}{61}
+\contentsline {section}{\numberline {8}Appendix B}{63}
+\contentsline {section}{\numberline {9}Appendix C}{66}
