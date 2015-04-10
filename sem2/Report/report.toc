@@ -1,77 +1,80 @@
 \contentsline {section}{\numberline {1}Introduction}{6}
-\contentsline {subsection}{\numberline {1.1}Background}{6}
-\contentsline {section}{\numberline {2}Problem Analysis}{7}
-\contentsline {subsection}{\numberline {2.1}The Internet of Things}{7}
-\contentsline {subsection}{\numberline {2.2}Current Safety Applications}{7}
-\contentsline {subsection}{\numberline {2.3}Achieving Safety and Security within the Home}{7}
-\contentsline {subsection}{\numberline {2.4}Embedded Computing}{8}
-\contentsline {subsubsection}{\numberline {2.4.1}Raspberry Pi}{8}
-\contentsline {subsubsection}{\numberline {2.4.2}Intel Galileo}{8}
-\contentsline {subsection}{\numberline {2.5}Functional Specification}{9}
-\contentsline {subsubsection}{\numberline {2.5.1}Functional Requirements}{9}
-\contentsline {subsubsection}{\numberline {2.5.2}Non-Functional Requirements}{9}
-\contentsline {section}{\numberline {3}Design}{10}
-\contentsline {subsection}{\numberline {3.1}Development Approach and Methodology}{10}
-\contentsline {subsection}{\numberline {3.2}Architecture}{10}
-\contentsline {subsubsection}{\numberline {3.2.1}Hardware}{10}
-\contentsline {subsubsection}{\numberline {3.2.2}Software}{14}
-\contentsline {paragraph}{Sensor Management System}{15}
-\contentsline {paragraph}{RESTful API}{15}
-\contentsline {paragraph}{Android Application}{15}
-\contentsline {paragraph}{Peripheral Sensing System}{16}
-\contentsline {subsection}{\numberline {3.3}Design Decisions}{16}
-\contentsline {subsection}{\numberline {3.4}Data Storage}{17}
-\contentsline {subsection}{\numberline {3.5}Data Modelling}{17}
-\contentsline {subsection}{\numberline {3.6}Communication Design}{17}
-\contentsline {subsection}{\numberline {3.7}User Interface}{18}
-\contentsline {subsection}{\numberline {3.8}Alerting}{18}
-\contentsline {section}{\numberline {4}Implementation }{19}
-\contentsline {subsection}{\numberline {4.1}Tools and Techniques}{19}
-\contentsline {paragraph}{Sensor Management System}{19}
-\contentsline {paragraph}{RESTful API}{19}
-\contentsline {paragraph}{Android Application}{19}
-\contentsline {paragraph}{Peripheral Sensing Node}{19}
-\contentsline {subsection}{\numberline {4.2}Sensor Management System}{20}
-\contentsline {subsubsection}{\numberline {4.2.1}Sensors and Peripheries}{20}
-\contentsline {subsubsection}{\numberline {4.2.2}Sensor Management}{22}
-\contentsline {subsubsection}{\numberline {4.2.3}Multithreading}{22}
-\contentsline {subsubsection}{\numberline {4.2.4}System Configuration}{22}
-\contentsline {subsubsection}{\numberline {4.2.5}Alerting}{24}
-\contentsline {subsubsection}{\numberline {4.2.6}Video and Image Capture}{24}
-\contentsline {subsubsection}{\numberline {4.2.7}API Communication}{25}
-\contentsline {subsubsection}{\numberline {4.2.8}Direct Communication}{25}
-\contentsline {subsection}{\numberline {4.3}Peripheral Sensing System}{28}
-\contentsline {subsubsection}{\numberline {4.3.1}General Operation}{28}
-\contentsline {subsubsection}{\numberline {4.3.2}Hardware}{28}
-\contentsline {subsubsection}{\numberline {4.3.3}Communication with Sensor Management System}{31}
-\contentsline {subsection}{\numberline {4.4}RESTful Application Programming Interface}{32}
-\contentsline {subsubsection}{\numberline {4.4.1}General Operation}{32}
-\contentsline {subsubsection}{\numberline {4.4.2}Request Management}{32}
-\contentsline {subsubsection}{\numberline {4.4.3}Response Management}{32}
-\contentsline {subsubsection}{\numberline {4.4.4}Video Streaming and Image Capture}{33}
-\contentsline {subsubsection}{\numberline {4.4.5}Data Storage}{34}
-\contentsline {subsubsection}{\numberline {4.4.6}Data Aggregation}{34}
-\contentsline {subsubsection}{\numberline {4.4.7}Push Notifications}{34}
-\contentsline {subsection}{\numberline {4.5}Android Application}{35}
-\contentsline {subsubsection}{\numberline {4.5.1}Application Structure}{35}
-\contentsline {subsubsection}{\numberline {4.5.2}UI Development}{36}
-\contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{36}
-\contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{38}
-\contentsline {subsubsection}{\numberline {4.5.5}API Communication}{41}
-\contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{42}
-\contentsline {subsubsection}{\numberline {4.5.7}Push Notifications}{44}
-\contentsline {subsubsection}{\numberline {4.5.8}Context Sensitive Help}{46}
-\contentsline {subsubsection}{\numberline {4.5.9}Graphing}{46}
-\contentsline {subsubsection}{\numberline {4.5.10}Camera Control and Video Streaming}{51}
-\contentsline {subsubsection}{\numberline {4.5.11}System Configuration}{53}
-\contentsline {section}{\numberline {5}Testing and Evaluation}{56}
-\contentsline {subsection}{\numberline {5.1}Continuous Integration Testing}{56}
-\contentsline {subsection}{\numberline {5.2}Verification}{56}
-\contentsline {subsection}{\numberline {5.3}Operational Timing}{56}
-\contentsline {subsection}{\numberline {5.4}Performance and Stress Testing}{57}
-\contentsline {subsection}{\numberline {5.5}Failures}{58}
-\contentsline {section}{\numberline {6}Conclusions}{59}
-\contentsline {subsection}{\numberline {6.1}Potential Improvements and Going Further}{59}
-\contentsline {section}{\numberline {7}Appendix A}{61}
-\contentsline {section}{\numberline {8}Appendix B}{63}
-\contentsline {section}{\numberline {9}Appendix C}{66}
+\contentsline {subsection}{\numberline {1.1}Report Structure}{6}
+\contentsline {subsection}{\numberline {1.2}Idea Genesis}{6}
+\contentsline {subsection}{\numberline {1.3}Project Goals}{6}
+\contentsline {subsection}{\numberline {1.4}Background}{7}
+\contentsline {section}{\numberline {2}Problem Analysis}{8}
+\contentsline {subsection}{\numberline {2.1}The Internet of Things}{8}
+\contentsline {subsection}{\numberline {2.2}Current Safety Applications}{8}
+\contentsline {subsection}{\numberline {2.3}Achieving Safety and Security within the Home}{8}
+\contentsline {subsection}{\numberline {2.4}Embedded Computing}{9}
+\contentsline {subsubsection}{\numberline {2.4.1}Raspberry Pi}{9}
+\contentsline {subsubsection}{\numberline {2.4.2}Intel Galileo}{9}
+\contentsline {subsection}{\numberline {2.5}Functional Specification}{10}
+\contentsline {subsubsection}{\numberline {2.5.1}Functional Requirements}{10}
+\contentsline {subsubsection}{\numberline {2.5.2}Non-Functional Requirements}{10}
+\contentsline {section}{\numberline {3}Design}{11}
+\contentsline {subsection}{\numberline {3.1}Development Approach and Methodology}{11}
+\contentsline {subsection}{\numberline {3.2}Architecture}{11}
+\contentsline {subsubsection}{\numberline {3.2.1}Hardware}{11}
+\contentsline {subsubsection}{\numberline {3.2.2}Software}{16}
+\contentsline {paragraph}{Sensor Management System}{16}
+\contentsline {paragraph}{RESTful API}{17}
+\contentsline {paragraph}{Android Application}{17}
+\contentsline {paragraph}{Peripheral Sensing System}{17}
+\contentsline {subsection}{\numberline {3.3}Design Decisions}{17}
+\contentsline {subsection}{\numberline {3.4}Data Storage}{18}
+\contentsline {subsection}{\numberline {3.5}Data Modelling}{18}
+\contentsline {subsection}{\numberline {3.6}Communication Design}{18}
+\contentsline {subsection}{\numberline {3.7}User Interface}{19}
+\contentsline {subsection}{\numberline {3.8}Alerting}{19}
+\contentsline {section}{\numberline {4}Implementation }{20}
+\contentsline {subsection}{\numberline {4.1}Tools and Techniques}{20}
+\contentsline {paragraph}{Sensor Management System}{20}
+\contentsline {paragraph}{RESTful API}{20}
+\contentsline {paragraph}{Android Application}{20}
+\contentsline {paragraph}{Peripheral Sensing Node}{20}
+\contentsline {subsection}{\numberline {4.2}Sensor Management System}{21}
+\contentsline {subsubsection}{\numberline {4.2.1}Sensors and Peripheries}{21}
+\contentsline {subsubsection}{\numberline {4.2.2}Sensor Management}{23}
+\contentsline {subsubsection}{\numberline {4.2.3}Multithreading}{23}
+\contentsline {subsubsection}{\numberline {4.2.4}System Configuration}{23}
+\contentsline {subsubsection}{\numberline {4.2.5}Alerting}{25}
+\contentsline {subsubsection}{\numberline {4.2.6}Video and Image Capture}{25}
+\contentsline {subsubsection}{\numberline {4.2.7}API Communication}{26}
+\contentsline {subsubsection}{\numberline {4.2.8}Direct Communication}{26}
+\contentsline {subsection}{\numberline {4.3}Peripheral Sensing System}{29}
+\contentsline {subsubsection}{\numberline {4.3.1}General Operation}{29}
+\contentsline {subsubsection}{\numberline {4.3.2}Hardware}{29}
+\contentsline {subsubsection}{\numberline {4.3.3}Communication with Sensor Management System}{32}
+\contentsline {subsection}{\numberline {4.4}RESTful Application Programming Interface}{33}
+\contentsline {subsubsection}{\numberline {4.4.1}General Operation}{33}
+\contentsline {subsubsection}{\numberline {4.4.2}Request Management}{33}
+\contentsline {subsubsection}{\numberline {4.4.3}Response Management}{33}
+\contentsline {subsubsection}{\numberline {4.4.4}Video Streaming and Image Capture}{34}
+\contentsline {subsubsection}{\numberline {4.4.5}Data Storage}{35}
+\contentsline {subsubsection}{\numberline {4.4.6}Data Aggregation}{35}
+\contentsline {subsubsection}{\numberline {4.4.7}Push Notifications}{35}
+\contentsline {subsection}{\numberline {4.5}Android Application}{36}
+\contentsline {subsubsection}{\numberline {4.5.1}Application Structure}{36}
+\contentsline {subsubsection}{\numberline {4.5.2}UI Development}{37}
+\contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{37}
+\contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{39}
+\contentsline {subsubsection}{\numberline {4.5.5}API Communication}{42}
+\contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{43}
+\contentsline {subsubsection}{\numberline {4.5.7}Push Notifications}{45}
+\contentsline {subsubsection}{\numberline {4.5.8}Context Sensitive Help}{47}
+\contentsline {subsubsection}{\numberline {4.5.9}Graphing}{47}
+\contentsline {subsubsection}{\numberline {4.5.10}Camera Control and Video Streaming}{52}
+\contentsline {subsubsection}{\numberline {4.5.11}System Configuration}{54}
+\contentsline {section}{\numberline {5}Testing and Evaluation}{57}
+\contentsline {subsection}{\numberline {5.1}Continuous Integration Testing}{57}
+\contentsline {subsection}{\numberline {5.2}Verification}{57}
+\contentsline {subsection}{\numberline {5.3}Operational Timing}{57}
+\contentsline {subsection}{\numberline {5.4}Performance and Stress Testing}{58}
+\contentsline {subsection}{\numberline {5.5}Failures}{59}
+\contentsline {section}{\numberline {6}Conclusions}{60}
+\contentsline {subsection}{\numberline {6.1}Potential Improvements and Going Further}{60}
+\contentsline {section}{\numberline {7}Appendix A}{62}
+\contentsline {section}{\numberline {8}Appendix B}{64}
+\contentsline {section}{\numberline {9}Appendix C}{67}

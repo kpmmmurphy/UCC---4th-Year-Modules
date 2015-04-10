@@ -1,219 +1,222 @@
 \relax 
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Background}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Problem Analysis}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The Internet of Things}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Current Safety Applications}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Achieving Safety and Security within the Home}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Embedded Computing}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Raspberry Pi}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Intel Galileo}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Functional Specification}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}Functional Requirements}{9}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}Non-Functional Requirements}{9}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Design}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Development Approach and Methodology}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Architecture}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Hardware}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Raspberry Pi board}}{10}}
-\newlabel{fig:hard_rasp_pi}{{1}{10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Thermistor sensor module}}{11}}
-\newlabel{fig:hard_temp}{{2}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces MQ7 carbon monoxide sensor module}}{11}}
-\newlabel{fig:hard_mq7}{{3}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces MQ2 flammable gas sensor module}}{12}}
-\newlabel{fig:hard_mq2}{{4}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Passive infrared motion detection sensor}}{12}}
-\newlabel{fig:hard_motion}{{5}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces HD camera}}{13}}
-\newlabel{fig:hard_camera}{{6}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Broadcom Wifi dongle}}{13}}
-\newlabel{fig:hard_camera}{{7}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Buzzer}}{14}}
-\newlabel{fig:hard_camera}{{8}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Software}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces High level system architecture diagram}}{15}}
-\newlabel{overflow}{{9}{15}}
-\@writefile{toc}{\contentsline {paragraph}{Sensor Management System}{15}}
-\@writefile{toc}{\contentsline {paragraph}{RESTful API}{15}}
-\@writefile{toc}{\contentsline {paragraph}{Android Application}{15}}
-\@writefile{toc}{\contentsline {paragraph}{Peripheral Sensing System}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Design Decisions}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Data Storage}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Data Modelling}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Communication Design}{17}}
-\newlabel{lst:json_message}{{1}{18}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}JSON Message Structure}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}User Interface}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Alerting}{18}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Implementation }{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Tools and Techniques}{19}}
-\@writefile{toc}{\contentsline {paragraph}{Sensor Management System}{19}}
-\@writefile{toc}{\contentsline {paragraph}{RESTful API}{19}}
-\@writefile{toc}{\contentsline {paragraph}{Android Application}{19}}
-\@writefile{toc}{\contentsline {paragraph}{Peripheral Sensing Node}{19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Sensor Management System}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Sensor management system high level diagram}}{20}}
-\newlabel{fig:sms_high_level_arch}{{10}{20}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Sensors and Peripheries}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces MCP3008 analog to digital converter}}{21}}
-\newlabel{fig:hard_adc}{{11}{21}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Sensor Management}{22}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Multithreading}{22}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}System Configuration}{22}}
-\newlabel{sssec:sms_sys_config}{{4.2.4}{22}}
-\newlabel{lst:sms_json_config}{{2}{23}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}JSON configuration structure}{23}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}Alerting}{24}}
-\newlabel{lst:sms_pn}{{3}{24}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}JSON push notification payload example}{24}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.6}Video and Image Capture}{24}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.7}API Communication}{25}}
-\newlabel{sssec:sms_api_comm}{{4.2.7}{25}}
-\newlabel{lst:json_sensor_values_example}{{4}{25}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}Sensor Values Request Body Example}{25}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.8}Direct Communication}{25}}
-\newlabel{sssec:sms_direct_comm}{{4.2.8}{25}}
-\newlabel{lst:json_device_connect}{{5}{26}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}JSON Connection Message Object}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Peripheral Sensing System}{28}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}General Operation}{28}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Hardware}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Intel Galileo gen 1}}{28}}
-\newlabel{fig:hard_galileo}{{12}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Grove IoT sensor kit}}{29}}
-\newlabel{fig:hard_grove_kit}{{13}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Grove base shield}}{29}}
-\newlabel{fig:hard_grove_sheild}{{14}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Grove light sensor module}}{30}}
-\newlabel{fig:hard_grove_light}{{15}{30}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Grove temperature sensor module}}{30}}
-\newlabel{fig:hard_grove_light}{{16}{30}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Communication with Sensor Management System}{31}}
-\newlabel{lst:json_peripheral_sensor_message}{{6}{31}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}JSON peripheral sensor readings message object}{31}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}RESTful Application Programming Interface}{32}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}General Operation}{32}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Request Management}{32}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Response Management}{32}}
-\newlabel{sssec:api_response_mgmt}{{4.4.3}{32}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces API Status and Corresponding Codes}}{33}}
-\newlabel{lst:json_api_response_sms}{{7}{33}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7}JSON API response to Sensor Management System}{33}}
-\newlabel{lst:json_api_response_android}{{8}{33}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {8}JSON API response to Android application}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.4}Video Streaming and Image Capture}{33}}
-\newlabel{sssec:api_video_and_image}{{4.4.4}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5}Data Storage}{34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Entity Relationship Diagram for RESTful API Database Schema}}{34}}
-\newlabel{fig:api_schema}{{17}{34}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.6}Data Aggregation}{34}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.7}Push Notifications}{34}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Android Application}{35}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}Application Structure}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Android application structure}}{35}}
-\newlabel{fig:android_app_struct}{{18}{35}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2}UI Development}{36}}
-\newlabel{sssec:android_ui_development}{{4.5.2}{36}}
-\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Sensor data screen within the application}}{36}}
-\newlabel{fig:android_opening_screen}{{19}{36}}
-\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Navigation bar within the application}}{36}}
-\newlabel{fig:android_navigation}{{20}{36}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{36}}
-\newlabel{lst:java_sensor_obj}{{9}{37}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}Sensor object to be serialized}{37}}
-\newlabel{lst:java_sensor_string}{{10}{37}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}Serialize object to string}{37}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Report Structure}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Idea Genesis}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Project Goals}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Background}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Problem Analysis}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The Internet of Things}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Current Safety Applications}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Achieving Safety and Security within the Home}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Embedded Computing}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.1}Raspberry Pi}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.2}Intel Galileo}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Functional Specification}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1}Functional Requirements}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.2}Non-Functional Requirements}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Design}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Development Approach and Methodology}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Architecture}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Hardware}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Raspberry Pi board}}{11}}
+\newlabel{fig:hard_rasp_pi}{{1}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Thermistor sensor module}}{12}}
+\newlabel{fig:hard_temp}{{2}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces MQ7 carbon monoxide sensor module}}{12}}
+\newlabel{fig:hard_mq7}{{3}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces MQ2 flammable gas sensor module}}{13}}
+\newlabel{fig:hard_mq2}{{4}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Passive infrared motion detection sensor}}{13}}
+\newlabel{fig:hard_motion}{{5}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces HD camera}}{14}}
+\newlabel{fig:hard_camera}{{6}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Broadcom Wifi dongle}}{14}}
+\newlabel{fig:hard_camera}{{7}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Buzzer}}{15}}
+\newlabel{fig:hard_camera}{{8}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Software}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces High level system architecture diagram}}{16}}
+\newlabel{overflow}{{9}{16}}
+\@writefile{toc}{\contentsline {paragraph}{Sensor Management System}{16}}
+\@writefile{toc}{\contentsline {paragraph}{RESTful API}{17}}
+\@writefile{toc}{\contentsline {paragraph}{Android Application}{17}}
+\@writefile{toc}{\contentsline {paragraph}{Peripheral Sensing System}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Design Decisions}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Data Storage}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Data Modelling}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Communication Design}{18}}
+\newlabel{lst:json_message}{{1}{19}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}JSON Message Structure}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}User Interface}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Alerting}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Implementation }{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Tools and Techniques}{20}}
+\@writefile{toc}{\contentsline {paragraph}{Sensor Management System}{20}}
+\@writefile{toc}{\contentsline {paragraph}{RESTful API}{20}}
+\@writefile{toc}{\contentsline {paragraph}{Android Application}{20}}
+\@writefile{toc}{\contentsline {paragraph}{Peripheral Sensing Node}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Sensor Management System}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Sensor management system high level diagram}}{21}}
+\newlabel{fig:sms_high_level_arch}{{10}{21}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Sensors and Peripheries}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces MCP3008 analog to digital converter}}{22}}
+\newlabel{fig:hard_adc}{{11}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Sensor Management}{23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Multithreading}{23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}System Configuration}{23}}
+\newlabel{sssec:sms_sys_config}{{4.2.4}{23}}
+\newlabel{lst:sms_json_config}{{2}{24}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}JSON configuration structure}{24}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}Alerting}{25}}
+\newlabel{lst:sms_pn}{{3}{25}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}JSON push notification payload example}{25}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.6}Video and Image Capture}{25}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.7}API Communication}{26}}
+\newlabel{sssec:sms_api_comm}{{4.2.7}{26}}
+\newlabel{lst:json_sensor_values_example}{{4}{26}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}Sensor Values Request Body Example}{26}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.8}Direct Communication}{26}}
+\newlabel{sssec:sms_direct_comm}{{4.2.8}{26}}
+\newlabel{lst:json_device_connect}{{5}{27}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}JSON Connection Message Object}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Peripheral Sensing System}{29}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}General Operation}{29}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Hardware}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Intel Galileo gen 1}}{29}}
+\newlabel{fig:hard_galileo}{{12}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Grove IoT sensor kit}}{30}}
+\newlabel{fig:hard_grove_kit}{{13}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Grove base shield}}{30}}
+\newlabel{fig:hard_grove_sheild}{{14}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Grove light sensor module}}{31}}
+\newlabel{fig:hard_grove_light}{{15}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Grove temperature sensor module}}{31}}
+\newlabel{fig:hard_grove_light}{{16}{31}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Communication with Sensor Management System}{32}}
+\newlabel{lst:json_peripheral_sensor_message}{{6}{32}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}JSON peripheral sensor readings message object}{32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}RESTful Application Programming Interface}{33}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}General Operation}{33}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Request Management}{33}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Response Management}{33}}
+\newlabel{sssec:api_response_mgmt}{{4.4.3}{33}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces API Status and Corresponding Codes}}{34}}
+\newlabel{lst:json_api_response_sms}{{7}{34}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7}JSON API response to Sensor Management System}{34}}
+\newlabel{lst:json_api_response_android}{{8}{34}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {8}JSON API response to Android application}{34}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.4}Video Streaming and Image Capture}{34}}
+\newlabel{sssec:api_video_and_image}{{4.4.4}{34}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.5}Data Storage}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Entity Relationship Diagram for RESTful API Database Schema}}{35}}
+\newlabel{fig:api_schema}{{17}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.6}Data Aggregation}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.7}Push Notifications}{35}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Android Application}{36}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}Application Structure}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Android application structure}}{36}}
+\newlabel{fig:android_app_struct}{{18}{36}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2}UI Development}{37}}
+\newlabel{sssec:android_ui_development}{{4.5.2}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Sensor data screen within the application}}{37}}
+\newlabel{fig:android_opening_screen}{{19}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Navigation bar within the application}}{37}}
+\newlabel{fig:android_navigation}{{20}{37}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{37}}
+\newlabel{lst:java_sensor_obj}{{9}{38}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}Sensor object to be serialized}{38}}
+\newlabel{lst:java_sensor_string}{{10}{38}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}Serialize object to string}{38}}
 \newlabel{lst:java_sensor_as_string}{{11}{38}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {11}Sensor string resulting from serialization}{38}}
 \newlabel{lst:java_sensor_deserialize}{{12}{38}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {12}Deserialize string to sensor object}{38}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{38}}
-\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Sensor Tile}}{38}}
-\newlabel{fig:android_sensor_tile}{{21}{38}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Sensor Tile}}{39}}
+\newlabel{fig:android_sensor_tile}{{21}{39}}
 \@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces An Alerting Sensor Tile }}{39}}
 \newlabel{fig:android_sensor_tile_alerting}{{22}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Input System Label}}{39}}
-\newlabel{fig:android_sensor_input_system}{{23}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Input System Label for Peripheral Device}}{39}}
-\newlabel{fig:android_sensor_input_system_peripheral}{{24}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Last Updated Timestamp and System Toggle Button}}{39}}
-\newlabel{fig:android_sensor_timestamp}{{25}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Peripheral Sensing Node Sensor Values}}{40}}
-\newlabel{fig:android_peripheral_sensing_values}{{26}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Context sensitive feedback for carbon monoxide reading of 100ppm}}{41}}
-\newlabel{fig:android_sensor_context_help}{{27}{41}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.5}API Communication}{41}}
-\newlabel{lst:java_api_singlton}{{13}{41}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {13}Singleton API object method invocation}{41}}
-\newlabel{lst:java_api_call}{{14}{42}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {14}Java method API call for request latest sensor readings}{42}}
-\newlabel{lst:java_api_response_obj}{{15}{42}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {15}APIResponse class, used when parsing the RESTful API response}{42}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{42}}
-\newlabel{lst:java_multicast_lock}{{16}{43}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {16}Multicast lock acquisition}{43}}
-\newlabel{lst:java_socket_send}{{17}{43}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {17}Singleton SocketManager object send message method invocation}{43}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.7}Push Notifications}{44}}
-\newlabel{sssec:android_push_notifications}{{4.5.7}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Push notification interaction diagram}}{44}}
-\newlabel{fig:android_pn_interaction}{{28}{44}}
-\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Push notification being displayed}}{45}}
-\newlabel{fig:android_pn_displayed}{{29}{45}}
-\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Conrext sensitive help after touching push notification}}{46}}
-\newlabel{fig:android_pn_help}{{30}{46}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.8}Context Sensitive Help}{46}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.9}Graphing}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Current hour sensor values line chart}}{47}}
-\newlabel{fig:android_current_hour_chart}{{31}{47}}
-\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Current day sensor values aggregated by hour line chart}}{48}}
-\newlabel{fig:android_current_day_chart}{{32}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Summary of sensor values aggregated by day}}{49}}
-\newlabel{fig:android_summary_day_chart}{{33}{49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Motion graphed as a precentage}}{50}}
-\newlabel{fig:android_summary_motion}{{34}{50}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.10}Camera Control and Video Streaming}{51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces Image fragment for controling camera operation}}{51}}
-\newlabel{fig:android_camera_fragment}{{35}{51}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.11}System Configuration}{53}}
-\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces System Details, Sensor Manager, and Alert Manager configuration form fields}}{53}}
-\newlabel{fig:android_config_1}{{36}{53}}
-\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces API Manger and Access Point Manager configuration form fields}}{54}}
-\newlabel{fig:android_config_2}{{37}{54}}
-\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces Sensor configuration fields}}{54}}
-\newlabel{fig:android_config_3}{{38}{54}}
-\@writefile{lof}{\contentsline {figure}{\numberline {39}{\ignorespaces Sensor configuration fields}}{55}}
-\newlabel{fig:android_config_4}{{39}{55}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Testing and Evaluation}{56}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Continuous Integration Testing}{56}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Verification}{56}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Operational Timing}{56}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Operation mean execution times in seconds}}{57}}
-\newlabel{table:testing_op_timings}{{2}{57}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Performance and Stress Testing}{57}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Failures}{58}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{59}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Potential Improvements and Going Further}{59}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Appendix A}{61}}
-\newlabel{sec:appendix_a}{{7}{61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {40}{\ignorespaces Wiring diagram for Raspberry Pi running the Sensor Management System}}{61}}
-\newlabel{fig:schematic_rasp_pi}{{40}{61}}
-\@writefile{lof}{\contentsline {figure}{\numberline {41}{\ignorespaces Wiring diagram for Intel Galileo running the Peripheral Sensor System. Note that no Grove base shield is included in this diagram due to it not being available for use with Fritzing. }}{62}}
-\newlabel{fig:schematic_galileo}{{41}{62}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Appendix B}{63}}
-\newlabel{sec:appendix_b}{{8}{63}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Carbon monoxide context sensitive help table}}{63}}
-\newlabel{table:testing_op_timings}{{3}{63}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Flammable gas context sensitive help table}}{64}}
-\newlabel{table:testing_op_timings}{{4}{64}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Temperature context sensitive help table}}{64}}
-\newlabel{table:testing_op_timings}{{5}{64}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Motion context sensitive help table}}{65}}
-\newlabel{table:testing_op_timings}{{6}{65}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Light context sensitive help table}}{65}}
-\newlabel{table:testing_op_timings}{{7}{65}}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Appendix C}{66}}
-\newlabel{sec:appendix_C}{{9}{66}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Code repository URLs}}{66}}
-\newlabel{table:testing_op_timings}{{8}{66}}
+\@writefile{lof}{\contentsline {figure}{\numberline {23}{\ignorespaces Input System Label}}{40}}
+\newlabel{fig:android_sensor_input_system}{{23}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {24}{\ignorespaces Input System Label for Peripheral Device}}{40}}
+\newlabel{fig:android_sensor_input_system_peripheral}{{24}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {25}{\ignorespaces Last Updated Timestamp and System Toggle Button}}{40}}
+\newlabel{fig:android_sensor_timestamp}{{25}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {26}{\ignorespaces Peripheral Sensing Node Sensor Values}}{41}}
+\newlabel{fig:android_peripheral_sensing_values}{{26}{41}}
+\@writefile{lof}{\contentsline {figure}{\numberline {27}{\ignorespaces Context sensitive feedback for carbon monoxide reading of 100ppm}}{42}}
+\newlabel{fig:android_sensor_context_help}{{27}{42}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.5}API Communication}{42}}
+\newlabel{lst:java_api_singlton}{{13}{42}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {13}Singleton API object method invocation}{42}}
+\newlabel{lst:java_api_call}{{14}{43}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {14}Java method API call for request latest sensor readings}{43}}
+\newlabel{lst:java_api_response_obj}{{15}{43}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {15}APIResponse class, used when parsing the RESTful API response}{43}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{43}}
+\newlabel{lst:java_multicast_lock}{{16}{44}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {16}Multicast lock acquisition}{44}}
+\newlabel{lst:java_socket_send}{{17}{44}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {17}Singleton SocketManager object send message method invocation}{44}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.7}Push Notifications}{45}}
+\newlabel{sssec:android_push_notifications}{{4.5.7}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {28}{\ignorespaces Push notification interaction diagram}}{45}}
+\newlabel{fig:android_pn_interaction}{{28}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {29}{\ignorespaces Push notification being displayed}}{46}}
+\newlabel{fig:android_pn_displayed}{{29}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {30}{\ignorespaces Conrext sensitive help after touching push notification}}{47}}
+\newlabel{fig:android_pn_help}{{30}{47}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.8}Context Sensitive Help}{47}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.9}Graphing}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {31}{\ignorespaces Current hour sensor values line chart}}{48}}
+\newlabel{fig:android_current_hour_chart}{{31}{48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {32}{\ignorespaces Current day sensor values aggregated by hour line chart}}{49}}
+\newlabel{fig:android_current_day_chart}{{32}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {33}{\ignorespaces Summary of sensor values aggregated by day}}{50}}
+\newlabel{fig:android_summary_day_chart}{{33}{50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {34}{\ignorespaces Motion graphed as a precentage}}{51}}
+\newlabel{fig:android_summary_motion}{{34}{51}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.10}Camera Control and Video Streaming}{52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {35}{\ignorespaces Image fragment for controling camera operation}}{52}}
+\newlabel{fig:android_camera_fragment}{{35}{52}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.11}System Configuration}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {36}{\ignorespaces System Details, Sensor Manager, and Alert Manager configuration form fields}}{54}}
+\newlabel{fig:android_config_1}{{36}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {37}{\ignorespaces API Manger and Access Point Manager configuration form fields}}{55}}
+\newlabel{fig:android_config_2}{{37}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {38}{\ignorespaces Sensor configuration fields}}{55}}
+\newlabel{fig:android_config_3}{{38}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {39}{\ignorespaces Sensor configuration fields}}{56}}
+\newlabel{fig:android_config_4}{{39}{56}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Testing and Evaluation}{57}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Continuous Integration Testing}{57}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Verification}{57}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Operational Timing}{57}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Operation mean execution times in seconds}}{58}}
+\newlabel{table:testing_op_timings}{{2}{58}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Performance and Stress Testing}{58}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Failures}{59}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions}{60}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Potential Improvements and Going Further}{60}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Appendix A}{62}}
+\newlabel{sec:appendix_a}{{7}{62}}
+\@writefile{lof}{\contentsline {figure}{\numberline {40}{\ignorespaces Wiring diagram for Raspberry Pi running the Sensor Management System}}{62}}
+\newlabel{fig:schematic_rasp_pi}{{40}{62}}
+\@writefile{lof}{\contentsline {figure}{\numberline {41}{\ignorespaces Wiring diagram for Intel Galileo running the Peripheral Sensor System. Note that no Grove base shield is included in this diagram due to it not being available for use with Fritzing. }}{63}}
+\newlabel{fig:schematic_galileo}{{41}{63}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Appendix B}{64}}
+\newlabel{sec:appendix_b}{{8}{64}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Carbon monoxide context sensitive help table}}{64}}
+\newlabel{table:testing_op_timings}{{3}{64}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Flammable gas context sensitive help table}}{65}}
+\newlabel{table:testing_op_timings}{{4}{65}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Temperature context sensitive help table}}{65}}
+\newlabel{table:testing_op_timings}{{5}{65}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Motion context sensitive help table}}{66}}
+\newlabel{table:testing_op_timings}{{6}{66}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Light context sensitive help table}}{66}}
+\newlabel{table:testing_op_timings}{{7}{66}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Appendix C}{67}}
+\newlabel{sec:appendix_C}{{9}{67}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Code repository URLs}}{67}}
+\newlabel{table:testing_op_timings}{{8}{67}}

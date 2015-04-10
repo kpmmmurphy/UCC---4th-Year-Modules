@@ -143,12 +143,41 @@ At the core of each subsystem is a middleware layer providing JSON message passi
 \newpage
 
 \section{Introduction}
+
+\subsection{Report Structure}
+This report is structured to reflect the project\rq s lifecycle. 
+Beginning with the Problem Analysis, the main motivation here was to identify problem areas within the home, and how to mitigate them. A functional specification of the system is presented. 
+\\\\
+The Design section looks at the system at a high level. Development methodologies and architectures are discusses. Alerting, communication and data management are some of the core issues addressed. \\\\
+The Implementation section is partitioned into 5 components. The first describing the tools and techniques used during development, and the remaining 4 detailing each subsystem within the project. 
+\\\\
+The Testing and Evaluation section looks at general system operation, the system\rq s fulfilment of the original functional specification and failures experienced. \\\\
+The Conclusions section details the experience gained from the project, and presents some further improvements to the system. 
+\\\\
+Appendix A houses wiring diagrams for the hardware implementations. Appendix B displays the context sensitive help tables used within the Android application. Appendix C provides URL links to the code repositories housed on GitHub. 
+
+\subsection{Idea Genesis}
 The ceiling in my kitchen is 7 feet tall, and with little ventilation, steam and smoke accumulate rapidly. This results in the smoke alarm being triggering numerous times each evening. To overcome this problem, while cooking, the batteries in the alarm are removed, and replaced when finished. However, in the event of someone forgetting to replace the batteries, there is virtually no means of alerting if a fire does occur. This began the initial conceptualization for this project. \\\\
 The simplistic functionality of the smoke alarm left much to be desired. I started to devise an embedded sensor system solution that would allow complete control over alerting functionality. This lead to further ideas on how to control and manage the integrated sensors, or more specifically, giving the user the ability to configure them as required. \\\\
 The main question I then asked myself was: how can safety and security be improve within the home, through the leveraging of modern hardware and software components? I kept this question in mind throughout the entire project lifecycle.
 
+\subsection{Project Goals}
+
+The central goals of the project are to increase safety and security within the home. To achieve this, the system has to accomplish the following things:
+\begin{itemize}
+  \item Live sensor readings
+  \item Granular sensor management 
+  \item Configurability 
+  \item Remote alerting 
+  \item Image and video capture
+  \item Sensor specific context sensitive help
+  \item Isolated operation
+\end{itemize}
+\noindent
+Additionally, finding a suitable system architecture that can support operation in the limited computational confines of embedded and mobile computing is an ongoing objective throughout the project. 
+
 \subsection{Background}
-Previous to starting the project I have no experience working with embedded systems, or electronics in general. Creating the circuit at the beginning of the project was one of the most challenging aspects I had to face. Without a reliable hardware implementation, the system is rendered completely futile.\\\\
+Previous to starting the project I had no experience working with embedded systems, or electronics in general. Creating the circuit at the beginning of the project was one of the most challenging aspects I had to face. Without a reliable hardware implementation, the system is rendered completely futile.\\\\
 Python is fastly growing as a popular multi-purpose language. It is used right across the IT spectrum, from machine learning to web development. I had never written a single line of Python before the project started, and wanted to acquire a working knowledge of the language before leaving university. \\\\
 Similarly, I had only written minimal C programs previous to the project. As C++ is used for high performance programming in many areas, I wanted to gain some experience in developing with it. While the amount of C++ code in the project is small, I got to learn the basic principles of C++ development. \\\\
 I had experimented with the Raspberry Pi a number of times over the last two years, but not for software development. I had previously employed it as a home media center solution. As for the Intel Galileo, I had never come into contact with one. I also had no experience with the Arduino board, so development with the Galileo started at a slow pace.  \\\\
@@ -287,6 +316,7 @@ The Raspberry Pi was chosen as I had some experience working with it at a high l
 \label{fig:hard_camera}
 \end{figure}
 
+\newpage
 \subsubsection{Software}
 The final software architecture was composed of three main components, with the addition of a peripheral sensing system, which was something introduced during the development phase.
 
@@ -351,8 +381,7 @@ A table was created to store the system\rq s details, such as its name, location
 For push notifications, it is necessary to maintain a table for all registered device identification numbers. These IDs are to be stored via the RESTful API and are used when sending out a push notification to a device. 
 \subsection{Communication Design}
 Developing a distributed architecture involved designing a message passing mechanism utilising Javascript Object Notation(JSON), a lightweight data-interchange format. It’s native support in most modern programming languages and easy to manipulate syntax facilitated fast integration in each subsystem. \\\\
-XML was considered, but its use is more applicable to heavily structured documents.  Library support for object serialization to JSON greatly promoted rapid application development, providing the ability to easily communicate current sensor readings and system configurations across a network. \\\\ A standard structure was defined for the JSON messages being communicated. \\\\
-\newpage
+XML was considered, but its use is more applicable to heavily structured documents.  Library support for object serialization to JSON greatly promoted rapid application development, providing the ability to easily communicate current sensor readings and system configurations across a network. \\\\ A standard structure was defined for the JSON messages being communicated.
 \noindent
 The basic structure was as followed: 
 \begin{lstlisting}[caption={JSON Message Structure},label={lst:json_message}]
@@ -804,7 +833,6 @@ To serialize, you create a new GsonBuilder object, and pass the object to be ser
 String sensorJsonString = GsonBuilder().create().toJson(sensor);
 \end{lstlisting}
 
-\newpage
 \begin{lstlisting}[caption={Sensor string resulting from serialization},label={lst:java_sensor_as_string}]
 {  
    name:"temperature",
@@ -822,6 +850,7 @@ To deserialise the string, a new Gson object is created, and the "fromJson" meth
 Sensor sensor = new Gson().fromJson(sensorJsonString, Sensor.class);
 \end{lstlisting}	
 
+\newpage
 \subsubsection{Data Presentation}
 Sensor value data is the first thing the user is presented with when opening the application. A GridView was used to achieve an extensible layout, with each sensor dedicated its own tile within the grid. Figure~\ref{fig:android_sensor_tile} shows a tile corresponding to the carbon monoxide sensor.  The sensor name is located at the bottom of the tile. The maximum and minimum values for the current day are placed at the right hand top corner. Directly in the center is the latest value, and just below is the measurement, in this case parts per million.
 \begin{figure}[H]
@@ -1206,8 +1235,7 @@ The following wirigin diagrams are created using the Fritzing simulation tool~\f
 \newpage
 \section{Appendix B}
 \label{sec:appendix_b}
-Carbon monoxide context sensitive help table, taken from http://www.detectcarbonmonoxide.com/co-health-risks/.
-
+Carbon monoxide context sensitive help table.~\footnote{Taken from http://www.detectcarbonmonoxide.com/co-health-risks/}
 
 \begin{table}[H]
 \def\arraystretch{2}% 
@@ -1246,7 +1274,7 @@ Carbon monoxide context sensitive help table, taken from http://www.detectcarbon
 
 \newpage
 \noindent
-Flammable gas context sensitive help table, http://inspectapedia.com/sickhouse/Gas\_ Exposure\_ Limits.php
+Flammable gas context sensitive help table.~\footnote{Taken from http://inspectapedia.com/sickhouse/Gas\_ Exposure\_ Limits.php}
 
 \begin{table}[H]
 \def\arraystretch{2}% 
@@ -1270,7 +1298,7 @@ Flammable gas context sensitive help table, http://inspectapedia.com/sickhouse/G
 \end{table}
 
 \noindent
-Temperature context sensitive help table, taken from http://en.wikipedia.org/wiki/Orders\_ of\_ magnitude\_ (temperature)
+Temperature context sensitive help table.~\footnote{Taken from http://en.wikipedia.org/wiki/Orders\_ of\_ magnitude\_ (temperature)}
 
 \begin{table}[H]
 \def\arraystretch{2}% 
@@ -1321,7 +1349,7 @@ Motion context sensitive help table.
 \end{table}
 
 \noindent
-Light Ccntext sensitive help table, taken from http://www.engineeringtoolbox.com/light\- level\- rooms\- d\_ 708.html
+Light Ccntext sensitive help table.~\footnote{Taken from http://www.engineeringtoolbox.com/light\- level\- rooms\- d\_ 708.html}
 
 \begin{table}[H]
 \def\arraystretch{2}% 
