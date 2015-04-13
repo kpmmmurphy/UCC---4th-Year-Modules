@@ -15,19 +15,19 @@
 \contentsline {subsubsection}{\numberline {2.5.2}Non-Functional Requirements}{10}
 \contentsline {section}{\numberline {3}Design}{11}
 \contentsline {subsection}{\numberline {3.1}Development Approach and Methodology}{11}
-\contentsline {subsection}{\numberline {3.2}Architecture}{11}
-\contentsline {subsubsection}{\numberline {3.2.1}Hardware}{11}
-\contentsline {subsubsection}{\numberline {3.2.2}Software}{16}
+\contentsline {subsection}{\numberline {3.2}Design Decisions}{11}
+\contentsline {subsection}{\numberline {3.3}Architecture}{12}
+\contentsline {subsubsection}{\numberline {3.3.1}Hardware}{12}
+\contentsline {subsubsection}{\numberline {3.3.2}Software}{16}
 \contentsline {paragraph}{Sensor Management System}{16}
 \contentsline {paragraph}{RESTful API}{17}
 \contentsline {paragraph}{Android Application}{17}
 \contentsline {paragraph}{Peripheral Sensing System}{17}
-\contentsline {subsection}{\numberline {3.3}Design Decisions}{17}
-\contentsline {subsection}{\numberline {3.4}Data Storage}{18}
-\contentsline {subsection}{\numberline {3.5}Data Modelling}{18}
+\contentsline {subsection}{\numberline {3.4}Data Storage}{17}
+\contentsline {subsection}{\numberline {3.5}Data Modelling}{17}
 \contentsline {subsection}{\numberline {3.6}Communication Design}{18}
-\contentsline {subsection}{\numberline {3.7}User Interface}{19}
-\contentsline {subsection}{\numberline {3.8}Alerting}{19}
+\contentsline {subsection}{\numberline {3.7}User Interface}{18}
+\contentsline {subsection}{\numberline {3.8}Alerting}{18}
 \contentsline {section}{\numberline {4}Implementation }{20}
 \contentsline {subsection}{\numberline {4.1}Tools and Techniques}{20}
 \contentsline {paragraph}{Sensor Management System}{20}
@@ -58,7 +58,7 @@
 \contentsline {subsection}{\numberline {4.5}Android Application}{36}
 \contentsline {subsubsection}{\numberline {4.5.1}Application Structure}{36}
 \contentsline {subsubsection}{\numberline {4.5.2}UI Development}{37}
-\contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{37}
+\contentsline {subsubsection}{\numberline {4.5.3}Data Modelling and Management}{38}
 \contentsline {subsubsection}{\numberline {4.5.4}Data Presentation}{39}
 \contentsline {subsubsection}{\numberline {4.5.5}API Communication}{42}
 \contentsline {subsubsection}{\numberline {4.5.6}Direct Communication}{43}

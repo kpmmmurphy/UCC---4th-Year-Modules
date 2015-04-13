@@ -1,0 +1,1725 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.19)  13 APR 2015 14:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**report.tex
+(./report.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\c@theorem=\count87
+\c@lemma=\count88
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count89
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen105
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen106
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
+\dotsspace@=\muskip10
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
+\tag@help=\toks16
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
+\andhelp@=\toks17
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks20
+)
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box28
+
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks23
+))
+\pgf@x=\dimen114
+\pgf@y=\dimen115
+\pgf@xa=\dimen116
+\pgf@ya=\dimen117
+\pgf@xb=\dimen118
+\pgf@yb=\dimen119
+\pgf@xc=\dimen120
+\pgf@yc=\dimen121
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count102
+\c@pgf@countb=\count103
+\c@pgf@countc=\count104
+\c@pgf@countd=\count105
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count106
+\pgfsyssoftpath@bigbuffer@items=\count107
+)
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen122
+\pgfmath@count=\count108
+\pgfmath@box=\box29
+\pgfmath@toks=\toks24
+\pgfmath@stack@operand=\toks25
+\pgfmath@stack@operation=\toks26
+)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count109
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen123
+\pgf@picmaxx=\dimen124
+\pgf@picminy=\dimen125
+\pgf@picmaxy=\dimen126
+\pgf@pathminx=\dimen127
+\pgf@pathmaxx=\dimen128
+\pgf@pathminy=\dimen129
+\pgf@pathmaxy=\dimen130
+\pgf@xx=\dimen131
+\pgf@xy=\dimen132
+\pgf@yx=\dimen133
+\pgf@yy=\dimen134
+\pgf@zx=\dimen135
+\pgf@zy=\dimen136
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen137
+\pgf@path@lasty=\dimen138
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen139
+\pgf@shorten@start@additional=\dimen140
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box30
+\pgf@hbox=\box31
+\pgf@layerbox@main=\box32
+\pgf@picture@serial@count=\count110
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen141
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen142
+\pgf@pt@y=\dimen143
+\pgf@pt@temp=\dimen144
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen145
+\pgf@sys@shading@range@num=\count111
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box33
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box34
+)
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen146
+\pgf@nodesepend=\dimen147
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen148
+\pgffor@skip=\dimen149
+\pgffor@stack=\toks27
+\pgffor@toks=\toks28
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count112
+\pgfplotmarksize=\dimen150
+)
+\tikz@lastx=\dimen151
+\tikz@lasty=\dimen152
+\tikz@lastxsaved=\dimen153
+\tikz@lastysaved=\dimen154
+\tikzleveldistance=\dimen155
+\tikzsiblingdistance=\dimen156
+\tikz@figbox=\box35
+\tikz@tempbox=\box36
+\tikztreelevel=\count113
+\tikznumberofchildren=\count114
+\tikznumberofcurrentchild=\count115
+\tikz@fig@count=\count116
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count117
+\pgfmatrixcurrentcolumn=\count118
+\pgf@matrix@numberofcolumns=\count119
+)
+\tikz@expandcount=\count120
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
+hs.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+))) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count121
+\float@exts=\toks29
+\float@box=\box37
+\@float@everytoks=\toks30
+\@floatcapt=\box38
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlepic/titlepic.sty
+Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
+
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count122
+\lst@gtempboxa=\box39
+\lst@token=\toks31
+\lst@length=\count123
+\lst@currlwidth=\dimen157
+\lst@column=\count124
+\lst@pos=\count125
+\lst@lostspace=\dimen158
+\lst@width=\dimen159
+\lst@newlines=\count126
+\lst@lineno=\count127
+\lst@maxwidth=\dimen160
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count128
+\lst@skipnumbers=\count129
+\lst@framebox=\box40
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen161
+\extrarowheight=\dimen162
+\NC@list=\toks32
+\extratabsurround=\skip46
+\backup@length=\skip47
+)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box41
+\sift@deathcycles=\count130
+\@vwid@loff=\dimen163
+\@vwid@roff=\dimen164
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count131
+\Gm@cntv=\count132
+\c@Gm@tempcnt=\count133
+\Gm@bindingoffset=\dimen165
+\Gm@wd@mp=\dimen166
+\Gm@odd@mp=\dimen167
+\Gm@even@mp=\dimen168
+\Gm@layoutwidth=\dimen169
+\Gm@layoutheight=\dimen170
+\Gm@layouthoffset=\dimen171
+\Gm@layoutvoffset=\dimen172
+\Gm@dimlist=\toks33
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2006/09/13 v1.1m fixes to LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)) (./report.aux
+
+LaTeX Warning: Label `fig:hard_camera' multiply defined.
+
+
+LaTeX Warning: Label `fig:hard_camera' multiply defined.
+
+
+LaTeX Warning: Label `fig:hard_grove_light' multiply defined.
+
+
+LaTeX Warning: Label `table:testing_op_timings' multiply defined.
+
+
+LaTeX Warning: Label `table:testing_op_timings' multiply defined.
+
+
+LaTeX Warning: Label `table:testing_op_timings' multiply defined.
+
+
+LaTeX Warning: Label `table:testing_op_timings' multiply defined.
+
+
+LaTeX Warning: Label `table:testing_op_timings' multiply defined.
+
+
+LaTeX Warning: Label `table:testing_op_timings' multiply defined.
+
+)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count134
+\scratchdimen=\dimen173
+\scratchbox=\box42
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen174
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
+\everyMPtoPDFconversion=\toks35
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros
+\c@lstlisting=\count140
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(93.95122pt, 409.60544pt, 93.95122pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=409.60544pt
+* \textheight=700.50687pt
+* \oddsidemargin=21.68123pt
+* \evensidemargin=21.68123pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<"header".jpg, id=4, 520.94624pt x 75.28125pt>
+File: "header".jpg Graphic file (type jpg)
+ <use "header".jpg>
+Package pdftex.def Info: "header".jpg used on input line 64.
+(pdftex.def)             Requested size: 409.60544pt x 59.19124pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 73.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 73.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./header.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 98--100
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 101.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
+ [1] [2] [3]
+(./report.toc [4])
+\tf@toc=\write4
+\openout4 = `report.toc'.
+
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 148--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--163
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--196
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 220--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--263
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
+
+ []
+
+<"rasp_pi".JPG, id=54, 3068.46375pt x 2139.49312pt>
+File: "rasp_pi".JPG Graphic file (type jpg)
+ <use "rasp_pi".JPG>
+Package pdftex.def Info: "rasp_pi".JPG used on input line 272.
+(pdftex.def)             Requested size: 341.43306pt x 238.05458pt.
+
+<"temp".JPG, id=55, 1285.05093pt x 563.10374pt>
+File: "temp".JPG Graphic file (type jpg)
+ <use "temp".JPG>
+Package pdftex.def Info: "temp".JPG used on input line 279.
+(pdftex.def)             Requested size: 227.62204pt x 99.73895pt.
+
+<"mq7".JPG, id=56, 1273.00594pt x 1658.44594pt>
+File: "mq7".JPG Graphic file (type jpg)
+ <use "mq7".JPG>
+Package pdftex.def Info: "mq7".JPG used on input line 286.
+(pdftex.def)             Requested size: 227.61607pt x 256.06953pt.
+ [12 <./rasp_pi.JPG> <./temp.JPG>] <"mq2".JPG, id=61, 1503.36656pt x 1835.35687
+pt>
+File: "mq2".JPG Graphic file (type jpg)
+
+<use "mq2".JPG>
+Package pdftex.def Info: "mq2".JPG used on input line 293.
+(pdftex.def)             Requested size: 227.60568pt x 256.05205pt.
+ <"infrared_motion".JPG, id=62, 1319.68031pt x 1050.17343pt>
+File: "infrared_motion".JPG Graphic file (type jpg)
+
+<use "infrared_motion".JPG>
+Package pdftex.def Info: "infrared_motion".JPG used on input line 300.
+(pdftex.def)             Requested size: 170.69858pt x 170.70724pt.
+ [13 <./mq7.JPG> <./mq2.JPG>]
+<"camera".JPG, id=66, 1514.65875pt x 1595.20969pt>
+File: "camera".JPG Graphic file (type jpg)
+ <use "camera".JPG>
+Package pdftex.def Info: "camera".JPG used on input line 307.
+(pdftex.def)             Requested size: 227.60503pt x 227.61183pt.
+
+<"dongle".JPG, id=67, 2201.97656pt x 2064.96469pt>
+File: "dongle".JPG Graphic file (type jpg)
+ <use "dongle".JPG>
+Package pdftex.def Info: "dongle".JPG used on input line 314.
+(pdftex.def)             Requested size: 227.60242pt x 227.61945pt.
+ [14 <./infrared_motion.JPG> <./camera.JPG>]
+<"buzzer".JPG, id=71, 912.40875pt x 946.28531pt>
+File: "buzzer".JPG Graphic file (type jpg)
+ <use "buzzer".JPG>
+Package pdftex.def Info: "buzzer".JPG used on input line 321.
+(pdftex.def)             Requested size: 227.61435pt x 227.61848pt.
+ [15 <./dongle.JPG> <./buzzer.JPG>]
+<"Open Day General System Diagram".jpg, id=75, 963.6pt x 722.7pt>
+File: "Open Day General System Diagram".jpg Graphic file (type jpg)
+
+<use "Open Day General System Diagram".jpg>
+Package pdftex.def Info: "Open Day General System Diagram".jpg used on input li
+ne 339.
+(pdftex.def)             Requested size: 455.24408pt x 341.43344pt.
+
+Overfull \hbox (45.63864pt too wide) in paragraph at lines 339--340
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--349
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--349
+
+ []
+
+[16 <./Open Day General System Diagram.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 362--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--368
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--383
+
+ []
+
+[17]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--386
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--386
+
+ []
+
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ú in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ù in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ú in font cmtt9!
+Missing character: There is no ‚ in font cmtt9!
+Missing character: There is no Ä in font cmtt9!
+Missing character: There is no ù in font cmtt9!
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--402
+
+ []
+
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 411--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 411--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--418
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--423
+
+ []
+
+[20] <"Sensor Management System Diagram".jpg, id=93, 963.6pt x 722.7pt>
+File: "Sensor Management System Diagram".jpg Graphic file (type jpg)
+
+<use "Sensor Management System Diagram".jpg>
+Package pdftex.def Info: "Sensor Management System Diagram".jpg used on input l
+ine 434.
+(pdftex.def)             Requested size: 409.60544pt x 307.20409pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
+
+ []
+
+[21 <./Sensor Management System Diagram.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--466
+
+ []
+
+<"mcp3008".JPG, id=97, 814.54312pt x 1118.67938pt>
+File: "mcp3008".JPG Graphic file (type jpg)
+ <use "mcp3008".JPG>
+Package pdftex.def Info: "mcp3008".JPG used on input line 469.
+(pdftex.def)             Requested size: 170.71109pt x 227.60672pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--482
+
+ []
+
+[22 <./mcp3008.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--495
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--495
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 556--560
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--560
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--560
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 565--567
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--578
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--578
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 589--592
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 589--592
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 597--599
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--610
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 623--629
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--629
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--629
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 623--629
+
+ []
+
+[27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 633--635
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 637--639
+
+ []
+
+<"galileo_board".JPG, id=120, 4625.28pt x 3468.96pt>
+File: "galileo_board".JPG Graphic file (type jpg)
+ <use "galileo_board".JPG>
+Package pdftex.def Info: "galileo_board".JPG used on input line 642.
+(pdftex.def)             Requested size: 409.55252pt x 284.50949pt.
+
+<"grove_kit".JPG, id=121, 2299.8422pt x 3392.92593pt>
+File: "grove_kit".JPG Graphic file (type jpg)
+ <use "grove_kit".JPG>
+Package pdftex.def Info: "grove_kit".JPG used on input line 649.
+(pdftex.def)             Requested size: 170.691pt x 227.5889pt.
+
+[29 <./galileo_board.JPG>]
+<"grove_sheild".JPG, id=125, 2603.97844pt x 2036.35782pt>
+File: "grove_sheild".JPG Graphic file (type jpg)
+
+<use "grove_sheild".JPG>
+Package pdftex.def Info: "grove_sheild".JPG used on input line 656.
+(pdftex.def)             Requested size: 227.59326pt x 170.71109pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 661--664
+
+ []
+
+<"grove_light".JPG, id=126, 1238.37656pt x 1366.35469pt>
+File: "grove_light".JPG Graphic file (type jpg)
+
+<use "grove_light".JPG>
+Package pdftex.def Info: "grove_light".JPG used on input line 667.
+(pdftex.def)             Requested size: 170.70718pt x 170.71051pt.
+ [30 <./grove_kit.JPG> <./grove_sheild.JPG>]
+<"grove_temp".JPG, id=131, 1416.04031pt x 1440.13031pt>
+File: "grove_temp".JPG Graphic file (type jpg)
+ <use "grove_temp".JPG>
+Package pdftex.def Info: "grove_temp".JPG used on input line 674.
+(pdftex.def)             Requested size: 170.71696pt x 170.69862pt.
+
+[31 <./grove_light.JPG> <./grove_temp.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 682--684
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 703--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--718
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 721--742
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 721--742
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 721--742
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 743--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--767
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--767
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--767
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--767
+
+ []
+
+[34] <"API SQL Schema".jpg, id=144, 963.6pt x 722.7pt>
+File: "API SQL Schema".jpg Graphic file (type jpg)
+
+<use "API SQL Schema".jpg>
+Package pdftex.def Info: "API SQL Schema".jpg used on input line 775.
+(pdftex.def)             Requested size: 409.60544pt x 307.20409pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--784
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 781--784
+
+ []
+
+[35 <./API SQL Schema.jpg>]
+<"Android Application Structure".png, id=148, 963.6pt x 722.7pt>
+File: "Android Application Structure".png Graphic file (type png)
+
+<use "Android Application Structure".png>
+Package pdftex.def Info: "Android Application Structure".png used on input line
+ 796.
+(pdftex.def)             Requested size: 409.60545pt x 284.53154pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--807
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--807
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--807
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--807
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 801--807
+
+ []
+
+[36 <./Android Application Structure.png>]
+<"opening_screen_shot".png, id=155, 1204.5pt x 1927.2pt>
+File: "opening_screen_shot".png Graphic file (type png)
+
+<use "opening_screen_shot".png>
+Package pdftex.def Info: "opening_screen_shot".png used on input line 814.
+(pdftex.def)             Requested size: 341.42978pt x 426.77895pt.
+
+<"nav_tabs".png, id=156, 903.375pt x 86.57344pt>
+File: "nav_tabs".png Graphic file (type png)
+ <use "nav_tabs".png>
+Package pdftex.def Info: "nav_tabs".png used on input line 824.
+(pdftex.def)             Requested size: 409.60544pt x 39.2549pt.
+ [37 <./opening_screen_shot.png> <./nav_tabs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 839--842
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 839--842
+
+ []
+
+[38] <"sensor_output".png, id=165, 529.98pt x 525.965pt>
+File: "sensor_output".png Graphic file (type png)
+
+<use "sensor_output".png>
+Package pdftex.def Info: "sensor_output".png used on input line 881.
+(pdftex.def)             Requested size: 227.62204pt x 225.89569pt.
+
+<"sensor_output_alert".png, id=166, 529.98pt x 525.965pt>
+File: "sensor_output_alert".png Graphic file (type png)
+
+<use "sensor_output_alert".png>
+Package pdftex.def Info: "sensor_output_alert".png used on input line 890.
+(pdftex.def)             Requested size: 227.62204pt x 225.89569pt.
+ [39 <./sensor_output.png>]
+<"system_name".png, id=171, 1120.185pt x 176.66pt>
+File: "system_name".png Graphic file (type png)
+ <use "system_name".png>
+Package pdftex.def Info: "system_name".png used on input line 899.
+(pdftex.def)             Requested size: 409.60544pt x 64.59761pt.
+
+<"peripheral_name".png, id=172, 1176.395pt x 176.66pt>
+File: "peripheral_name".png Graphic file (type png)
+
+<use "peripheral_name".png>
+Package pdftex.def Info: "peripheral_name".png used on input line 906.
+(pdftex.def)             Requested size: 409.60544pt x 61.51114pt.
+ <"last_updated".png, id=173, 1164.35pt x 232.87pt>
+File: "last_updated".png Graphic file (type png)
+
+<use "last_updated".png>
+Package pdftex.def Info: "last_updated".png used on input line 915.
+(pdftex.def)             Requested size: 409.60544pt x 81.9179pt.
+
+<"peripheral_screen".png, id=174, 752.8125pt x 1034.36438pt>
+File: "peripheral_screen".png Graphic file (type png)
+
+<use "peripheral_screen".png>
+Package pdftex.def Info: "peripheral_screen".png used on input line 924.
+(pdftex.def)             Requested size: 284.53246pt x 398.3341pt.
+ [40 <./sensor_output_alert.png> <./system_name.png> <./peripheral_name.png> <.
+/last_updated.png>]
+<"context_help".png, id=182, 752.8125pt x 724.20563pt>
+File: "context_help".png Graphic file (type png)
+
+<use "context_help".png>
+Package pdftex.def Info: "context_help".png used on input line 933.
+(pdftex.def)             Requested size: 409.61418pt x 341.43753pt.
+ [41 <./peripheral_screen.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 939--941
+
+ []
+
+[42 <./context_help.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 988--991
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 988--991
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 1000--1002
+
+ []
+
+[44] <"Push Notification Diagram".png, id=196, 925.4575pt x 690.58pt>
+File: "Push Notification Diagram".png Graphic file (type png)
+
+<use "Push Notification Diagram".png>
+Package pdftex.def Info: "Push Notification Diagram".png used on input line 101
+3.
+(pdftex.def)             Requested size: 409.60544pt x 305.64749pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+<"pn_showing".png, id=197, 903.375pt x 776.9025pt>
+File: "pn_showing".png Graphic file (type png)
+ <use "pn_showing".png>
+Package pdftex.def Info: "pn_showing".png used on input line 1034.
+(pdftex.def)             Requested size: 398.34087pt x 341.43509pt.
+
+[45 <./Push Notification Diagram.png>]
+<"context_help_2".png, id=202, 903.375pt x 843.90282pt>
+File: "context_help_2".png Graphic file (type png)
+
+<use "context_help_2".png>
+Package pdftex.def Info: "context_help_2".png used on input line 1044.
+(pdftex.def)             Requested size: 398.34087pt x 341.43109pt.
+ [46 <./pn_showing.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1056
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1056
+
+ []
+
+[47 <./context_help_2.png>]
+<"current_hour_graph".png, id=211, 903.375pt x 792.71156pt>
+File: "current_hour_graph".png Graphic file (type png)
+
+<use "current_hour_graph".png>
+Package pdftex.def Info: "current_hour_graph".png used on input line 1062.
+(pdftex.def)             Requested size: 409.61649pt x 341.43993pt.
+ [48 <./current_hour_graph.png>]
+<"current_day_sum".png, id=217, 903.375pt x 710.655pt>
+File: "current_day_sum".png Graphic file (type png)
+
+<use "current_day_sum".png>
+Package pdftex.def Info: "current_day_sum".png used on input line 1072.
+(pdftex.def)             Requested size: 409.61649pt x 341.43584pt.
+ [49 <./current_day_sum.png>]
+<"complete_sum_graph".png, id=223, 903.375pt x 700.86844pt>
+File: "complete_sum_graph".png Graphic file (type png)
+
+<use "complete_sum_graph".png>
+Package pdftex.def Info: "complete_sum_graph".png used on input line 1083.
+(pdftex.def)             Requested size: 409.61649pt x 341.43939pt.
+ [50 <./complete_sum_graph.png>]
+<"motion_graph".png, id=228, 903.375pt x 685.05937pt>
+File: "motion_graph".png Graphic file (type png)
+ <use "motion_graph".png>
+Package pdftex.def Info: "motion_graph".png used on input line 1094.
+(pdftex.def)             Requested size: 409.61649pt x 341.44171pt.
+
+[51 <./motion_graph.png>]
+<"image_fragment".png, id=233, 903.375pt x 1174.3875pt>
+File: "image_fragment".png Graphic file (type png)
+
+<use "image_fragment".png>
+Package pdftex.def Info: "image_fragment".png used on input line 1105.
+(pdftex.def)             Requested size: 398.34087pt x 455.23174pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1115
+
+ []
+
+[52 <./image_fragment.png>] [53]
+<"config_1".png, id=241, 903.375pt x 1177.39874pt>
+File: "config_1".png Graphic file (type png)
+ <use "config_1".png>
+Package pdftex.def Info: "config_1".png used on input line 1122.
+(pdftex.def)             Requested size: 398.34087pt x 455.24919pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1127--1132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1127--1132
+
+ []
+
+[54 <./config_1.png>] <"config_2".png, id=247, 903.375pt x 484.05844pt>
+File: "config_2".png Graphic file (type png)
+
+<use "config_2".png>
+Package pdftex.def Info: "config_2".png used on input line 1135.
+(pdftex.def)             Requested size: 398.34087pt x 199.16692pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1140--1143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1140--1143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1140--1143
+
+ []
+
+<"config_4".png, id=248, 903.375pt x 849.1725pt>
+File: "config_4".png Graphic file (type png)
+ <use "config_4".png>
+Package pdftex.def Info: "config_4".png used on input line 1146.
+(pdftex.def)             Requested size: 398.34087pt x 284.52962pt.
+ [55 <./config_2.png> <./config_4.png>]
+<"config_3".png, id=254, 903.375pt x 840.13875pt>
+File: "config_3".png Graphic file (type png)
+ <use "config_3".png>
+Package pdftex.def Info: "config_3".png used on input line 1156.
+(pdftex.def)             Requested size: 398.34087pt x 284.5281pt.
+ [56 <./config_3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1167--1169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1177--1179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1177--1179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1177--1179
+
+ []
+
+[57]
+Overfull \hbox (31.7565pt too wide) in paragraph at lines 1183--1203
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1215
+
+ []
+
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 1217--1219
+
+ []
+
+[59]
+Underfull \hbox (badness 10000) in paragraph at lines 1222--1228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1222--1228
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1222--1228
+
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1236
+
+ []
+
+[60] [61] <"schematic_rasp_pi".png, id=275, 1242.14063pt x 1941.50343pt>
+File: "schematic_rasp_pi".png Graphic file (type png)
+
+<use "schematic_rasp_pi".png>
+Package pdftex.def Info: "schematic_rasp_pi".png used on input line 1245.
+(pdftex.def)             Requested size: 409.60442pt x 608.43658pt.
+
+<"schematic_galileo".png, id=276, 1192.455pt x 1655.4347pt>
+File: "schematic_galileo".png Graphic file (type png)
+
+<use "schematic_galileo".png>
+Package pdftex.def Info: "schematic_galileo".png used on input line 1252.
+(pdftex.def)             Requested size: 409.59608pt x 625.35852pt.
+ [62 <./schematic_rasp_pi.png>] [63 <./schematic_galileo.png>]
+Overfull \hbox (10.7046pt too wide) in paragraph at lines 1265--1292
+ [] 
+ []
+
+[64]
+Overfull \hbox (10.7046pt too wide) in paragraph at lines 1304--1317
+ [] 
+ []
+
+[65] [66]
+Overfull \hbox (33.16724pt too wide) in paragraph at lines 1419--1431
+ [] 
+ []
+
+[67] (./report.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 13407 strings out of 493304
+ 240508 string characters out of 6139871
+ 301738 words of memory out of 5000000
+ 16539 multiletter control sequences out of 15000+600000
+ 12472 words of font info for 51 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 56i,12n,55p,1183b,1503s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.p
+fb>
+Output written on report.pdf (68 pages, 15538245 bytes).
+PDF statistics:
+ 336 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+
